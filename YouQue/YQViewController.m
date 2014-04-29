@@ -285,7 +285,7 @@
     }
     [((SKView*) self.view) presentScene:MainMenuScene transition:FromLefttransition];
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.3 delay:0.3 options:UIViewAnimationOptionCurveLinear animations:^{
         
         menuView.alpha = 1.0;
         
