@@ -692,12 +692,12 @@
         for(int j = 0 ; j < rowEntity.row.count;j++)
         {
             GraphCell *GCell = [rowEntity.row objectAtIndex:j];
-            GCell.color = unOccupied;
             NSUInteger index = [gameController.currentGame.graph getIndexOfGraphCell:GCell];
             
             CellView *cell = [self getCellViewWithIndex:index];
-            [cell removeCell:rowEntity.orientation animted:YES withCompletionBlock:^(BOOL finished){
+            [cell removeCell:rowEntity.orientation animted:YES withStatus:GCell.color withCompletionBlock:^(BOOL finished){
                 
+                GCell.color = unOccupied;
                 if(j == rowEntity.row.count-1 && i == Rows.count-1)
                 {
                     

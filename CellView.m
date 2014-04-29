@@ -384,18 +384,13 @@
     
     
 }
--(void)removeCell:(removedRowOrientation)orientation animted:(BOOL)animated withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
+-(void)removeCell:(removedRowOrientation)orientation animted:(BOOL)animated withStatus:(GraphCellStatus)status withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
 {
     self.IsOccupied = NO;
-    [self animateCellRemovalWithDelay:0.0 withOrientation:(removedRowOrientation)orientation  withCompletionBlock:completionBlock];
+    [self animateCellRemovalWithDelay:0.0 withOrientation:(removedRowOrientation)orientation withStatus:status  withCompletionBlock:completionBlock];
 }
--(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withOrientation:(removedRowOrientation)orientation withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
+-(SKAction*)removalActionWithOrientation:(removedRowOrientation)orientation
 {
-    contentView.zPosition = 1000;
-    
-    SKAction *delayAction = [SKAction waitForDuration:delay*0.15];
-    
-    
     SKAction *removalAction;
     
     switch (orientation) {
@@ -415,9 +410,18 @@
         default:
             break;
     }
+    return removalAction;
+}
+-(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withOrientation:(removedRowOrientation)orientation withStatus:(GraphCellStatus)status withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
+{
+    contentView.zPosition = 1000;
+    
+    SKAction *delayAction = [SKAction waitForDuration:delay*0.15];
     
     
-    SKAction *sequense = [SKAction sequence:@[delayAction,removalAction]];
+    
+    
+    SKAction *sequense = [SKAction sequence:@[delayAction,[self removalActionWithOrientation:orientation]]];
     
     [contentView runAction:sequense completion:^{
         

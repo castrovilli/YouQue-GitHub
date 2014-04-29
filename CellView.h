@@ -61,7 +61,7 @@ typedef enum
 // Methods to set the colour status of the cell with animation
 -(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
 -(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
--(void)removeCell:(removedRowOrientation)orientation animted:(BOOL)animated withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
+-(void)removeCell:(removedRowOrientation)orientation animted:(BOOL)animated withStatus:(GraphCellStatus)status withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
 
 -(UIColor*)getColorWithStatus:(GraphCellStatus)status;
 @end
