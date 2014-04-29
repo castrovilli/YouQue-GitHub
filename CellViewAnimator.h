@@ -26,7 +26,15 @@
 +(CellViewAnimator*)sharedInstance;
 
 //******************** cell removal actions *******************************
-@property(nonatomic,retain,readonly)SKAction *scaleUpFadeOutGroup ;
+@property(nonatomic,retain,readonly)SKAction *removalHorizontal ;
+@property(nonatomic,retain,readonly)SKAction *removalVertical ;
+@property(nonatomic,retain,readonly)SKAction *removalDiagonalToTheRight ;
+@property(nonatomic,retain,readonly)SKAction *removalDiagonalToTheLeft;
+@property(nonatomic,retain,readonly)SKAction *removalReset;
+
+//@property(nonatomic,retain,readonly)SKAction *fruitBlurAction;
+
+//@property(nonatomic,retain,readonly)SKEffectNode *fruitBlurEffect;
 
 //******************** cell addition actions *******************************
 @property(nonatomic,retain,readonly)SKAction *fadeInScaleUp ;

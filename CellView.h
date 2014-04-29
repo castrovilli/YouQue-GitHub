@@ -14,6 +14,7 @@
 #define SQUARE_IMAGE @"SQUARE WHITE UNPRESSED.png"
 #import "CellViewAnimator.h"
 #import "CellViewTextures.h"
+#import "RemovedRowEntity.h"
 #define CELL_SIZE ((([[UIDevice currentDevice] userInterfaceIdiom]) == (UIUserInterfaceIdiomPhone)) ? (41) : (60))
 
 
@@ -36,7 +37,9 @@ typedef enum
     int fisrtX;
     int firtsY;
     
+    SKEffectNode *fruitBlurEffect;
     
+    SKAction *_fruitBlurAction;
     
 }
 @property(nonatomic,assign)id<CellViewDelegate> delegate;
@@ -58,7 +61,7 @@ typedef enum
 // Methods to set the colour status of the cell with animation
 -(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
 -(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
-
+-(void)removeCell:(removedRowOrientation)orientation animted:(BOOL)animated withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
 
 -(UIColor*)getColorWithStatus:(GraphCellStatus)status;
 @end

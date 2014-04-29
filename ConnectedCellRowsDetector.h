@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Graph.h"
+#import "RemovedRowEntity.h"
 #define CONNECTED_CELLS_COUNT 4
+
 typedef void (^DetectedResultArrayBlock)(NSArray *);
 @interface ConnectedCellRowsDetector : NSObject
 +(NSArray*)getConnectedCellsWithGraph:(Graph*)graph withVertices:(NSArray*)vertices withCompletionBlock:(DetectedResultArrayBlock)block;

@@ -28,17 +28,47 @@
     {
         //******************** cell removal actions *******************************
         
-        SKAction *scaleUp = [SKAction scaleTo:1.8 duration:0.22];
+        
+        //SKAction *scaleUp = [SKAction scaleTo:1.8 duration:0.22];
+        
+        CGFloat removalDuration = 0.17;
+       // SKAction *fadeOutDelay = [SKAction waitForDuration:0.09];
+        SKAction *fadeOut = [SKAction fadeOutWithDuration:removalDuration];
+        //SKAction *fadeOutSequense = [SKAction sequence:@[fadeOutDelay,fadeOut]];
         
         
-        SKAction *fadeOutDelay = [SKAction waitForDuration:0.11];
-        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.11];
-        SKAction *fadeOutSequense = [SKAction sequence:@[fadeOutDelay,fadeOut]];
+        
+        SKAction *squeezeAction = [SKAction scaleXTo:4.0 y:0.2 duration:removalDuration];
         
         
-        _scaleUpFadeOutGroup = [SKAction group:@[scaleUp,fadeOutSequense]];
+        _removalHorizontal = [SKAction group:@[squeezeAction,fadeOut]];
         
         
+        
+        SKAction *squeezeVertical = [SKAction scaleXTo:0.2 y:4.0 duration:removalDuration];
+        
+        _removalVertical = [SKAction group:@[squeezeVertical,fadeOut]];
+        
+        
+        
+        SKAction *squeezeDiagonalToTheRight = [SKAction scaleXTo:4.0 y:0.2 duration:removalDuration];
+        
+        SKAction *rotateToTheRight = [SKAction rotateByAngle:degreesToRadians( 45.0  ) duration:0.0];
+        
+        _removalDiagonalToTheRight = [SKAction group:@[rotateToTheRight,squeezeDiagonalToTheRight,fadeOut]];
+        
+        
+        
+        SKAction *rotateToTheLeft = [SKAction rotateByAngle:degreesToRadians( -45.0  ) duration:0.0];
+        
+        _removalDiagonalToTheLeft = [SKAction group:@[rotateToTheLeft,squeezeDiagonalToTheRight,fadeOut]];
+        
+        
+        SKAction *rotateReset = [SKAction rotateToAngle:degreesToRadians( 0.0  ) duration:0.0];
+        
+        SKAction *scaleReset = [SKAction scaleXTo:1.0 y:1.0 duration:0.0];
+        
+        _removalReset = [SKAction group:@[rotateReset,scaleReset]];
         
         //******************** cell addition actions *******************************
         
@@ -50,15 +80,28 @@
         _scaleDownAction = [SKAction scaleTo:1.0 duration:0.1];
         
         
+        /*SKAction *squeezeAction = [SKAction scaleXTo:1.2 y:0.8 duration:0.3];
         
+        SKAction *squeezeReverse = [SKAction scaleXTo:0.8 y:1.2 duration:0.3];
+        
+        SKAction *squeezeSequense = [SKAction sequence:@[squeezeAction,squeezeReverse]];
+        
+        SKAction *squeezeRepeat = [SKAction repeatActionForever:squeezeSequense];*/
         
         SKAction *rotateLeftAction = [SKAction rotateByAngle:degreesToRadians( (kAnimationRotateDeg * -1.0)  ) duration:0.07];
         
         SKAction *rotateRightAction = [SKAction rotateByAngle:degreesToRadians( kAnimationRotateDeg  ) duration:0.07];
-        _jigglingAction = [SKAction repeatActionForever:[SKAction sequence:@[rotateLeftAction,rotateRightAction,rotateRightAction,rotateLeftAction]]];
+        SKAction *jiigleAction = [SKAction repeatActionForever:[SKAction sequence:@[rotateLeftAction,rotateRightAction,rotateRightAction,rotateLeftAction]]];
+        
+        //SKAction *groupAction = [SKAction group:@[jiigleAction,squeezeRepeat]];
+        
+        _jigglingAction = jiigleAction;
         
         
-        _resetJigglingAction = [SKAction rotateToAngle:0 duration:0.05];
+        SKAction *squeezeReset = [SKAction scaleXTo:1.0 y:1.0 duration:0.05];
+        
+        _resetJigglingAction = [SKAction group:@[squeezeReset,[SKAction rotateToAngle:0 duration:0.05]]];
+        
     }
     
     return self;

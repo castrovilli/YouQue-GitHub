@@ -32,7 +32,9 @@
         contentView.position = CGPointMake(self.size.width/2, self.size.height/2);
         contentView.anchorPoint = CGPointMake(0.5, 0.5);
         contentView.color = [UIColor clearColor];
+        
         [self addChild:contentView];
+        
         
         
         
@@ -382,8 +384,53 @@
     
     
 }
-
-
+-(void)removeCell:(removedRowOrientation)orientation animted:(BOOL)animated withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
+{
+    self.IsOccupied = NO;
+    [self animateCellRemovalWithDelay:0.0 withOrientation:(removedRowOrientation)orientation  withCompletionBlock:completionBlock];
+}
+-(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withOrientation:(removedRowOrientation)orientation withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
+{
+    contentView.zPosition = 1000;
+    
+    SKAction *delayAction = [SKAction waitForDuration:delay*0.15];
+    
+    
+    SKAction *removalAction;
+    
+    switch (orientation) {
+        case removedRowOrientationVertical:
+            removalAction = [CellViewAnimator sharedInstance].removalVertical;
+            break;
+        case removedRowOrientationHorizontal:
+            removalAction = [CellViewAnimator sharedInstance].removalHorizontal;
+            break;
+        case removedRowOrientationDiagonalToTheRight:
+            removalAction = [CellViewAnimator sharedInstance].removalDiagonalToTheRight;
+            break;
+        case removedRowOrientationDiagonalToTheLeft:
+            removalAction = [CellViewAnimator sharedInstance].removalDiagonalToTheLeft;
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    SKAction *sequense = [SKAction sequence:@[delayAction,removalAction]];
+    
+    [contentView runAction:sequense completion:^{
+        
+        
+        contentView.texture = nil;
+        contentView.alpha = 1.0;
+        [contentView runAction:[CellViewAnimator sharedInstance].removalReset];
+        contentView.zPosition = 10;
+        completionBlock(YES);
+        
+        
+    }];
+}
 -(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
 {
     contentView.zPosition = 1000;
@@ -392,17 +439,17 @@
     
 
     
+
     
     
-    SKAction *sequense = [SKAction sequence:@[delayAction,[CellViewAnimator sharedInstance].scaleUpFadeOutGroup]];
+    SKAction *sequense = [SKAction sequence:@[delayAction,[CellViewAnimator sharedInstance].removalDiagonalToTheLeft]];
     
     [contentView runAction:sequense completion:^{
     
         
         contentView.texture = nil;
         contentView.alpha = 1.0;
-        SKAction *scaleDown = [SKAction scaleTo:1.0 duration:0.0];
-        [contentView runAction:scaleDown];
+        [contentView runAction:[CellViewAnimator sharedInstance].removalReset];
         contentView.zPosition = 10;
         completionBlock(YES);
     

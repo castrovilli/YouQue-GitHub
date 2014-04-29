@@ -31,6 +31,7 @@
 		6E44A4E1190CE46300E8888D /* greyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4DD190CE46300E8888D /* greyButton@2x.png */; };
 		6E44A4E2190CE46300E8888D /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4DE190CE46300E8888D /* greyButtonHighlight.png */; };
 		6E44A4E3190CE46300E8888D /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4DF190CE46300E8888D /* greyButtonHighlight@2x.png */; };
+		6E5F1976190F94660013F9D7 /* RemovedRowEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F1975190F94660013F9D7 /* RemovedRowEntity.m */; };
 		6E80E54A190E718B00349E38 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80E549190E718B00349E38 /* Accounts.framework */; };
 		6E80E54C190E719D00349E38 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80E54B190E719D00349E38 /* Social.framework */; };
 		6E80E54E190E71A600349E38 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80E54D190E71A600349E38 /* Security.framework */; };
@@ -174,6 +175,8 @@
 		6E44A4DE190CE46300E8888D /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
 		6E44A4DF190CE46300E8888D /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		6E493C9D190EAD7D00C25B0B /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		6E5F1974190F94660013F9D7 /* RemovedRowEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemovedRowEntity.h; sourceTree = "<group>"; };
+		6E5F1975190F94660013F9D7 /* RemovedRowEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemovedRowEntity.m; sourceTree = "<group>"; };
 		6E80E549190E718B00349E38 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6E80E54B190E719D00349E38 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6E80E54D190E71A600349E38 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -460,6 +463,15 @@
 				6E44A4DF190CE46300E8888D /* greyButtonHighlight@2x.png */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		6E5F1973190F94430013F9D7 /* RemovedRowEntity */ = {
+			isa = PBXGroup;
+			children = (
+				6E5F1974190F94660013F9D7 /* RemovedRowEntity.h */,
+				6E5F1975190F94660013F9D7 /* RemovedRowEntity.m */,
+			);
+			name = RemovedRowEntity;
 			sourceTree = "<group>";
 		};
 		6E80E572190E72F600349E38 /* StartApp */ = {
@@ -882,6 +894,7 @@
 		6E9AF170190B349800E41D73 /* ConnectedCellRowsDetector */ = {
 			isa = PBXGroup;
 			children = (
+				6E5F1973190F94430013F9D7 /* RemovedRowEntity */,
 				6E9AF16D190B349000E41D73 /* ConnectedCellRowsDetector.h */,
 				6E9AF16E190B349000E41D73 /* ConnectedCellRowsDetector.m */,
 			);
@@ -1127,6 +1140,7 @@
 				6E80E580190E783000349E38 /* MJPopupBackgroundView.m in Sources */,
 				6E9AF147190B32BB00E41D73 /* ScoreEntity.m in Sources */,
 				6E9601E8190B8D9A008E972A /* SSPieProgressView.m in Sources */,
+				6E5F1976190F94660013F9D7 /* RemovedRowEntity.m in Sources */,
 				6E9601DF190B893B008E972A /* TSBlurView.m in Sources */,
 				6E9601CD190B893B008E972A /* TSMessage.m in Sources */,
 				6E9AF13F190B328400E41D73 /* Graph.m in Sources */,
@@ -1288,6 +1302,10 @@
 		6E9AF130190B31FD00E41D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				CODE_SIGN_ENTITLEMENTS = YouQue/YouQue.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: mohammed dehairy (ZMZ5ECK8F3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: mohammed dehairy (ZMZ5ECK8F3)";
@@ -1313,6 +1331,10 @@
 		6E9AF131190B31FD00E41D73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				CODE_SIGN_ENTITLEMENTS = YouQue/YouQue.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: mohammed dehairy (ZMZ5ECK8F3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: mohammed dehairy (ZMZ5ECK8F3)";

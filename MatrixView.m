@@ -677,36 +677,54 @@
 //************************* Game Controller delegate implementation ********************************************
 //*******************************************************************************************************************
 
--(void)removeCells:(NSArray *)GCells withCompletionBlock:(void (^)(void))block
+-(void)removeCells:(NSArray *)Rows withCompletionBlock:(void (^)(void))block
 {
-    if(GCells.count == 0)
+    if(Rows.count == 0)
     {
         block();
         return;
         
     }
     
-    for(int i = 0 ; i < GCells.count ; i++)
+    for(int i = 0 ;i < Rows.count;i++)
     {
-        GraphCell *GCell = [GCells objectAtIndex:i];
-        GCell.color = unOccupied;
-        NSUInteger index = [gameController.currentGame.graph getIndexOfGraphCell:GCell];
-        
-        [self setCellAtIndex:index withStatus:GCell withanimation:CellAnimationTypeRemoval withCompletionBlock:^(BOOL finished){
+        RemovedRowEntity *rowEntity = [Rows objectAtIndex:i];
+        for(int j = 0 ; j < rowEntity.row.count;j++)
+        {
+            GraphCell *GCell = [rowEntity.row objectAtIndex:j];
+            GCell.color = unOccupied;
+            NSUInteger index = [gameController.currentGame.graph getIndexOfGraphCell:GCell];
             
-            if(i == GCells.count-1)
-            {
+            CellView *cell = [self getCellViewWithIndex:index];
+            [cell removeCell:rowEntity.orientation animted:YES withCompletionBlock:^(BOOL finished){
                 
-                block();
-            }
+                if(j == rowEntity.row.count-1 && i == Rows.count-1)
+                {
+                    
+                    block();
+                }
+                
+                
+                
+                
+            }];
             
-            
-            
-            
-        }];
+            /*[self setCellAtIndex:index withStatus:GCell withanimation:CellAnimationTypeRemoval withCompletionBlock:^(BOOL finished){
+                
+                if(j == rowEntity.row.count-1 && i == Rows.count-1)
+                {
+                    
+                    block();
+                }
+                
+                
+                
+                
+            }];*/
+        }
+        
     }
 }
-
 -(void)onLocalPlayerScoreReceived:(int)highScore
 {
     NSLog(@"local Player High Score : %d",highScore);

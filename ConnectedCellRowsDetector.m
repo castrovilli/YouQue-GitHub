@@ -17,10 +17,52 @@
     
     for(GraphCell *GCell in vertices)
     {
-        [result addObjectsFromArray:[self detectConnectedRowsVerticallyWithGraph:graph withVertixe:GCell]];
+        NSArray *verticalRow = [self detectConnectedRowsVerticallyWithGraph:graph withVertixe:GCell];
+        if(verticalRow.count > 0)
+        {
+            RemovedRowEntity *verticalRowEntity = [[RemovedRowEntity alloc] init];
+            verticalRowEntity.row = verticalRow;
+            verticalRowEntity.orientation = removedRowOrientationVertical;
+            [result addObject:verticalRowEntity];
+            
+        }
+        
+        
+        NSArray *Horizontal = [self detectConnectedRowsHorizontallyWithGraph:graph withVertixe:GCell];
+        if(Horizontal.count > 0)
+        {
+            RemovedRowEntity *HorizontalEntity = [[RemovedRowEntity alloc] init];
+            HorizontalEntity.row = Horizontal;
+            HorizontalEntity.orientation = removedRowOrientationHorizontal;
+            [result addObject:HorizontalEntity];
+            
+        }
+        
+        
+        NSArray *DiagonallyToTheRight = [self detectConnectedRowsDiagonallyToTheRightWithGraph:graph withVertixe:GCell];
+        if(DiagonallyToTheRight.count > 0)
+        {
+            RemovedRowEntity *DiagonallyToTheRightEntity = [[RemovedRowEntity alloc] init];
+            DiagonallyToTheRightEntity.row = DiagonallyToTheRight;
+            DiagonallyToTheRightEntity.orientation = removedRowOrientationDiagonalToTheRight;
+            [result addObject:DiagonallyToTheRightEntity];
+            
+        }
+        
+        NSArray *DiagonallyToTheLeft = [self detectConnectedRowsDiagonallyToTheLeftWithGraph:graph withVertixe:GCell];
+        if(DiagonallyToTheLeft.count > 0)
+        {
+            RemovedRowEntity *DiagonallyToTheLeftEntity = [[RemovedRowEntity alloc] init];
+            DiagonallyToTheLeftEntity.row = DiagonallyToTheLeft;
+            DiagonallyToTheLeftEntity.orientation = removedRowOrientationDiagonalToTheLeft;
+            [result addObject:DiagonallyToTheLeftEntity];
+            
+        }
+        
+        /*[result addObjectsFromArray:[self detectConnectedRowsVerticallyWithGraph:graph withVertixe:GCell]];
         [result addObjectsFromArray:[self detectConnectedRowsHorizontallyWithGraph:graph withVertixe:GCell]];
         [result addObjectsFromArray:[self detectConnectedRowsDiagonallyToTheRightWithGraph:graph withVertixe:GCell]];
-        [result addObjectsFromArray:[self detectConnectedRowsDiagonallyToTheLeftWithGraph:graph withVertixe:GCell]];
+        [result addObjectsFromArray:[self detectConnectedRowsDiagonallyToTheLeftWithGraph:graph withVertixe:GCell]];*/
     }
     NSSet *set = [NSSet setWithArray:result];
     NSArray *uniqueArray = [set allObjects];
