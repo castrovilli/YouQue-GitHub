@@ -19,4 +19,12 @@
 @property(nonatomic,retain,readonly)SKTexture *blueberryImg;
 @property(nonatomic,retain,readonly)SKTexture *appleImg;
 @property(nonatomic,retain,readonly)SKTexture *emptyImg;
+
+
+@property(nonatomic,retain,readonly)SKTexture *orangeImg_blur;
+@property(nonatomic,retain,readonly)SKTexture *watermelonImg_blur;
+@property(nonatomic,retain,readonly)SKTexture *strawberryImg_blur;
+@property(nonatomic,retain,readonly)SKTexture *blueberryImg_blur;
+@property(nonatomic,retain,readonly)SKTexture *appleImg_blur;
+@property(nonatomic,retain,readonly)SKTexture *emptyImg_blur;
 @end

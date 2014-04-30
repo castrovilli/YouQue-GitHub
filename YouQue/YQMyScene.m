@@ -28,7 +28,7 @@
         
         undoBtn = [SKButton spriteNodeWithImageNamed:@"undo2.png"];
         undoBtn.position = CGPointMake(290, 520);
-        undoBtn.size = CGSizeMake(60, 60);
+        undoBtn.size = CGSizeMake(40, 40);
         undoBtn.name = @"undoBtn";
         [self addChild:undoBtn];
         
@@ -38,7 +38,7 @@
         [self addChild:ScoreBoard];
         
         quitBtn = [SKSpriteNode spriteNodeWithImageNamed:@"pause.png"];
-        quitBtn.size = CGSizeMake(60, 60);
+        quitBtn.size = CGSizeMake(40, 40);
         quitBtn.position = CGPointMake(30, 520);
         quitBtn.name = @"quitBtn";
         [self addChild:quitBtn];

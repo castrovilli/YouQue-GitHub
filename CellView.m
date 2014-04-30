@@ -317,6 +317,31 @@
     return backColor;
 }
 
+-(SKTexture*)getBlurredImageForStatus:(GraphCellStatus)status
+{
+    SKTexture *backColor ;
+    switch (status) {
+        case red:
+            backColor  = [CellViewTextures sharedInstance].strawberryImg_blur;
+            break;
+        case blue:
+            backColor = [CellViewTextures sharedInstance].blueberryImg_blur;
+            break;
+        case green:
+            backColor = [CellViewTextures sharedInstance].watermelonImg_blur;
+            break;
+        case yellow:
+            backColor = [CellViewTextures sharedInstance].appleImg_blur;
+            break;
+        case orange:
+            backColor = [CellViewTextures sharedInstance].orangeImg_blur;
+            break;
+        default:
+            backColor = nil;
+            break;
+    }
+    return backColor;
+}
 
 -(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
 {
@@ -418,8 +443,7 @@
     
     SKAction *delayAction = [SKAction waitForDuration:delay*0.15];
     
-    
-    
+    contentView.texture = [self getBlurredImageForStatus:status];
     
     SKAction *sequense = [SKAction sequence:@[delayAction,[self removalActionWithOrientation:orientation]]];
     

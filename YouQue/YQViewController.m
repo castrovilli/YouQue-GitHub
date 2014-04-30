@@ -185,12 +185,11 @@
 }
 -(void)revmobAdDidFailWithError:(NSError *)error
 {
-   // [self stopAnimating];
     [bannerView_ loadAd];
 }
 -(void)revmobUserClickedInTheAd
 {
-   // [self startAnimating];
+    
 }
 -(void)revmobUserClosedTheAd
 {
@@ -198,16 +197,15 @@
 }
 -(void)installDidReceive
 {
-   // [self stopAnimating];
+    
 }
 -(void)installDidFail
 {
-    //[self stopAnimating];
+    
 }
 -(void)removeAds
 {
     [bannerView_ removeFromSuperview];
-    //[bannerView_ removeFromSuperview];
 }
 - (BOOL)hasFourInchDisplay {
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);

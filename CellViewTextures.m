@@ -31,6 +31,14 @@
         _appleImg = [SKTexture textureWithImageNamed:@"Apple50x50.png"];
         _orangeImg = [SKTexture textureWithImageNamed:@"Orange50x50.png"];
         _emptyImg = [SKTexture textureWithImageNamed:@"emptyCell1.png"];
+        
+        
+        _strawberryImg_blur = [SKTexture textureWithImageNamed:@"strawberryicon50x50-blur.png"];
+        _blueberryImg_blur = [SKTexture textureWithImageNamed:@"blueberrycoloricon50x50-blur.png"];
+        _watermelonImg_blur = [SKTexture textureWithImageNamed:@"Watermelonicon50x50-blur.png"];
+        _appleImg_blur = [SKTexture textureWithImageNamed:@"Apple50x50-blur.png"];
+        _orangeImg_blur = [SKTexture textureWithImageNamed:@"Orange50x50-blur.png"];
+        _emptyImg_blur = [SKTexture textureWithImageNamed:@"emptyCell1.png"];
     }
     
     return self;
