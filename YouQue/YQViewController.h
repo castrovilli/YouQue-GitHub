@@ -13,15 +13,16 @@
 #import "STABannerView.h"
 #import "MDPaymentTransactionObserver.h"
 #import "UIViewController+Loader.h"
+#import <RevMobAds/RevMobAds.h>
 #define PRODUCT_ID @"YouQueRemoveAds"
 typedef enum
 {
     currentSceneGame = 1,
     currentSceneMenu = 2
 }currentScene;
-@interface YQViewController : UIViewController<GKGameCenterControllerDelegate,SKProductsRequestDelegate,MDPaymentTransactionObserverDelegate>
+@interface YQViewController : UIViewController<GKGameCenterControllerDelegate,SKProductsRequestDelegate,MDPaymentTransactionObserverDelegate,RevMobAdsDelegate>
 {
-    STABannerView* bannerView_;
+    RevMobBannerView* bannerView_;
     
     YQMainMenu * MainMenuScene;
     YQMyScene *gameScene;

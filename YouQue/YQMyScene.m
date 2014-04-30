@@ -8,14 +8,24 @@
 
 #import "YQMyScene.h"
 #import "YQViewController.h"
+
 @implementation YQMyScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
+        
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(highScoreUpdated) name:HIGH_SCORE_UPDATED_NOTIFICATION object:nil];
         
        
-        self.backgroundColor = [UIColor colorWithRed:(75.0f/255.0f) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];
+       /* self.backgroundColor = [UIColor colorWithRed:(75.0f/255.0f) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];*/
+        UIImage *bg = [UIImage imageNamed:@"background.jpg"];
+        CGFloat width = bg.size.height / bg.size.width;
+        SKSpriteNode *BGNode = [SKSpriteNode spriteNodeWithTexture:[ SKTexture textureWithRect:CGRectMake(0, 0, width, 1.0) inTexture:[SKTexture textureWithImage:bg] ]];
+        BGNode.size = size;
+        BGNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        [self insertChild:BGNode atIndex:0];
+        
         
         undoBtn = [SKButton spriteNodeWithImageNamed:@"undo2.png"];
         undoBtn.position = CGPointMake(290, 530);
@@ -59,7 +69,6 @@
         SKSpriteNode *gameContainerView = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:CGSizeMake(600, 400)];
         gameContainerView.anchorPoint = CGPointMake(0.0, 0.0);
         gameContainerView.position = CGPointMake(5, 120);
-        
         [self addChild:gameContainerView];
         
         

@@ -31,7 +31,7 @@
         
         //SKAction *scaleUp = [SKAction scaleTo:1.8 duration:0.22];
         
-        CGFloat removalDuration = 0.17;
+        CGFloat removalDuration = 0.11;
        // SKAction *fadeOutDelay = [SKAction waitForDuration:0.09];
         SKAction *fadeOut = [SKAction fadeOutWithDuration:removalDuration];
         //SKAction *fadeOutSequense = [SKAction sequence:@[fadeOutDelay,fadeOut]];

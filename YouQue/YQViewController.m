@@ -38,7 +38,6 @@
     gameScene = [YQMyScene sceneWithSize:skView.bounds.size];
     gameScene.scaleMode = SKSceneScaleModeAspectFill;
     gameScene.viewController = self;
-    
     // Present the scene.
     
     currentScene curr = [self lastScene];
@@ -168,15 +167,47 @@
     {
         return;
     }
-    if (bannerView_ == nil) {
+    /*if (bannerView_ == nil) {
         bannerView_ = [[STABannerView alloc] initWithSize:STA_AutoAdSize autoOrigin:STAAdOrigin_Bottom
                                                  withView:self.view withDelegate:nil];
         [self.view addSubview:bannerView_];
-    }
+    }*/
+    bannerView_ = [[RevMobAds session] bannerView];
+    bannerView_.frame = CGRectMake(0, self.view.bounds.size.height-50, self.view.bounds.size.width, 50);
+    [self.view addSubview:bannerView_];
+    
+    bannerView_.delegate = self;
+    [bannerView_ loadAd];
+}
+-(void)revmobAdDidReceive
+{
+
+}
+-(void)revmobAdDidFailWithError:(NSError *)error
+{
+   // [self stopAnimating];
+    [bannerView_ loadAd];
+}
+-(void)revmobUserClickedInTheAd
+{
+   // [self startAnimating];
+}
+-(void)revmobUserClosedTheAd
+{
+    
+}
+-(void)installDidReceive
+{
+   // [self stopAnimating];
+}
+-(void)installDidFail
+{
+    //[self stopAnimating];
 }
 -(void)removeAds
 {
     [bannerView_ removeFromSuperview];
+    //[bannerView_ removeFromSuperview];
 }
 - (BOOL)hasFourInchDisplay {
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);

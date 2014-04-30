@@ -7,16 +7,23 @@
 //
 
 #import "YQAppDelegate.h"
-
+#import <RevMobAds/RevMobAds.h>
 @implementation YQAppDelegate
 - (BOOL)hasFourInchDisplay {
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    if(![self adRemovalPurchased] && [self hasFourInchDisplay])
+    {
+        [RevMobAds startSessionWithAppID:@"53588cadd63ee9c01fe876de"];
+        [RevMobAds session].testingMode = RevMobAdsTestingModeWithAds;
+    }
+    
     [[FaceBookManager sharedInstance] Initializefacebook];
     // [MMSDK initialize]; //Initialize a Millennial Media session
-    [STAStartAppAd initWithAppId:@"204223654" developerId:@"104470863"];
+   // [STAStartAppAd initWithAppId:@"204223654" developerId:@"104470863"];
     // Override point for customization after application launch.
     
     [self authenticateLocalPlayer];
