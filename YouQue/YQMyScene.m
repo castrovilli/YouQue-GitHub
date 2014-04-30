@@ -20,26 +20,26 @@
        
        /* self.backgroundColor = [UIColor colorWithRed:(75.0f/255.0f) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];*/
         UIImage *bg = [UIImage imageNamed:@"background.jpg"];
-        CGFloat width = bg.size.height / bg.size.width;
-        SKSpriteNode *BGNode = [SKSpriteNode spriteNodeWithTexture:[ SKTexture textureWithRect:CGRectMake(0, 0, width, 1.0) inTexture:[SKTexture textureWithImage:bg] ]];
+        SKSpriteNode *BGNode = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:bg ]];
         BGNode.size = size;
         BGNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         [self insertChild:BGNode atIndex:0];
         
         
         undoBtn = [SKButton spriteNodeWithImageNamed:@"undo2.png"];
-        undoBtn.position = CGPointMake(290, 530);
-        undoBtn.size = CGSizeMake(40, 40);
+        undoBtn.position = CGPointMake(290, 520);
+        undoBtn.size = CGSizeMake(60, 60);
         undoBtn.name = @"undoBtn";
         [self addChild:undoBtn];
         
         ScoreBoard = [[SKLabelNode alloc] init];
         ScoreBoard.position = CGPointMake(CGRectGetMidX(self.frame), 515);
+        ScoreBoard.fontColor = [UIColor blackColor];
         [self addChild:ScoreBoard];
         
         quitBtn = [SKSpriteNode spriteNodeWithImageNamed:@"pause.png"];
-        quitBtn.size = CGSizeMake(40, 40);
-        quitBtn.position = CGPointMake(30, 530);
+        quitBtn.size = CGSizeMake(60, 60);
+        quitBtn.position = CGPointMake(30, 520);
         quitBtn.name = @"quitBtn";
         [self addChild:quitBtn];
         
@@ -47,6 +47,7 @@
         personalHighScoreLbl = [[SKLabelNode alloc] init];
         personalHighScoreLbl.position = CGPointMake(CGRectGetMidX(self.frame), 490);
         personalHighScoreLbl.fontSize = 15;
+        personalHighScoreLbl.fontColor = [UIColor blackColor];
         [self addChild:personalHighScoreLbl];
         
         quitTransition = [SKTransition moveInWithDirection:SKTransitionDirectionLeft duration:0.5];

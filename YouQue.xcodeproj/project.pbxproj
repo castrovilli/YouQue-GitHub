@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6E2F2E4C190D8C59006DD825 /* Watermelon-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F2E4B190D8C59006DD825 /* Watermelon-icon.png */; };
 		6E3656251910A7EE00FAAA68 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3656241910A7EE00FAAA68 /* RevMobAds.framework */; };
+		6E3656271910B73300FAAA68 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E3656261910B73300FAAA68 /* background.jpg */; };
+		6E3656291910B89900FAAA68 /* background640x1136.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E3656281910B89900FAAA68 /* background640x1136.jpg */; };
+		6E36562B1910B8F700FAAA68 /* splash640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E36562A1910B8F700FAAA68 /* splash640x1136.png */; };
+		6E36562D1910B95400FAAA68 /* splash640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E36562C1910B95400FAAA68 /* splash640x960.png */; };
 		6E44A4A8190CA5DE00E8888D /* undo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4A7190CA5DE00E8888D /* undo2.png */; };
 		6E44A4AC190CAA1B00E8888D /* SKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E44A4AB190CAA1B00E8888D /* SKButton.m */; };
 		6E44A4AE190CAE1500E8888D /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4AD190CAE1500E8888D /* pause.png */; };
@@ -18,7 +22,6 @@
 		6E44A4B9190CAF1F00E8888D /* icon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4B3190CAF1F00E8888D /* icon80x80.png */; };
 		6E44A4BA190CAF1F00E8888D /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4B4190CAF1F00E8888D /* icon114x114.png */; };
 		6E44A4BB190CAF1F00E8888D /* icon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4B5190CAF1F00E8888D /* icon120x120.png */; };
-		6E44A4C0190CAF5D00E8888D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4BD190CAF5D00E8888D /* Default-568h@2x.png */; };
 		6E44A4C1190CAF5D00E8888D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4BE190CAF5D00E8888D /* Default.png */; };
 		6E44A4C2190CAF5D00E8888D /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4BF190CAF5D00E8888D /* Default~iphone.png */; };
 		6E44A4C6190CC38C00E8888D /* cellEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4C5190CC38C00E8888D /* cellEmpty.png */; };
@@ -140,7 +143,6 @@
 		6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */; };
 		6EFF2F4C190FE09300FA6F6F /* cartoon natural landscape1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */; };
 		6EFF2F4E190FE1BA00FA6F6F /* Cartoon natural landscape Vector Backgrounds.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F4D190FE1BA00FA6F6F /* Cartoon natural landscape Vector Backgrounds.jpg */; };
-		6EFF2F50190FE2BA00FA6F6F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F4F190FE2BA00FA6F6F /* background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,10 @@
 /* Begin PBXFileReference section */
 		6E2F2E4B190D8C59006DD825 /* Watermelon-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermelon-icon.png"; sourceTree = "<group>"; };
 		6E3656241910A7EE00FAAA68 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
+		6E3656261910B73300FAAA68 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		6E3656281910B89900FAAA68 /* background640x1136.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background640x1136.jpg; sourceTree = "<group>"; };
+		6E36562A1910B8F700FAAA68 /* splash640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash640x1136.png; sourceTree = "<group>"; };
+		6E36562C1910B95400FAAA68 /* splash640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash640x960.png; sourceTree = "<group>"; };
 		6E44A4A7190CA5DE00E8888D /* undo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo2.png; sourceTree = "<group>"; };
 		6E44A4AA190CAA1B00E8888D /* SKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKButton.h; sourceTree = "<group>"; };
 		6E44A4AB190CAA1B00E8888D /* SKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButton.m; sourceTree = "<group>"; };
@@ -166,7 +172,6 @@
 		6E44A4B3190CAF1F00E8888D /* icon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80x80.png; sourceTree = "<group>"; };
 		6E44A4B4190CAF1F00E8888D /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
 		6E44A4B5190CAF1F00E8888D /* icon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120x120.png; sourceTree = "<group>"; };
-		6E44A4BD190CAF5D00E8888D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E44A4BE190CAF5D00E8888D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6E44A4BF190CAF5D00E8888D /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		6E44A4C5190CC38C00E8888D /* cellEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellEmpty.png; sourceTree = "<group>"; };
@@ -338,7 +343,6 @@
 		6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartoon natural landscape.png"; sourceTree = "<group>"; };
 		6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape1.jpg"; sourceTree = "<group>"; };
 		6EFF2F4D190FE1BA00FA6F6F /* Cartoon natural landscape Vector Backgrounds.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cartoon natural landscape Vector Backgrounds.jpg"; sourceTree = "<group>"; };
-		6EFF2F4F190FE2BA00FA6F6F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,7 +443,9 @@
 		6E44A4BC190CAF4A00E8888D /* splash */ = {
 			isa = PBXGroup;
 			children = (
-				6E44A4BD190CAF5D00E8888D /* Default-568h@2x.png */,
+				6E36562C1910B95400FAAA68 /* splash640x960.png */,
+				6E36562A1910B8F700FAAA68 /* splash640x1136.png */,
+				6E3656281910B89900FAAA68 /* background640x1136.jpg */,
 				6E44A4BE190CAF5D00E8888D /* Default.png */,
 				6E44A4BF190CAF5D00E8888D /* Default~iphone.png */,
 			);
@@ -1016,7 +1022,7 @@
 		6EFF2F46190FD47300FA6F6F /* BG */ = {
 			isa = PBXGroup;
 			children = (
-				6EFF2F4F190FE2BA00FA6F6F /* background.jpg */,
+				6E3656261910B73300FAAA68 /* background.jpg */,
 				6EFF2F4D190FE1BA00FA6F6F /* Cartoon natural landscape Vector Backgrounds.jpg */,
 				6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */,
 				6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */,
@@ -1117,8 +1123,10 @@
 				6E44A4B8190CAF1F00E8888D /* icon58x58.png in Resources */,
 				6E960205190B93AD008E972A /* Watermelonicon50x50@2x.png in Resources */,
 				6E9601D4190B893B008E972A /* NotificationBackgroundSuccess.png in Resources */,
+				6E3656291910B89900FAAA68 /* background640x1136.jpg in Resources */,
 				6E44A4E2190CE46300E8888D /* greyButtonHighlight.png in Resources */,
 				6EFF2F4E190FE1BA00FA6F6F /* Cartoon natural landscape Vector Backgrounds.jpg in Resources */,
+				6E36562D1910B95400FAAA68 /* splash640x960.png in Resources */,
 				6E44A4CC190CC4DA00E8888D /* emptyCell.png in Resources */,
 				6E44A4E0190CE46300E8888D /* greyButton.png in Resources */,
 				6EFF2F44190FBFC000FA6F6F /* blueberrycoloricon50x50-blur-horizontal.png in Resources */,
@@ -1150,11 +1158,11 @@
 				6E44A4E1190CE46300E8888D /* greyButton@2x.png in Resources */,
 				6E9AF117190B31FD00E41D73 /* Spaceship.png in Resources */,
 				6E44A4B6190CAF1F00E8888D /* icon29x29.png in Resources */,
-				6EFF2F50190FE2BA00FA6F6F /* background.jpg in Resources */,
+				6E3656271910B73300FAAA68 /* background.jpg in Resources */,
+				6E36562B1910B8F700FAAA68 /* splash640x1136.png in Resources */,
 				6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */,
 				6E44A4A8190CA5DE00E8888D /* undo2.png in Resources */,
 				6E44A4C1190CAF5D00E8888D /* Default.png in Resources */,
-				6E44A4C0190CAF5D00E8888D /* Default-568h@2x.png in Resources */,
 				6E9601D6190B893B008E972A /* NotificationBackgroundSuccessIcon.png in Resources */,
 				6E9601DC190B893B008E972A /* NotificationButtonBackground.png in Resources */,
 				6E9601DE190B893B008E972A /* TSMessagesDefaultDesign.json in Resources */,

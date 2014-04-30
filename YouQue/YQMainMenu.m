@@ -15,6 +15,11 @@
         self.backgroundColor = [UIColor colorWithRed:(75.0f/255.0f) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];
         
 
+        UIImage *bg = [UIImage imageNamed:@"background.jpg"];
+        SKSpriteNode *BGNode = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:bg ]];
+        BGNode.size = size;
+        BGNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        [self insertChild:BGNode atIndex:0];
         
         
     }
