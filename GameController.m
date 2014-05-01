@@ -18,11 +18,13 @@
         _levelProvider.delegate = self;
         
         _UndoManager = [[UndoManager alloc] init];
+        newGame = NO;
     }
     return self;
 }
 -(void)matrixViewDidLoad:(BOOL)gameIsResumed
 {
+    newGame = !gameIsResumed;
     if(!gameIsResumed)
     {
         [self GenerateRandomCellsAndAddToSuperView:NO];
@@ -91,7 +93,12 @@
 -(void)saveGame
 {
     [self PersistGameToPermenantStore];
-    [self SaveGameToUndoManager];
+  /*  if(!newGame)
+    {
+        [self SaveGameToUndoManager];
+    }
+    newGame = NO;*/
+    
     
     
 }
@@ -166,51 +173,42 @@
         }
         return;
     }
-    [RandomUnOccupiedCellsGenerator GenerateRandomUnOccupiedCellsIndexes:[_levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
+    NSArray *result = [RandomUnOccupiedCellsGenerator GenerateRandomUnOccupiedCellsIndexes:[_levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){}];
+    
+    NSMutableArray *AddedCells = [NSMutableArray array];
+    for(int i=0 ;i<[_levelProvider GetCurrentLevel].numberOfAddedCells;i++)
+    {
+        GraphCell *AddedGCell = [_currentGame.nextCellsToAdd objectAtIndex:i];
+        GraphCell *LocalGCell = [_currentGame.graph getGraphCellWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
+        LocalGCell.color = AddedGCell.color;
+        
+        [AddedCells addObject:LocalGCell];
+        
+    }
+    
+    [_delegate dropCells:AddedCells withCompletionBlock:^(BOOL finished){
         
         
-        NSMutableArray *AddedCells = [NSMutableArray array];
-        for(int i=0 ;i<[_levelProvider GetCurrentLevel].numberOfAddedCells;i++)
-        {
-            GraphCell *AddedGCell = [_currentGame.nextCellsToAdd objectAtIndex:i];
-            GraphCell *LocalGCell = [_currentGame.graph getGraphCellWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
-            LocalGCell.color = AddedGCell.color;
+        [self DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:^(NSArray* detectedCells){
             
-            [AddedCells addObject:LocalGCell];
             
-        }
-        
-        [_delegate dropCells:AddedCells withCompletionBlock:^(BOOL finished){
-        
-        
-           [self DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:^(NSArray* detectedCells){
-           
-           
-               [_delegate setUserInteractionEnabled:YES];
-               
-               NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
-               
-               if(unoccupiedCells.count==0)
-               {
-                   [_delegate GameOver];
-                   
-               }else
-               {
-                   [self GenerateRandomCellsAndAddToSuperView:YES];
-                   [self saveGame];
-               }
-           
-           
-           
-           }
+            [_delegate setUserInteractionEnabled:YES];
+            
+            NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
+            
+            if(unoccupiedCells.count==0)
+            {
+                [_delegate GameOver];
                 
-             withVerticesArray:AddedCells];
-        
+            }else
+            {
+                [self GenerateRandomCellsAndAddToSuperView:YES];
+                [self saveGame];
+            }
             
-        }];
-        
-        
-        
+            
+            
+        } withVerticesArray:AddedCells];
         
         
     }];
@@ -247,6 +245,7 @@
     {
         numberOfCellsDetected += row.row.count;
     }
+    
     
     [_delegate removeCells:result withCompletionBlock:^{
         
@@ -321,6 +320,11 @@
         
         return;
     }
+    if(!newGame)
+    {
+        [self SaveGameToUndoManager];
+    }
+    newGame = NO;
     
     
     [_delegate setUserInteractionEnabled:NO];

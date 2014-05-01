@@ -9,10 +9,10 @@
 #import "RandomUnOccupiedCellsGenerator.h"
 
 @implementation RandomUnOccupiedCellsGenerator
-+(void)GenerateRandomUnOccupiedCellsIndexes:(int)count WithUnOccupiedCells:(NSArray *)UnOccupiedCells withCompletionBlock:(RandomGenerationBlock)block
++(NSArray*)GenerateRandomUnOccupiedCellsIndexes:(int)count WithUnOccupiedCells:(NSArray *)UnOccupiedCells withCompletionBlock:(RandomGenerationBlock)block
 {
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
+    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
     
     
         int Iterations = count;
@@ -46,13 +46,13 @@
             }
             
         }
-        dispatch_async(dispatch_get_main_queue(), ^(void){
+    //    dispatch_async(dispatch_get_main_queue(), ^(void){
             
-            block(result);
+           return result;
             
-        });
+      //  });
     
-    });
+  //  });
     
     
     

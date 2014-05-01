@@ -10,5 +10,5 @@
 
 @interface RandomUnOccupiedCellsGenerator : NSObject
 typedef void (^RandomGenerationBlock)(NSArray *result);
-+(void)GenerateRandomUnOccupiedCellsIndexes:(int)count WithUnOccupiedCells:(NSArray*)UnOccupiedCells withCompletionBlock:(RandomGenerationBlock)block;
++(NSArray*)GenerateRandomUnOccupiedCellsIndexes:(int)count WithUnOccupiedCells:(NSArray*)UnOccupiedCells withCompletionBlock:(RandomGenerationBlock)block;
 @end

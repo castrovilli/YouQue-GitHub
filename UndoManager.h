@@ -10,14 +10,11 @@
 #import "GameEntity.h"
 @interface UndoManager : NSObject
 {
-    GameEntity *previousGame;
     NSMutableArray *UndoGamesList;
-    //NSMutableArray *RedoGamesList;
 }
 -(void)EnqueueGameInUndoList:(GameEntity*)game;
 -(GameEntity*)UndoLastMove;
-/*-(GameEntity*)RedoLastMove;
--(BOOL)CanRedo;*/
+
 -(BOOL)CanUndo;
 -(void)ResetManager;
 @end

@@ -22,7 +22,7 @@ typedef void (^CompletionBlock)(NSArray* detectedCells);
 @interface GameController : NSObject<LevelProviderDelegate>
 {
     
-    
+    BOOL newGame;
     
 }
 
