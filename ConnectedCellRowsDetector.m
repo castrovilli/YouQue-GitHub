@@ -17,13 +17,15 @@
     
     for(GraphCell *GCell in vertices)
     {
+        NSMutableArray *rowsForCurrentVertix = [NSMutableArray array];
+        
         NSArray *verticalRow = [self detectConnectedRowsVerticallyWithGraph:graph withVertixe:GCell];
         if(verticalRow.count > 0)
         {
             RemovedRowEntity *verticalRowEntity = [[RemovedRowEntity alloc] init];
-            verticalRowEntity.row = verticalRow;
+            verticalRowEntity.row = [NSMutableArray arrayWithArray:verticalRow];
             verticalRowEntity.orientation = removedRowOrientationVertical;
-            [result addObject:verticalRowEntity];
+            [rowsForCurrentVertix addObject:verticalRowEntity];
             
         }
         
@@ -32,9 +34,9 @@
         if(Horizontal.count > 0)
         {
             RemovedRowEntity *HorizontalEntity = [[RemovedRowEntity alloc] init];
-            HorizontalEntity.row = Horizontal;
+            HorizontalEntity.row = [NSMutableArray arrayWithArray:Horizontal];
             HorizontalEntity.orientation = removedRowOrientationHorizontal;
-            [result addObject:HorizontalEntity];
+            [rowsForCurrentVertix addObject:HorizontalEntity];
             
         }
         
@@ -43,9 +45,9 @@
         if(DiagonallyToTheRight.count > 0)
         {
             RemovedRowEntity *DiagonallyToTheRightEntity = [[RemovedRowEntity alloc] init];
-            DiagonallyToTheRightEntity.row = DiagonallyToTheRight;
+            DiagonallyToTheRightEntity.row = [NSMutableArray arrayWithArray:DiagonallyToTheRight];
             DiagonallyToTheRightEntity.orientation = removedRowOrientationDiagonalToTheRight;
-            [result addObject:DiagonallyToTheRightEntity];
+            [rowsForCurrentVertix addObject:DiagonallyToTheRightEntity];
             
         }
         
@@ -53,12 +55,22 @@
         if(DiagonallyToTheLeft.count > 0)
         {
             RemovedRowEntity *DiagonallyToTheLeftEntity = [[RemovedRowEntity alloc] init];
-            DiagonallyToTheLeftEntity.row = DiagonallyToTheLeft;
+            DiagonallyToTheLeftEntity.row = [NSMutableArray arrayWithArray: DiagonallyToTheLeft ];
             DiagonallyToTheLeftEntity.orientation = removedRowOrientationDiagonalToTheLeft;
-            [result addObject:DiagonallyToTheLeftEntity];
+            [rowsForCurrentVertix addObject:DiagonallyToTheLeftEntity];
             
         }
         
+        if(rowsForCurrentVertix.count > 1)
+        {
+            for(int i = 1 ; i < rowsForCurrentVertix.count; i++)
+            {
+                RemovedRowEntity *row = [rowsForCurrentVertix objectAtIndex:i];
+                [row.row removeObject:GCell];
+            }
+        }
+        
+        [result addObjectsFromArray:rowsForCurrentVertix];
         /*[result addObjectsFromArray:[self detectConnectedRowsVerticallyWithGraph:graph withVertixe:GCell]];
         [result addObjectsFromArray:[self detectConnectedRowsHorizontallyWithGraph:graph withVertixe:GCell]];
         [result addObjectsFromArray:[self detectConnectedRowsDiagonallyToTheRightWithGraph:graph withVertixe:GCell]];

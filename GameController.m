@@ -242,7 +242,11 @@
     
     
     // iterate on detected cells and remove them
-    NSUInteger numberOfCellsDetected = result.count;
+    NSUInteger numberOfCellsDetected = 0;
+    for(RemovedRowEntity *row in result)
+    {
+        numberOfCellsDetected += row.row.count;
+    }
     
     [_delegate removeCells:result withCompletionBlock:^{
         
@@ -253,7 +257,7 @@
         
         
         // track achievements
-        [_currentGame.achievementsState reportAchievementWithNumberOfConsecutiveClearedOutMoves:_currentGame.score.numberOfConsecutiveRowCollection NumberOfClearedOutCells:numberOfCellsDetected];
+        [_currentGame.achievementsState reportAchievementWithNumberOfConsecutiveClearedOutMoves:_currentGame.score.numberOfConsecutiveRowCollection NumberOfClearedOutCells:numberOfCellsDetected level:[_levelProvider GetCurrentLevel].LevelIndex];
         
         //call completion block
         block(result);

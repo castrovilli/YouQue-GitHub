@@ -15,6 +15,6 @@ typedef enum
     removedRowOrientationDiagonalToTheLeft
 }removedRowOrientation;
 @interface RemovedRowEntity : NSObject
-@property(nonatomic,retain)NSArray *row;
+@property(nonatomic,retain)NSMutableArray *row;
 @property(nonatomic)removedRowOrientation orientation;
 @end

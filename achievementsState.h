@@ -11,5 +11,5 @@
 @interface achievementsState : NSObject <NSCoding,NSCopying>
 
 
--(void)reportAchievementWithNumberOfConsecutiveClearedOutMoves:(NSUInteger)NoOfConsecutiveClearedOutMoves NumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells;
+-(void)reportAchievementWithNumberOfConsecutiveClearedOutMoves:(NSUInteger)NoOfConsecutiveClearedOutMoves NumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells level:(int)level;
 @end

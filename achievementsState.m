@@ -50,10 +50,12 @@
     }
     return copy;
 }
--(void)reportAchievementWithNumberOfConsecutiveClearedOutMoves:(NSUInteger)NoOfConsecutiveClearedOutMoves NumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells
+-(void)reportAchievementWithNumberOfConsecutiveClearedOutMoves:(NSUInteger)NoOfConsecutiveClearedOutMoves NumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells level:(int)level
 {
     self.numberOfClearedOutCells += NoOfClearedOutCells;
     self.numberOfConsecutiveRowCollection = NoOfConsecutiveClearedOutMoves;
+    
+   
 }
 - (void) reportAchievements:(NSArray*)achievements
 {
