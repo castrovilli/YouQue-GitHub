@@ -50,12 +50,139 @@
     }
     return copy;
 }
--(void)reportAchievementWithNumberOfConsecutiveClearedOutMoves:(NSUInteger)NoOfConsecutiveClearedOutMoves NumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells level:(int)level
+-(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel
 {
+    
+    if(NoOfClearedOutCells == 0)
+    {
+        _numberOfConsecutiveRowCollection = 0;
+        
+    }else
+    {
+        _numberOfConsecutiveRowCollection++;
+    }
+    
     self.numberOfClearedOutCells += NoOfClearedOutCells;
-    self.numberOfConsecutiveRowCollection = NoOfConsecutiveClearedOutMoves;
+    
+    NSMutableArray *achievements = [NSMutableArray array];
+    int newPoints = 0;
+    if(NoOfClearedOutCells == 5)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"5fruits" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    if(NoOfClearedOutCells == 6)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"6fruits" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    
+    if(NoOfClearedOutCells == 7)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"7fruits" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    
+    if(_numberOfConsecutiveRowCollection == 2)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"2xCombo" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    
+    if(_numberOfConsecutiveRowCollection == 4)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"4xCombo" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    
+    if(_numberOfConsecutiveRowCollection == 6)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"6xCombo" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    
+    if(_numberOfConsecutiveRowCollection == 8)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"8xCombo" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+    }
+    
+    if(_numberOfConsecutiveRowCollection == 10)
+    {
+        GKAchievement *achievement = [self achievementWitjIdentifier:@"10xCombo" withPercentage:100.0];
+        [achievements addObject:achievement];
+        
+        NSLog(@"%@",achievement.identifier);
+        
+        newPoints += 100;
+    }
+    
+    GKAchievement *newLevelAch = [self newLevelAchievement:Newlevel oldLevel:oldLevel];
+    
+    if(newLevelAch)
+    {
+        [achievements addObject:newLevelAch];
+        NSLog(@"%@",newLevelAch.identifier);
+    }
+    
+    if(achievements.count > 0)
+    {
+        [self reportAchievements:achievements];
+        [[NSNotificationCenter defaultCenter] postNotificationName:FRUITS5_ACHIEVEMENT object:nil];
+    }
     
    
+}
+-(void)notifyDelegateWithNewPoints:(int)points
+{
+    if([_delegate respondsToSelector:@selector(addAchievementsPoints:)])
+    {
+        [_delegate addAchievementsPoints:points];
+    }
+}
+-(GKAchievement*)newLevelAchievement:(int)Newlevel oldLevel:(int)oldLevel
+{
+    if(oldLevel == Newlevel)
+    {
+        return nil;
+        
+    }
+    
+    if(Newlevel == 2)
+    {
+        return [self achievementWitjIdentifier:@"level2" withPercentage:100.0];
+    }else if(Newlevel == 3)
+    {
+        return [self achievementWitjIdentifier:@"level3" withPercentage:100.0];
+    }else if(Newlevel == 4)
+    {
+        return [self achievementWitjIdentifier:@"level4" withPercentage:100.0];
+    }else
+    {
+        return nil;
+    }
+}
+
+-(GKAchievement*)achievementWitjIdentifier:(NSString*)ID withPercentage:(double)percent
+{
+    GKAchievement *achievement = [[GKAchievement alloc] initWithIdentifier:ID];
+    achievement.percentComplete = percent;
+    
+    return achievement;
 }
 - (void) reportAchievements:(NSArray*)achievements
 {

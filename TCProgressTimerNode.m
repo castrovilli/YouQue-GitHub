@@ -61,7 +61,7 @@
         return nil;
     }
     
-    self = [super initWithColor:[UIColor clearColor] size:foregroundTexture.size];
+    self = [super initWithColor:[UIColor clearColor] size:CGSizeMake(60, 60)];
     
     if (self)
     {
@@ -80,6 +80,7 @@
     if (backgroundTexture)
     {
         _backgroundImageSpriteNode = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
+        _backgroundImageSpriteNode.size = self.size;
         [self addChild:_backgroundImageSpriteNode];
     }
 }

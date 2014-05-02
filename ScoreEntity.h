@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "ICloudManager.h"
+@protocol ScoreEntityDelegate;
 @interface ScoreEntity : NSObject<NSCoding,NSCopying>
-@property(nonatomic)int score;
-@property(nonatomic)int numberOfConsecutiveRowCollection;
--(void)ReportScoreWithNumberOfDetectedCells:(NSUInteger)numberOfDetectedCells;
+@property(nonatomic,weak)id<ScoreEntityDelegate> levelDelegate;
+@property(nonatomic,readonly)int score;
+@property(nonatomic,readonly)int numberOfConsecutiveRowCollection;
+-(int)ReportScoreWithNumberOfDetectedCells:(NSUInteger)numberOfDetectedCells;
 -(void)ResetScore;
+-(void)reportAchievementsPoints:(int)newPoints;
+@end
+@protocol ScoreEntityDelegate <NSObject>
+
+-(void)newScore:(int)score;
+
 @end

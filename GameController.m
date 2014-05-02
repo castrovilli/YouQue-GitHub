@@ -22,6 +22,14 @@
     }
     return self;
 }
+-(id)initWithGame:(GameEntity *)game
+{
+    self = [self init];
+    _currentGame = game;
+    _currentGame.achievementsState.delegate = self;
+    _currentGame.score.levelDelegate = _levelProvider;
+    return self;
+}
 -(void)matrixViewDidLoad:(BOOL)gameIsResumed
 {
     newGame = !gameIsResumed;
@@ -249,14 +257,20 @@
     
     [_delegate removeCells:result withCompletionBlock:^{
         
-        
+        int oldLevel = [_levelProvider GetCurrentLevel].LevelIndex;
         
         //Update Score
-        [self UpdateScoreWithNumberOfDetectedCells:numberOfCellsDetected];
-        
+        int deltaScore = [_currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
         
         // track achievements
-        [_currentGame.achievementsState reportAchievementWithNumberOfConsecutiveClearedOutMoves:_currentGame.score.numberOfConsecutiveRowCollection NumberOfClearedOutCells:numberOfCellsDetected level:[_levelProvider GetCurrentLevel].LevelIndex];
+        [_currentGame.achievementsState reportAchievementWithNumberOfClearedOutCells:numberOfCellsDetected Newlevel:[_levelProvider GetCurrentLevel].LevelIndex OldLevel:oldLevel];
+        
+        
+        
+    
+        
+        
+        [self UpdateScoreWithDeltaScore:deltaScore];
         
         //call completion block
         block(result);
@@ -274,23 +288,11 @@
 }
 -(void)UpdateScore
 {
-    [self UpdateScoreWithDetaScore:0];
+    [self UpdateScoreWithDeltaScore:0];
 }
--(void)UpdateScoreWithNumberOfDetectedCells:(NSUInteger)numberOfCellsDetected
+-(void)UpdateScoreWithDeltaScore:(int)delta
 {
     
-    int oldScore = _currentGame.score.score;
-    
-    
-    [_currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
-    
-    
-    [self UpdateScoreWithDetaScore:_currentGame.score.score-oldScore];
-    
-}
--(void)UpdateScoreWithDetaScore:(int)delta
-{
-    [_levelProvider ReportScore:_currentGame.score.score];
     [_delegate SetScoreInScoreBoard:_currentGame.score.score delta:delta];
     if([_delegate respondsToSelector:@selector(setLevelProgress:withLevelNumber:)])
     {
@@ -402,5 +404,9 @@
     
     [_delegate setCellAtIndex:self.startCellIndex.intValue Touched:NO];
     self.startCellIndex = nil;
+}
+-(void)addAchievementsPoints:(int)newPoints
+{
+    [_currentGame.score reportAchievementsPoints:newPoints];
 }
 @end

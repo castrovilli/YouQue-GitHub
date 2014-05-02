@@ -21,7 +21,7 @@
     IBOutlet UIButton *okBtn;
     IBOutlet UIButton *CancelBtn;
     
-    IBOutlet UILabel *LevelLbl;
+    IBOutlet SKLabelNode *LevelLbl;
     IBOutlet TCProgressTimerNode *progressView;
     
     SKButton *undoBtn;

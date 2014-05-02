@@ -8,8 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
+#define FRUITS5_ACHIEVEMENT @"5fruitsAchieved"
+@protocol AchievementsStateDelegate;
 @interface achievementsState : NSObject <NSCoding,NSCopying>
+{
+    
+}
+@property(nonatomic,weak)id<AchievementsStateDelegate> delegate;
 
+-(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel;
+@end
+@protocol AchievementsStateDelegate <NSObject>
 
--(void)reportAchievementWithNumberOfConsecutiveClearedOutMoves:(NSUInteger)NoOfConsecutiveClearedOutMoves NumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells level:(int)level;
+-(void)addAchievementsPoints:(int)newPoints;
+
 @end

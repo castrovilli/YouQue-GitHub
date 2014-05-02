@@ -35,11 +35,10 @@
         playLevelCompletionSound = [SKAction playSoundFileNamed:@"Ta Da.wav" waitForCompletion:NO];
         
         IsGameResumed = resumed;
-        gameController = [[GameController alloc] init];
-        gameController.delegate = self;
+        
         if(Game)
         {
-            gameController.currentGame = Game;
+            gameController = [[GameController alloc] initWithGame:Game];
             
         }else
         {
@@ -49,14 +48,17 @@
             Graph *graph = [[Graph alloc] initWithSize:size];
             ScoreEntity *Score = [[ScoreEntity alloc] init];
             
-            gameController.currentGame = [[GameEntity alloc] init];
+            GameEntity *game = [[GameEntity alloc] init];
             
-            gameController.currentGame.graph = graph;
-            gameController.currentGame.score = Score;
-            gameController.currentGame.nextCellsToAdd = [NSMutableArray array];
+            game.graph = graph;
+            game.score = Score;
+            game.nextCellsToAdd = [NSMutableArray array];
             
-            gameController.currentGame.achievementsState = [[achievementsState alloc] init];
+            game.achievementsState = [[achievementsState alloc] init];
+            
+            gameController = [[GameController alloc] initWithGame:game];
         }
+        gameController.delegate = self;
         MSize *size = gameController.currentGame.graph.size;
         contentView = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:CGSizeMake((CELL_SIZE*size.width)+20, (CELL_SIZE*size.height)+20)];
         contentView.anchorPoint = CGPointMake(0.0, 0.0);

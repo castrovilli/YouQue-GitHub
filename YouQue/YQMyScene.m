@@ -36,14 +36,18 @@
         
         
         
-        progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:@"progress_foreground.png"
-                                                            backgroundImageNamed:@"progress_background.png"
-                                                             accessoryImageNamed:@"progress_accessory.png"];
+        progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:@"Watermelon-fill.png"
+                                                            backgroundImageNamed:@"fill.png"
+                                                             accessoryImageNamed:nil];
         progressView.position = CGPointMake(280, 465);
         [self addChild:progressView];
         [progressView setProgress:0.0f];
         
-        
+        LevelLbl = [[SKLabelNode alloc] init];
+        LevelLbl.position = CGPointMake(280, 460);
+        LevelLbl.fontColor = [UIColor blackColor];
+        LevelLbl.fontSize = 15;
+        [self addChild:LevelLbl];
         
         
         undoBtn = [SKButton spriteNodeWithImageNamed:@"undo2.png"];

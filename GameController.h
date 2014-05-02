@@ -19,13 +19,13 @@
 #import "FaceBookManager.h"
 @protocol GameControllerDelegate ;
 typedef void (^CompletionBlock)(NSArray* detectedCells);
-@interface GameController : NSObject<LevelProviderDelegate>
+@interface GameController : NSObject<LevelProviderDelegate,AchievementsStateDelegate>
 {
     
     BOOL newGame;
     
 }
-
+-(id)initWithGame:(GameEntity*)game;
 @property(nonatomic,retain) UndoManager *UndoManager;
 
 @property(nonatomic,retain) LevelProvider *levelProvider;

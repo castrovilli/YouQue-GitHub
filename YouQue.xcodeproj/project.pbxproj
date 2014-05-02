@@ -150,6 +150,12 @@
 		6EE15F59191387E3004C3C5B /* progress_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F58191387E3004C3C5B /* progress_background.png */; };
 		6EE15F5B191387F1004C3C5B /* progress_foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F5A191387F1004C3C5B /* progress_foreground.png */; };
 		6EE15F5E1913992B004C3C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F5C1913992B004C3C5B /* Main.storyboard */; };
+		6EE15F6119139EA4004C3C5B /* fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F5F19139EA4004C3C5B /* fill.png */; };
+		6EE15F6219139EA4004C3C5B /* green-circle60.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F6019139EA4004C3C5B /* green-circle60.png */; };
+		6EE15F641913A147004C3C5B /* green-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F631913A147004C3C5B /* green-circle.png */; };
+		6EE15F681913A3AE004C3C5B /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F671913A3AE004C3C5B /* orange.png */; };
+		6EE15F6A1913A481004C3C5B /* Watermelon-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F691913A481004C3C5B /* Watermelon-fill.png */; };
+		6EE15F6E1913A7C2004C3C5B /* orange-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F6D1913A7C2004C3C5B /* orange-fill.png */; };
 		6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6EE76190E22B500ED0C17 /* targetred200x200.png */; };
 		6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */; };
 		6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */; };
@@ -361,6 +367,12 @@
 		6EE15F58191387E3004C3C5B /* progress_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_background.png; sourceTree = "<group>"; };
 		6EE15F5A191387F1004C3C5B /* progress_foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_foreground.png; sourceTree = "<group>"; };
 		6EE15F5D1913992B004C3C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EE15F5F19139EA4004C3C5B /* fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fill.png; sourceTree = "<group>"; };
+		6EE15F6019139EA4004C3C5B /* green-circle60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-circle60.png"; sourceTree = "<group>"; };
+		6EE15F631913A147004C3C5B /* green-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-circle.png"; sourceTree = "<group>"; };
+		6EE15F671913A3AE004C3C5B /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
+		6EE15F691913A481004C3C5B /* Watermelon-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermelon-fill.png"; sourceTree = "<group>"; };
+		6EE15F6D1913A7C2004C3C5B /* orange-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange-fill.png"; sourceTree = "<group>"; };
 		6EE6EE76190E22B500ED0C17 /* targetred200x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetred200x200.png; sourceTree = "<group>"; };
 		6EE6EE78190E30A700ED0C17 /* YouQue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = YouQue.entitlements; sourceTree = "<group>"; };
 		6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape.jpg"; sourceTree = "<group>"; };
@@ -414,6 +426,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E15B21E1913B5FD004F59F5 /* tagret image */ = {
+			isa = PBXGroup;
+			children = (
+				6EE6EE76190E22B500ED0C17 /* targetred200x200.png */,
+			);
+			name = "tagret image";
+			sourceTree = "<group>";
+		};
 		6E44A4A5190CA5AE00E8888D /* Fruit images */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,9 +687,9 @@
 		6E9601F1190B9366008E972A /* UI Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E15B21E1913B5FD004F59F5 /* tagret image */,
 				6EE15F55191387A5004C3C5B /* Progress */,
 				6EFF2F46190FD47300FA6F6F /* BG */,
-				6EE6EE76190E22B500ED0C17 /* targetred200x200.png */,
 				6E44A4DB190CE40D00E8888D /* Buttons */,
 				6E44A4CD190CD05A00E8888D /* sounds */,
 				6E44A4CB190CC4DA00E8888D /* emptyCell.png */,
@@ -1031,6 +1051,12 @@
 		6EE15F55191387A5004C3C5B /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				6EE15F6D1913A7C2004C3C5B /* orange-fill.png */,
+				6EE15F691913A481004C3C5B /* Watermelon-fill.png */,
+				6EE15F671913A3AE004C3C5B /* orange.png */,
+				6EE15F631913A147004C3C5B /* green-circle.png */,
+				6EE15F5F19139EA4004C3C5B /* fill.png */,
+				6EE15F6019139EA4004C3C5B /* green-circle60.png */,
 				6EE15F5A191387F1004C3C5B /* progress_foreground.png */,
 				6EE15F58191387E3004C3C5B /* progress_background.png */,
 				6EE15F56191387D3004C3C5B /* progress_accessory.png */,
@@ -1170,11 +1196,13 @@
 				6E44A4CC190CC4DA00E8888D /* emptyCell.png in Resources */,
 				6E44A4E0190CE46300E8888D /* greyButton.png in Resources */,
 				6E9601D1190B893B008E972A /* NotificationBackgroundErrorIcon@2x.png in Resources */,
+				6EE15F6219139EA4004C3C5B /* green-circle60.png in Resources */,
 				6E9601D9190B893B008E972A /* NotificationBackgroundWarning@2x.png in Resources */,
 				6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */,
 				6E02749A191110C700D91445 /* Watermelonicon50x50-blur@2x.png in Resources */,
 				6E9601D0190B893B008E972A /* NotificationBackgroundErrorIcon.png in Resources */,
 				6EE15F57191387D3004C3C5B /* progress_accessory.png in Resources */,
+				6EE15F6E1913A7C2004C3C5B /* orange-fill.png in Resources */,
 				6E9601D8190B893B008E972A /* NotificationBackgroundWarning.png in Resources */,
 				6E44A4C2190CAF5D00E8888D /* Default~iphone.png in Resources */,
 				6E9601DD190B893B008E972A /* NotificationButtonBackground@2x.png in Resources */,
@@ -1193,6 +1221,7 @@
 				6E44A4E3190CE46300E8888D /* greyButtonHighlight@2x.png in Resources */,
 				6E9601FF190B93AD008E972A /* blueberrycoloricon50x50@2x.png in Resources */,
 				6E44A4AE190CAE1500E8888D /* pause.png in Resources */,
+				6EE15F641913A147004C3C5B /* green-circle.png in Resources */,
 				6E9601FD190B93AD008E972A /* Apple50x50@2x.png in Resources */,
 				6E44A4BA190CAF1F00E8888D /* icon114x114.png in Resources */,
 				6E2F2E4C190D8C59006DD825 /* Watermelon-icon.png in Resources */,
@@ -1200,13 +1229,16 @@
 				6E9AF119190B31FD00E41D73 /* Images.xcassets in Resources */,
 				6E9601CE190B893B008E972A /* NotificationBackgroundError.png in Resources */,
 				6E44A4E1190CE46300E8888D /* greyButton@2x.png in Resources */,
+				6EE15F681913A3AE004C3C5B /* orange.png in Resources */,
 				6E9AF117190B31FD00E41D73 /* Spaceship.png in Resources */,
 				6E44A4B6190CAF1F00E8888D /* icon29x29.png in Resources */,
 				6E3656271910B73300FAAA68 /* background.jpg in Resources */,
 				6E36562B1910B8F700FAAA68 /* Default-568h@2x.png in Resources */,
 				6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */,
+				6EE15F6119139EA4004C3C5B /* fill.png in Resources */,
 				6E44A4A8190CA5DE00E8888D /* undo2.png in Resources */,
 				6EE15F5E1913992B004C3C5B /* Main.storyboard in Resources */,
+				6EE15F6A1913A481004C3C5B /* Watermelon-fill.png in Resources */,
 				6E44A4C1190CAF5D00E8888D /* Default.png in Resources */,
 				6E9601D6190B893B008E972A /* NotificationBackgroundSuccessIcon.png in Resources */,
 				6E9601DC190B893B008E972A /* NotificationButtonBackground.png in Resources */,

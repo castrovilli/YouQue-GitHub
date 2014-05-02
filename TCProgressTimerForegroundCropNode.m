@@ -50,6 +50,7 @@
 - (void)initializeIndicatorSpriteNodeWithTexture:(SKTexture *)texture
 {
     _indicatorSpriteNode = [SKSpriteNode spriteNodeWithTexture:texture];
+    _indicatorSpriteNode.size = CGSizeMake(68, 68);
     [self addChild:_indicatorSpriteNode];
 }
 

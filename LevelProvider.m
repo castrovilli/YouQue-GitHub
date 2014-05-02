@@ -42,6 +42,10 @@
 {
     _currentLevel = [_Levels objectAtIndex:0];
 }
+-(void)newScore:(int)score
+{
+    [self ReportScore:score];
+}
 -(void)ReportScore:(int)score
 {
     LevelEntity *newLevel ;

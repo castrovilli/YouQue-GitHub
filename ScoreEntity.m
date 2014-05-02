@@ -7,7 +7,10 @@
 //
 
 #import "ScoreEntity.h"
-
+@interface ScoreEntity ()
+@property(nonatomic,readwrite)int score;
+@property(nonatomic,readwrite)int numberOfConsecutiveRowCollection;
+@end
 @implementation ScoreEntity
 -(id)init
 {
@@ -34,8 +37,10 @@
     [aCoder encodeObject:[NSNumber numberWithInt:self.score] forKey:@"scoreInt"];
     [aCoder encodeObject:[NSNumber numberWithInt:self.numberOfConsecutiveRowCollection] forKey:@"numberOfConsecutiveRowCollection"];
 }
--(void)ReportScoreWithNumberOfDetectedCells:(NSUInteger)numberOfDetectedCells
+-(int)ReportScoreWithNumberOfDetectedCells:(NSUInteger)numberOfDetectedCells
 {
+    int oldScore = _score;
+    
     _score += 3 * numberOfDetectedCells;
     
     if(numberOfDetectedCells == 0)
@@ -47,13 +52,22 @@
         _score += 4 * _numberOfConsecutiveRowCollection ;
         _numberOfConsecutiveRowCollection++;
     }
+    if([_levelDelegate respondsToSelector:@selector(newScore:)])
+    {
+        [_levelDelegate newScore:_score];
+    }
     
+    return _score - oldScore;
     
 }
 -(void)ResetScore
 {
     _numberOfConsecutiveRowCollection = 0;
     _score = 0;
+}
+-(void)reportAchievementsPoints:(int)newPoints
+{
+    _score += newPoints;
 }
 -(id)copyWithZone:(NSZone *)zone
 {
