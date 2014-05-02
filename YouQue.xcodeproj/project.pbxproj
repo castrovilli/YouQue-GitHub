@@ -94,9 +94,7 @@
 		6E9601DF190B893B008E972A /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9601CA190B893B008E972A /* TSBlurView.m */; };
 		6E9601E0190B893B008E972A /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9601CC190B893B008E972A /* TSMessageView.m */; };
 		6E9601E5190B896B008E972A /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9601E4190B896B008E972A /* HexColor.m */; };
-		6E9601E8190B8D9A008E972A /* SSPieProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9601E7190B8D9A008E972A /* SSPieProgressView.m */; };
 		6E9601EC190B8DDA008E972A /* MDpopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9601EB190B8DDA008E972A /* MDpopUpView.m */; };
-		6E9601F0190B8E4E008E972A /* SSDrawingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9601EF190B8E4E008E972A /* SSDrawingUtilities.m */; };
 		6E9601FC190B93AD008E972A /* Apple50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9601F2190B93AD008E972A /* Apple50x50.png */; };
 		6E9601FD190B93AD008E972A /* Apple50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9601F3190B93AD008E972A /* Apple50x50@2x.png */; };
 		6E9601FE190B93AD008E972A /* blueberrycoloricon50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9601F4190B93AD008E972A /* blueberrycoloricon50x50.png */; };
@@ -114,7 +112,6 @@
 		6E9AF106190B31FD00E41D73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AF104190B31FD00E41D73 /* InfoPlist.strings */; };
 		6E9AF108190B31FD00E41D73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF107190B31FD00E41D73 /* main.m */; };
 		6E9AF10C190B31FD00E41D73 /* YQAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF10B190B31FD00E41D73 /* YQAppDelegate.m */; };
-		6E9AF10F190B31FD00E41D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AF10D190B31FD00E41D73 /* Main.storyboard */; };
 		6E9AF112190B31FD00E41D73 /* YQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF111190B31FD00E41D73 /* YQViewController.m */; };
 		6E9AF115190B31FD00E41D73 /* YQMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF114190B31FD00E41D73 /* YQMyScene.m */; };
 		6E9AF117190B31FD00E41D73 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9AF116190B31FD00E41D73 /* Spaceship.png */; };
@@ -146,6 +143,13 @@
 		6E9AF184190B354900E41D73 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF183190B354900E41D73 /* CellView.m */; };
 		6E9AF189190B3A6C00E41D73 /* SKNode+Jiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF188190B3A6C00E41D73 /* SKNode+Jiggle.m */; };
 		6ED65224190B9FB600D5D4CE /* MDBinarySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */; };
+		6EE15F5119138579004C3C5B /* TCProgressTimerForegroundCropNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */; };
+		6EE15F5219138579004C3C5B /* TCProgressTimerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE15F5019138579004C3C5B /* TCProgressTimerNode.m */; };
+		6EE15F54191386AB004C3C5B /* YQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F53191386AB004C3C5B /* YQViewController.xib */; };
+		6EE15F57191387D3004C3C5B /* progress_accessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F56191387D3004C3C5B /* progress_accessory.png */; };
+		6EE15F59191387E3004C3C5B /* progress_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F58191387E3004C3C5B /* progress_background.png */; };
+		6EE15F5B191387F1004C3C5B /* progress_foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F5A191387F1004C3C5B /* progress_foreground.png */; };
+		6EE15F5E1913992B004C3C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F5C1913992B004C3C5B /* Main.storyboard */; };
 		6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6EE76190E22B500ED0C17 /* targetred200x200.png */; };
 		6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */; };
 		6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */; };
@@ -270,12 +274,8 @@
 		6E9601CC190B893B008E972A /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
 		6E9601E3190B896B008E972A /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
 		6E9601E4190B896B008E972A /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
-		6E9601E6190B8D9A008E972A /* SSPieProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPieProgressView.h; sourceTree = "<group>"; };
-		6E9601E7190B8D9A008E972A /* SSPieProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPieProgressView.m; sourceTree = "<group>"; };
 		6E9601EA190B8DDA008E972A /* MDpopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDpopUpView.h; sourceTree = "<group>"; };
 		6E9601EB190B8DDA008E972A /* MDpopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDpopUpView.m; sourceTree = "<group>"; };
-		6E9601EE190B8E4E008E972A /* SSDrawingUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawingUtilities.h; sourceTree = "<group>"; };
-		6E9601EF190B8E4E008E972A /* SSDrawingUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawingUtilities.m; sourceTree = "<group>"; };
 		6E9601F2190B93AD008E972A /* Apple50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple50x50.png; sourceTree = "<group>"; };
 		6E9601F3190B93AD008E972A /* Apple50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple50x50@2x.png"; sourceTree = "<group>"; };
 		6E9601F4190B93AD008E972A /* blueberrycoloricon50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueberrycoloricon50x50.png; sourceTree = "<group>"; };
@@ -297,7 +297,6 @@
 		6E9AF109190B31FD00E41D73 /* YouQue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YouQue-Prefix.pch"; sourceTree = "<group>"; };
 		6E9AF10A190B31FD00E41D73 /* YQAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQAppDelegate.h; sourceTree = "<group>"; };
 		6E9AF10B190B31FD00E41D73 /* YQAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQAppDelegate.m; sourceTree = "<group>"; };
-		6E9AF10E190B31FD00E41D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E9AF110190B31FD00E41D73 /* YQViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQViewController.h; sourceTree = "<group>"; };
 		6E9AF111190B31FD00E41D73 /* YQViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQViewController.m; sourceTree = "<group>"; };
 		6E9AF113190B31FD00E41D73 /* YQMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQMyScene.h; sourceTree = "<group>"; };
@@ -353,6 +352,15 @@
 		6E9AF188190B3A6C00E41D73 /* SKNode+Jiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+Jiggle.m"; sourceTree = "<group>"; };
 		6ED65222190B9FB600D5D4CE /* MDBinarySearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBinarySearch.h; sourceTree = "<group>"; };
 		6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBinarySearch.m; sourceTree = "<group>"; };
+		6EE15F4D19138579004C3C5B /* TCProgressTimerForegroundCropNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProgressTimerForegroundCropNode.h; sourceTree = "<group>"; };
+		6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProgressTimerForegroundCropNode.m; sourceTree = "<group>"; };
+		6EE15F4F19138579004C3C5B /* TCProgressTimerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProgressTimerNode.h; sourceTree = "<group>"; };
+		6EE15F5019138579004C3C5B /* TCProgressTimerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProgressTimerNode.m; sourceTree = "<group>"; };
+		6EE15F53191386AB004C3C5B /* YQViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQViewController.xib; sourceTree = "<group>"; };
+		6EE15F56191387D3004C3C5B /* progress_accessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_accessory.png; sourceTree = "<group>"; };
+		6EE15F58191387E3004C3C5B /* progress_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_background.png; sourceTree = "<group>"; };
+		6EE15F5A191387F1004C3C5B /* progress_foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_foreground.png; sourceTree = "<group>"; };
+		6EE15F5D1913992B004C3C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EE6EE76190E22B500ED0C17 /* targetred200x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetred200x200.png; sourceTree = "<group>"; };
 		6EE6EE78190E30A700ED0C17 /* YouQue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = YouQue.entitlements; sourceTree = "<group>"; };
 		6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape.jpg"; sourceTree = "<group>"; };
@@ -647,17 +655,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		6E9601E9190B8DA0008E972A /* PieProgress */ = {
-			isa = PBXGroup;
-			children = (
-				6E9601EE190B8E4E008E972A /* SSDrawingUtilities.h */,
-				6E9601EF190B8E4E008E972A /* SSDrawingUtilities.m */,
-				6E9601E6190B8D9A008E972A /* SSPieProgressView.h */,
-				6E9601E7190B8D9A008E972A /* SSPieProgressView.m */,
-			);
-			name = PieProgress;
-			sourceTree = "<group>";
-		};
 		6E9601ED190B8DE1008E972A /* MDPopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +667,7 @@
 		6E9601F1190B9366008E972A /* UI Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EE15F55191387A5004C3C5B /* Progress */,
 				6EFF2F46190FD47300FA6F6F /* BG */,
 				6EE6EE76190E22B500ED0C17 /* targetred200x200.png */,
 				6E44A4DB190CE40D00E8888D /* Buttons */,
@@ -743,12 +741,13 @@
 		6E9AF101190B31FD00E41D73 /* YouQue */ = {
 			isa = PBXGroup;
 			children = (
+				6EE15F5C1913992B004C3C5B /* Main.storyboard */,
 				6EE6EE78190E30A700ED0C17 /* YouQue.entitlements */,
 				6E9AF10A190B31FD00E41D73 /* YQAppDelegate.h */,
 				6E9AF10B190B31FD00E41D73 /* YQAppDelegate.m */,
-				6E9AF10D190B31FD00E41D73 /* Main.storyboard */,
 				6E9AF110190B31FD00E41D73 /* YQViewController.h */,
 				6E9AF111190B31FD00E41D73 /* YQViewController.m */,
+				6EE15F53191386AB004C3C5B /* YQViewController.xib */,
 				6E9AF113190B31FD00E41D73 /* YQMyScene.h */,
 				6E9AF114190B31FD00E41D73 /* YQMyScene.m */,
 				6E9AF116190B31FD00E41D73 /* Spaceship.png */,
@@ -977,9 +976,9 @@
 		6E9AF180190B352F00E41D73 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				6EE15F4C19138557004C3C5B /* ProgressNode */,
 				6E44A4A9190CA9FB00E8888D /* SKButton */,
 				6E9601ED190B8DE1008E972A /* MDPopUpView */,
-				6E9601E9190B8DA0008E972A /* PieProgress */,
 				6E9601B1190B893B008E972A /* TSMessages */,
 				6E9601AA190B891F008E972A /* SIAlertView */,
 				6E9601A6190B88D8008E972A /* MatrixView */,
@@ -1016,6 +1015,27 @@
 				6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */,
 			);
 			name = MDBinarySearch;
+			sourceTree = "<group>";
+		};
+		6EE15F4C19138557004C3C5B /* ProgressNode */ = {
+			isa = PBXGroup;
+			children = (
+				6EE15F4D19138579004C3C5B /* TCProgressTimerForegroundCropNode.h */,
+				6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */,
+				6EE15F4F19138579004C3C5B /* TCProgressTimerNode.h */,
+				6EE15F5019138579004C3C5B /* TCProgressTimerNode.m */,
+			);
+			name = ProgressNode;
+			sourceTree = "<group>";
+		};
+		6EE15F55191387A5004C3C5B /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				6EE15F5A191387F1004C3C5B /* progress_foreground.png */,
+				6EE15F58191387E3004C3C5B /* progress_background.png */,
+				6EE15F56191387D3004C3C5B /* progress_accessory.png */,
+			);
+			name = Progress;
 			sourceTree = "<group>";
 		};
 		6EFF2F40190FBFA300FA6F6F /* Blured */ = {
@@ -1141,6 +1161,7 @@
 				6E027496191110C700D91445 /* Orange50x50-blur@2x.png in Resources */,
 				6E027495191110C700D91445 /* Orange50x50-blur.png in Resources */,
 				6E960205190B93AD008E972A /* Watermelonicon50x50@2x.png in Resources */,
+				6EE15F54191386AB004C3C5B /* YQViewController.xib in Resources */,
 				6E9601D4190B893B008E972A /* NotificationBackgroundSuccess.png in Resources */,
 				6E3656291910B89900FAAA68 /* background640x1136.jpg in Resources */,
 				6E44A4E2190CE46300E8888D /* greyButtonHighlight.png in Resources */,
@@ -1153,12 +1174,14 @@
 				6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */,
 				6E02749A191110C700D91445 /* Watermelonicon50x50-blur@2x.png in Resources */,
 				6E9601D0190B893B008E972A /* NotificationBackgroundErrorIcon.png in Resources */,
+				6EE15F57191387D3004C3C5B /* progress_accessory.png in Resources */,
 				6E9601D8190B893B008E972A /* NotificationBackgroundWarning.png in Resources */,
 				6E44A4C2190CAF5D00E8888D /* Default~iphone.png in Resources */,
 				6E9601DD190B893B008E972A /* NotificationButtonBackground@2x.png in Resources */,
 				6E9AF106190B31FD00E41D73 /* InfoPlist.strings in Resources */,
 				6E44A4BB190CAF1F00E8888D /* icon120x120.png in Resources */,
 				6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */,
+				6EE15F59191387E3004C3C5B /* progress_background.png in Resources */,
 				6E960204190B93AD008E972A /* Watermelonicon50x50.png in Resources */,
 				6E9601D3190B893B008E972A /* NotificationBackgroundMessage@2x.png in Resources */,
 				6E027493191110C700D91445 /* blueberrycoloricon50x50-blur.png in Resources */,
@@ -1183,11 +1206,13 @@
 				6E36562B1910B8F700FAAA68 /* Default-568h@2x.png in Resources */,
 				6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */,
 				6E44A4A8190CA5DE00E8888D /* undo2.png in Resources */,
+				6EE15F5E1913992B004C3C5B /* Main.storyboard in Resources */,
 				6E44A4C1190CAF5D00E8888D /* Default.png in Resources */,
 				6E9601D6190B893B008E972A /* NotificationBackgroundSuccessIcon.png in Resources */,
 				6E9601DC190B893B008E972A /* NotificationButtonBackground.png in Resources */,
 				6E9601DE190B893B008E972A /* TSMessagesDefaultDesign.json in Resources */,
 				6E027492191110C700D91445 /* Apple50x50-blur@2x.png in Resources */,
+				6EE15F5B191387F1004C3C5B /* progress_foreground.png in Resources */,
 				6E960202190B93AD008E972A /* strawberryicon50x50.png in Resources */,
 				6E9601DA190B893B008E972A /* NotificationBackgroundWarningIcon.png in Resources */,
 				6E027491191110C700D91445 /* Apple50x50-blur.png in Resources */,
@@ -1201,7 +1226,6 @@
 				6E9601CF190B893B008E972A /* NotificationBackgroundError@2x.png in Resources */,
 				6E44A4CF190CD06F00E8888D /* Ta Da.wav in Resources */,
 				6E9601D2190B893B008E972A /* NotificationBackgroundMessage.png in Resources */,
-				6E9AF10F190B31FD00E41D73 /* Main.storyboard in Resources */,
 				6E9601DB190B893B008E972A /* NotificationBackgroundWarningIcon@2x.png in Resources */,
 				6E9601D7190B893B008E972A /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
 				6E027498191110C700D91445 /* strawberryicon50x50-blur@2x.png in Resources */,
@@ -1226,8 +1250,8 @@
 			files = (
 				6E9601AF190B891F008E972A /* SIAlertView.m in Sources */,
 				6E80E580190E783000349E38 /* MJPopupBackgroundView.m in Sources */,
+				6EE15F5119138579004C3C5B /* TCProgressTimerForegroundCropNode.m in Sources */,
 				6E9AF147190B32BB00E41D73 /* ScoreEntity.m in Sources */,
-				6E9601E8190B8D9A008E972A /* SSPieProgressView.m in Sources */,
 				6E5F1976190F94660013F9D7 /* RemovedRowEntity.m in Sources */,
 				6E9601DF190B893B008E972A /* TSBlurView.m in Sources */,
 				6E9601CD190B893B008E972A /* TSMessage.m in Sources */,
@@ -1244,13 +1268,13 @@
 				6E9AF154190B33A800E41D73 /* FaceBookManager.m in Sources */,
 				6E9AF14C190B32E900E41D73 /* ICloudManager.m in Sources */,
 				6E9AF164190B342700E41D73 /* UndoManager.m in Sources */,
+				6EE15F5219138579004C3C5B /* TCProgressTimerNode.m in Sources */,
 				6E80E579190E75BE00349E38 /* UIViewController+Loader.m in Sources */,
 				6E9AF189190B3A6C00E41D73 /* SKNode+Jiggle.m in Sources */,
 				6E9AF16B190B346100E41D73 /* RandomUnOccupiedCellsGenerator.m in Sources */,
 				6E9AF10C190B31FD00E41D73 /* YQAppDelegate.m in Sources */,
 				6E44A4DA190CE33E00E8888D /* YQMainMenu.m in Sources */,
 				6E9AF17F190B350F00E41D73 /* MJPriorityQueue.mm in Sources */,
-				6E9601F0190B8E4E008E972A /* SSDrawingUtilities.m in Sources */,
 				6E9601A9190B88F1008E972A /* MatrixView.m in Sources */,
 				6E44A4AC190CAA1B00E8888D /* SKButton.m in Sources */,
 				6E80E57D190E75E500349E38 /* LoadingIndicatorView.m in Sources */,
@@ -1298,20 +1322,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		6E9AF10D190B31FD00E41D73 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E9AF10E190B31FD00E41D73 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6E9AF128190B31FD00E41D73 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6E9AF129190B31FD00E41D73 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6EE15F5C1913992B004C3C5B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EE15F5D1913992B004C3C5B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -33,13 +33,13 @@ typedef enum
     SKTransition *FromRighttransition;
     SKTransition *FromLefttransition;
     
-    IBOutlet UIView *menuView;
+     UIView *menuView;
     
-    IBOutlet UIButton *ResumBtn;
-    IBOutlet UIButton *howToBtn;
-    IBOutlet UIButton *newBtn;
-    IBOutlet UIButton *highScoreBtn;
-    IBOutlet UIButton *removeAdsBtn;
+     UIButton *ResumBtn;
+     UIButton *howToBtn;
+     UIButton *newBtn;
+     UIButton *highScoreBtn;
+     UIButton *removeAdsBtn;
     
     MDPaymentTransactionObserver *paymentObserver;
 }

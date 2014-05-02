@@ -12,6 +12,7 @@
 #import <StoreKit/StoreKit.h>
 #import <GameKit/GameKit.h>
 #import "MDPaymentTransactionObserver.h"
+#import "YQViewController.h"
 @interface YQAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

@@ -15,6 +15,15 @@
     if (self = [super initWithSize:size]) {
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(highScoreUpdated) name:HIGH_SCORE_UPDATED_NOTIFICATION object:nil];
         
        
@@ -26,10 +35,22 @@
         [self insertChild:BGNode atIndex:0];
         
         
+        
+        progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:@"progress_foreground.png"
+                                                            backgroundImageNamed:@"progress_background.png"
+                                                             accessoryImageNamed:@"progress_accessory.png"];
+        progressView.position = CGPointMake(280, 465);
+        [self addChild:progressView];
+        [progressView setProgress:0.0f];
+        
+        
+        
+        
         undoBtn = [SKButton spriteNodeWithImageNamed:@"undo2.png"];
         undoBtn.position = CGPointMake(290, 520);
         undoBtn.size = CGSizeMake(40, 40);
         undoBtn.name = @"undoBtn";
+        undoBtn.zPosition = 1000;
         [self addChild:undoBtn];
         
         ScoreBoard = [[SKLabelNode alloc] init];
@@ -41,6 +62,7 @@
         quitBtn.size = CGSizeMake(40, 40);
         quitBtn.position = CGPointMake(30, 520);
         quitBtn.name = @"quitBtn";
+        quitBtn.zPosition = 1000;
         [self addChild:quitBtn];
         
         
@@ -128,9 +150,9 @@
         
         
         
-        progressView.pieFillColor = [UIColor colorWithRed:(37.0f/255.0f) green:(37.0f/255.0f) blue:(37.0f/255.0f) alpha:1.0];
+     /*   progressView.pieFillColor = [UIColor colorWithRed:(37.0f/255.0f) green:(37.0f/255.0f) blue:(37.0f/255.0f) alpha:1.0];
         progressView.pieBorderColor = [UIColor whiteColor];
-        progressView.pieBackgroundColor = [UIColor lightGrayColor];
+        progressView.pieBackgroundColor = [UIColor lightGrayColor];*/
         
 
         
@@ -209,9 +231,7 @@
     
     if ([node.name isEqualToString:@"undoBtn"]) {
         [self UndoAction:nil];
-    }
-    
-    if([node.name isEqualToString:@"quitBtn"])
+    }else if([node.name isEqualToString:@"quitBtn"])
     {
         [self QuitAction:nil];
     }

@@ -7,11 +7,11 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "SSPieProgressView.h"
 #import "MDpopUpView.h"
 #import "MatrixView.h"
 #import "MDBinarySearch.h"
 #import "SKButton.h"
+#import "TCProgressTimerNode.h"
 @class YQViewController;
 #define MAX_NUMBER_OF_ADDED_CELLS 6
 @interface YQMyScene : SKScene<UIAlertViewDelegate,MatrixViewDelegate>
@@ -22,7 +22,7 @@
     IBOutlet UIButton *CancelBtn;
     
     IBOutlet UILabel *LevelLbl;
-    IBOutlet SSPieProgressView *progressView;
+    IBOutlet TCProgressTimerNode *progressView;
     
     SKButton *undoBtn;
     SKLabelNode *ScoreBoard;
