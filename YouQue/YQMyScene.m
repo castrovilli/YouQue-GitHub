@@ -20,8 +20,8 @@
         
         
         
-        
-        
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newAchievementsActions:) name:FRUITS5_ACHIEVEMENT object:nil];
         
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(highScoreUpdated) name:HIGH_SCORE_UPDATED_NOTIFICATION object:nil];
@@ -37,7 +37,7 @@
         
         
         progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:@"Watermelon-fill.png"
-                                                            backgroundImageNamed:@"fill.png"
+                                                            backgroundImageNamed:@"emptyCell-wooden.png"
                                                              accessoryImageNamed:nil];
         progressView.position = CGPointMake(280, 465);
         [self addChild:progressView];
@@ -45,7 +45,7 @@
         
         LevelLbl = [[SKLabelNode alloc] init];
         LevelLbl.position = CGPointMake(280, 460);
-        LevelLbl.fontColor = [UIColor blackColor];
+        LevelLbl.fontColor = [UIColor yellowColor];
         LevelLbl.fontSize = 15;
         [self addChild:LevelLbl];
         
@@ -166,6 +166,33 @@
     }
     return self;
 }
+-(void)newAchievementsActions:(NSNotification *)notification
+{
+    NSArray *achievements = [notification.userInfo objectForKey:ACHIEVEMENTS_INFO_KEY];
+    
+    [self showAchievements:achievements currentIndex:0];
+}
+-(void)showAchievements:(NSArray*)achievements currentIndex:(int)index
+{
+    if(index == achievements.count)
+    {
+        return;
+    }
+    
+    MDAchievement *ach = [achievements objectAtIndex:index++];
+    
+    if(!achievementsPopUpView)
+    {
+        achievementsPopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-100)/2, 60, 200, 100) withTextColor:[UIColor purpleColor] withFontSize:25];
+    }
+    
+    [achievementsPopUpView showInView:self.view withText:ach.title withCompletionBlock:^{
+        
+        
+        [self showAchievements:achievements currentIndex:index];
+        
+    }];
+}
 -(void)highScoreUpdated
 {
     [self updateHighScoreLabel];
@@ -262,7 +289,7 @@
     ScoreBoard.text = [NSString stringWithFormat:@"%d",score];
     if(!scorePopUpView)
     {
-        scorePopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-100)/2, 50, 0, 0)];
+        scorePopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-100)/2, 10, 300, 100) withTextColor:[UIColor greenColor] withFontSize:60];
     }
     if(deltaScore > 12)
     {

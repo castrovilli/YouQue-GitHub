@@ -17,7 +17,7 @@
      self.screenName = @"Game View";
     [TSMessage setDefaultViewController:self];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newAchievementsActions:) name:FRUITS5_ACHIEVEMENT object:nil];
+    
     
     if([self hasFourInchDisplay])
     {
@@ -103,12 +103,7 @@
         [self loadNewAd];
     }
 }
--(void)newAchievementsActions:(NSNotification *)notification
-{
-  //  NSArray *achievements = [notification.userInfo objectForKey:ACHIEVEMENTS_INFO_KEY];
-    
-    [TSMessage showNotificationWithTitle:@"New Achievements" subtitle:@"" type:TSMessageNotificationTypeSuccess];
-}
+
 -(void)initializeMenuButtons
 {
     UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]

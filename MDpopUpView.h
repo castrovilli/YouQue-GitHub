@@ -12,5 +12,6 @@
 {
     UILabel *lbl;
 }
+- (id)initWithFrame:(CGRect)frame withTextColor:(UIColor*)color withFontSize:(CGFloat)fontSize;
 -(void)showInView:(UIView*)containerView withText:(NSString*)txt withCompletionBlock:(void (^) (void))completionBlock;
 @end

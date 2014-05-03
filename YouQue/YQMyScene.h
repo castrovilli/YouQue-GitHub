@@ -36,6 +36,8 @@
     
     MDpopUpView *scorePopUpView;
     
+    MDpopUpView *achievementsPopUpView;
+    
     SKAction *matrixSlideInSequense;
     
     SKTransition *quitTransition;

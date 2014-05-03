@@ -10,16 +10,16 @@
 
 @implementation MDpopUpView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame withTextColor:(UIColor*)color withFontSize:(CGFloat)fontSize
 {
-    self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, 200, 100)];
+    self = [super initWithFrame:frame];
     if (self) {
         
         self.backgroundColor = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
         
         lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
-        lbl.textColor = [UIColor redColor];
-        lbl.font = [UIFont boldSystemFontOfSize:60];
+        lbl.textColor = color;
+        lbl.font = [UIFont boldSystemFontOfSize:fontSize];
         lbl.backgroundColor = [UIColor clearColor];
         [self addSubview:lbl];
     }
