@@ -157,6 +157,7 @@
 		6EE15F6A1913A481004C3C5B /* Watermelon-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F691913A481004C3C5B /* Watermelon-fill.png */; };
 		6EE15F6E1913A7C2004C3C5B /* orange-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F6D1913A7C2004C3C5B /* orange-fill.png */; };
 		6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6EE76190E22B500ED0C17 /* targetred200x200.png */; };
+		6EEF85C41915380600EC1973 /* emptyCell-wooden.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEF85C31915380600EC1973 /* emptyCell-wooden.png */; };
 		6EF292E11914E8DC004D49F4 /* ShareEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF292E01914E8DC004D49F4 /* ShareEntity.m */; };
 		6EF292E51914F776004D49F4 /* MDAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF292E41914F776004D49F4 /* MDAchievement.m */; };
 		6EF292EE1914FDCD004D49F4 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF292ED1914FDCD004D49F4 /* libGoogleAnalyticsServices.a */; };
@@ -378,6 +379,7 @@
 		6EE15F6D1913A7C2004C3C5B /* orange-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange-fill.png"; sourceTree = "<group>"; };
 		6EE6EE76190E22B500ED0C17 /* targetred200x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetred200x200.png; sourceTree = "<group>"; };
 		6EE6EE78190E30A700ED0C17 /* YouQue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = YouQue.entitlements; sourceTree = "<group>"; };
+		6EEF85C31915380600EC1973 /* emptyCell-wooden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emptyCell-wooden.png"; sourceTree = "<group>"; };
 		6EF292DF1914E8DC004D49F4 /* ShareEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareEntity.h; sourceTree = "<group>"; };
 		6EF292E01914E8DC004D49F4 /* ShareEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareEntity.m; sourceTree = "<group>"; };
 		6EF292E31914F776004D49F4 /* MDAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAchievement.h; sourceTree = "<group>"; };
@@ -702,6 +704,7 @@
 		6E9601F1190B9366008E972A /* UI Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EEF85C31915380600EC1973 /* emptyCell-wooden.png */,
 				6E15B21E1913B5FD004F59F5 /* tagret image */,
 				6EE15F55191387A5004C3C5B /* Progress */,
 				6EFF2F46190FD47300FA6F6F /* BG */,
@@ -1258,6 +1261,7 @@
 				6E9601DD190B893B008E972A /* NotificationButtonBackground@2x.png in Resources */,
 				6E9AF106190B31FD00E41D73 /* InfoPlist.strings in Resources */,
 				6E44A4BB190CAF1F00E8888D /* icon120x120.png in Resources */,
+				6EEF85C41915380600EC1973 /* emptyCell-wooden.png in Resources */,
 				6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */,
 				6EE15F59191387E3004C3C5B /* progress_background.png in Resources */,
 				6E960204190B93AD008E972A /* Watermelonicon50x50.png in Resources */,
