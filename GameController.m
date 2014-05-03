@@ -40,6 +40,7 @@
     {
         [_delegate addNextCellsToSuperView:_currentGame.nextCellsToAdd];
     }
+    [self UpdateScore];
 }
 -(void)levelProvider:(LevelProvider*)lvlProvider LevelChanged:(LevelEntity*)newLevel
 {

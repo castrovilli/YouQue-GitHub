@@ -144,12 +144,7 @@
     _UndoBtn.enabled = NO;
     [gameController.currentGame.score ResetScore];
     [gameController.currentGame.graph ResetGraph];
-    [gameController UpdateScore];
     [self ReloadWithSize:gameController.currentGame.graph.size gameResumed:NO];
-}
--(void)UpdateScoreBoard
-{
-    
 }
 //**********************MATRIX RELOAD WITH CELLS ***************************************************
 
@@ -877,7 +872,6 @@
 {
     gameController.currentGame = game;
     
-    [gameController UpdateScore];
     
     [self ReloadWithSize:gameController.currentGame.graph.size gameResumed:YES];
 }
