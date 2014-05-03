@@ -87,7 +87,7 @@
         
         NSLog(@"%@",achievement.identifier);
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [[FaceBookManager sharedInstance] share:entity];
+        [self shareEntity:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 2)
@@ -113,7 +113,7 @@
         
         NSLog(@"%@",achievement.identifier);
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 6x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [[FaceBookManager sharedInstance] share:entity];
+        [self shareEntity:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 8)
@@ -124,7 +124,7 @@
         NSLog(@"%@",achievement.identifier);
         
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 8x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [[FaceBookManager sharedInstance] share:entity];
+        [self shareEntity:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 10)
@@ -135,7 +135,7 @@
         NSLog(@"%@",achievement.identifier);
         
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [[FaceBookManager sharedInstance] share:entity];
+        [self shareEntity:entity];
     }
     
     GKAchievement *newLevelAch = [self newLevelAchievement:Newlevel oldLevel:oldLevel];
@@ -154,7 +154,10 @@
     
    
 }
-
+-(void)shareEntity:(ShareEntity*)entity
+{
+    //[[FaceBookManager sharedInstance] share:entity];
+}
 -(void)notifyDelegateWithNewPoints:(int)points
 {
     if([_delegate respondsToSelector:@selector(addAchievementsPoints:)])
