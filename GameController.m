@@ -293,6 +293,7 @@
 }
 -(void)UpdateScore
 {
+    [_levelProvider ReportScore:_currentGame.score.score];
     [self UpdateScoreWithDeltaScore:0];
 }
 -(void)UpdateScoreWithDeltaScore:(int)delta
