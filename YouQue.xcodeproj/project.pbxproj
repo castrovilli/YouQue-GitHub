@@ -158,6 +158,8 @@
 		6EE15F6E1913A7C2004C3C5B /* orange-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F6D1913A7C2004C3C5B /* orange-fill.png */; };
 		6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6EE76190E22B500ED0C17 /* targetred200x200.png */; };
 		6EF292E11914E8DC004D49F4 /* ShareEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF292E01914E8DC004D49F4 /* ShareEntity.m */; };
+		6EF292E51914F776004D49F4 /* MDAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF292E41914F776004D49F4 /* MDAchievement.m */; };
+		6EF292EE1914FDCD004D49F4 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF292ED1914FDCD004D49F4 /* libGoogleAnalyticsServices.a */; };
 		6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */; };
 		6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */; };
 		6EFF2F4C190FE09300FA6F6F /* cartoon natural landscape1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */; };
@@ -378,6 +380,15 @@
 		6EE6EE78190E30A700ED0C17 /* YouQue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = YouQue.entitlements; sourceTree = "<group>"; };
 		6EF292DF1914E8DC004D49F4 /* ShareEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareEntity.h; sourceTree = "<group>"; };
 		6EF292E01914E8DC004D49F4 /* ShareEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareEntity.m; sourceTree = "<group>"; };
+		6EF292E31914F776004D49F4 /* MDAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAchievement.h; sourceTree = "<group>"; };
+		6EF292E41914F776004D49F4 /* MDAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAchievement.m; sourceTree = "<group>"; };
+		6EF292E71914FDAF004D49F4 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		6EF292E81914FDAF004D49F4 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		6EF292E91914FDAF004D49F4 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		6EF292EA1914FDAF004D49F4 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		6EF292EB1914FDAF004D49F4 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		6EF292EC1914FDAF004D49F4 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		6EF292ED1914FDCD004D49F4 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape.jpg"; sourceTree = "<group>"; };
 		6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartoon natural landscape.png"; sourceTree = "<group>"; };
 		6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape1.jpg"; sourceTree = "<group>"; };
@@ -402,6 +413,7 @@
 				6E80E558190E71F600349E38 /* libsqlite3.0.dylib in Frameworks */,
 				6E80E556190E71DB00349E38 /* CFNetwork.framework in Frameworks */,
 				6E80E554190E71D200349E38 /* CoreLocation.framework in Frameworks */,
+				6EF292EE1914FDCD004D49F4 /* libGoogleAnalyticsServices.a in Frameworks */,
 				6E80E552190E71C700349E38 /* MediaPlayer.framework in Frameworks */,
 				6E80E550190E71BC00349E38 /* MobileCoreServices.framework in Frameworks */,
 				6E80E54E190E71A600349E38 /* Security.framework in Frameworks */,
@@ -709,6 +721,7 @@
 		6E9AF0ED190B31FD00E41D73 = {
 			isa = PBXGroup;
 			children = (
+				6EF292E61914FCB7004D49F4 /* GoogleAnalytics */,
 				6E80E572190E72F600349E38 /* StartApp */,
 				6E9601F1190B9366008E972A /* UI Resources */,
 				6E9AF180190B352F00E41D73 /* Custom Views */,
@@ -885,6 +898,7 @@
 		6E9AF14D190B32F400E41D73 /* AchievementsState */ = {
 			isa = PBXGroup;
 			children = (
+				6EF292E21914F758004D49F4 /* MDAchievement */,
 				6E9AF14E190B330A00E41D73 /* achievementsState.h */,
 				6E9AF14F190B330A00E41D73 /* achievementsState.m */,
 			);
@@ -1075,6 +1089,29 @@
 				6EF292E01914E8DC004D49F4 /* ShareEntity.m */,
 			);
 			name = ShareEntity;
+			sourceTree = "<group>";
+		};
+		6EF292E21914F758004D49F4 /* MDAchievement */ = {
+			isa = PBXGroup;
+			children = (
+				6EF292E31914F776004D49F4 /* MDAchievement.h */,
+				6EF292E41914F776004D49F4 /* MDAchievement.m */,
+			);
+			name = MDAchievement;
+			sourceTree = "<group>";
+		};
+		6EF292E61914FCB7004D49F4 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				6EF292ED1914FDCD004D49F4 /* libGoogleAnalyticsServices.a */,
+				6EF292E71914FDAF004D49F4 /* GAI.h */,
+				6EF292E81914FDAF004D49F4 /* GAIDictionaryBuilder.h */,
+				6EF292E91914FDAF004D49F4 /* GAIFields.h */,
+				6EF292EA1914FDAF004D49F4 /* GAILogger.h */,
+				6EF292EB1914FDAF004D49F4 /* GAITrackedViewController.h */,
+				6EF292EC1914FDAF004D49F4 /* GAITracker.h */,
+			);
+			name = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 		6EFF2F40190FBFA300FA6F6F /* Blured */ = {
@@ -1311,6 +1348,7 @@
 				6E44A4D7190CDB4200E8888D /* CellViewTextures.m in Sources */,
 				6E9AF16F190B349000E41D73 /* ConnectedCellRowsDetector.m in Sources */,
 				6E9AF160190B340C00E41D73 /* LevelEntity.m in Sources */,
+				6EF292E51914F776004D49F4 /* MDAchievement.m in Sources */,
 				6E9AF154190B33A800E41D73 /* FaceBookManager.m in Sources */,
 				6E9AF14C190B32E900E41D73 /* ICloudManager.m in Sources */,
 				6E9AF164190B342700E41D73 /* UndoManager.m in Sources */,

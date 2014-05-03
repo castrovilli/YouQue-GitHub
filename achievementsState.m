@@ -67,61 +67,72 @@
     NSMutableArray *achievements = [NSMutableArray array];
     if(NoOfClearedOutCells == 5)
     {
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"5fruits" title:@"5 fruits" points:10];
+        
         GKAchievement *achievement = [self achievementWitjIdentifier:@"5fruits" withPercentage:100.0];
-        [achievements addObject:achievement];
+        [achievements addObject:acheievement];
         
         NSLog(@"%@",achievement.identifier);
     }
     if(NoOfClearedOutCells == 6)
     {
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"6fruits" title:@"6 fruits" points:10];
+        
         GKAchievement *achievement = [self achievementWitjIdentifier:@"6fruits" withPercentage:100.0];
-        [achievements addObject:achievement];
+        [achievements addObject:acheievement];
         
         NSLog(@"%@",achievement.identifier);
     }
     
     if(NoOfClearedOutCells == 7)
     {
-        GKAchievement *achievement = [self achievementWitjIdentifier:@"7fruits" withPercentage:100.0];
-        [achievements addObject:achievement];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"7fruits" title:@"7 fruits" points:10];
         
-        NSLog(@"%@",achievement.identifier);
+        [achievements addObject:acheievement];
+        
+        
+        
+        NSLog(@"%@",acheievement.identifier);
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
         [self shareEntity:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 2)
     {
-        GKAchievement *achievement = [self achievementWitjIdentifier:@"2xCombo" withPercentage:100.0];
-        [achievements addObject:achievement];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"2xCombo" title:@"2x Combo" points:10];
+
+        [achievements addObject:acheievement];
         
-        NSLog(@"%@",achievement.identifier);
+        NSLog(@"%@",acheievement.identifier);
     }
     
     if(_numberOfConsecutiveRowCollection == 4)
     {
-        GKAchievement *achievement = [self achievementWitjIdentifier:@"4xCombo" withPercentage:100.0];
-        [achievements addObject:achievement];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"4xCombo" title:@"4x Combo" points:40];
         
-        NSLog(@"%@",achievement.identifier);
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
     }
     
     if(_numberOfConsecutiveRowCollection == 6)
     {
-        GKAchievement *achievement = [self achievementWitjIdentifier:@"6xCombo" withPercentage:100.0];
-        [achievements addObject:achievement];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"6xCombo" title:@"6x Combo" points:60];
         
-        NSLog(@"%@",achievement.identifier);
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 6x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
         [self shareEntity:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 8)
     {
-        GKAchievement *achievement = [self achievementWitjIdentifier:@"8xCombo" withPercentage:100.0];
-        [achievements addObject:achievement];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"8xCombo" title:@"8x Combo" points:80];
         
-        NSLog(@"%@",achievement.identifier);
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
         
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 8x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
         [self shareEntity:entity];
@@ -129,10 +140,11 @@
     
     if(_numberOfConsecutiveRowCollection == 10)
     {
-        GKAchievement *achievement = [self achievementWitjIdentifier:@"10xCombo" withPercentage:100.0];
-        [achievements addObject:achievement];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"10xCombo" title:@"10x Combo" points:100];
+    
+        [achievements addObject:acheievement];
         
-        NSLog(@"%@",achievement.identifier);
+        NSLog(@"%@",acheievement.identifier);
         
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
         [self shareEntity:entity];
@@ -149,7 +161,7 @@
     if(achievements.count > 0)
     {
         [self reportAchievements:achievements];
-        [[NSNotificationCenter defaultCenter] postNotificationName:FRUITS5_ACHIEVEMENT object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:FRUITS5_ACHIEVEMENT object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:achievements,ACHIEVEMENTS_INFO_KEY, nil]];
     }
     
    
@@ -197,8 +209,15 @@
 }
 - (void) reportAchievements:(NSArray*)achievements
 {
+    NSMutableArray *GKAchievements = [NSMutableArray array];
     
-    [GKAchievement reportAchievements: achievements withCompletionHandler:^(NSError *error)
+    for(MDAchievement *ach in achievements)
+    {
+        GKAchievement *GkAch = [[GKAchievement alloc] initWithIdentifier:ach.identifier];
+        GkAch.percentComplete = 100;
+        [GKAchievements addObject:GkAch];
+    }
+    [GKAchievement reportAchievements: GKAchievements withCompletionHandler:^(NSError *error)
      {
          if (error != nil)
          {

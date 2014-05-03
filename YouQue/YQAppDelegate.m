@@ -19,10 +19,11 @@
     if(![self adRemovalPurchased] && [self hasFourInchDisplay])
     {
         [RevMobAds startSessionWithAppID:@"53588cadd63ee9c01fe876de"];
-        [RevMobAds session].testingMode = RevMobAdsTestingModeOff;
+        [RevMobAds session].testingMode = RevMobAdsTestingModeWithAds;
     }
     
     [[FaceBookManager sharedInstance] Initializefacebook];
+    [self initializeGoogleAnalyticsTracker];
     // [MMSDK initialize]; //Initialize a Millennial Media session
    // [STAStartAppAd initWithAppId:@"204223654" developerId:@"104470863"];
     // Override point for customization after application launch.
@@ -30,6 +31,20 @@
     [self authenticateLocalPlayer];
     
     return YES;
+}
+-(void)initializeGoogleAnalyticsTracker
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-50016663-1"];
 }
 - (void) authenticateLocalPlayer
 {

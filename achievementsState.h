@@ -8,7 +8,9 @@
 #import "FaceBookManager.h"
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
+#import "MDAchievement.h"
 #define FRUITS5_ACHIEVEMENT @"5fruitsAchieved"
+#define ACHIEVEMENTS_INFO_KEY @"achievements"
 @protocol AchievementsStateDelegate;
 @interface achievementsState : NSObject <NSCoding,NSCopying>
 {

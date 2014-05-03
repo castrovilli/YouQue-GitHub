@@ -15,12 +15,13 @@
 #import "UIViewController+Loader.h"
 #import <RevMobAds/RevMobAds.h>
 #define PRODUCT_ID @"YouQueRemoveAds"
+#import "GAITrackedViewController.h"
 typedef enum
 {
     currentSceneGame = 1,
     currentSceneMenu = 2
 }currentScene;
-@interface YQViewController : UIViewController<GKGameCenterControllerDelegate,SKProductsRequestDelegate,MDPaymentTransactionObserverDelegate,RevMobAdsDelegate>
+@interface YQViewController : GAITrackedViewController<GKGameCenterControllerDelegate,SKProductsRequestDelegate,MDPaymentTransactionObserverDelegate,RevMobAdsDelegate>
 {
     RevMobBannerView* bannerView_;
     
