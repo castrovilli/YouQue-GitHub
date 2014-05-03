@@ -65,7 +65,6 @@
     self.numberOfClearedOutCells += NoOfClearedOutCells;
     
     NSMutableArray *achievements = [NSMutableArray array];
-    int newPoints = 0;
     if(NoOfClearedOutCells == 5)
     {
         GKAchievement *achievement = [self achievementWitjIdentifier:@"5fruits" withPercentage:100.0];
@@ -87,6 +86,8 @@
         [achievements addObject:achievement];
         
         NSLog(@"%@",achievement.identifier);
+        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+        [[FaceBookManager sharedInstance] share:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 2)
@@ -111,6 +112,8 @@
         [achievements addObject:achievement];
         
         NSLog(@"%@",achievement.identifier);
+        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 6x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+        [[FaceBookManager sharedInstance] share:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 8)
@@ -119,6 +122,9 @@
         [achievements addObject:achievement];
         
         NSLog(@"%@",achievement.identifier);
+        
+        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 8x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+        [[FaceBookManager sharedInstance] share:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 10)
@@ -128,7 +134,8 @@
         
         NSLog(@"%@",achievement.identifier);
         
-        newPoints += 100;
+        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+        [[FaceBookManager sharedInstance] share:entity];
     }
     
     GKAchievement *newLevelAch = [self newLevelAchievement:Newlevel oldLevel:oldLevel];
@@ -147,6 +154,7 @@
     
    
 }
+
 -(void)notifyDelegateWithNewPoints:(int)points
 {
     if([_delegate respondsToSelector:@selector(addAchievementsPoints:)])
@@ -194,5 +202,15 @@
              NSLog(@"Error in reporting achievements: %@", error);
          }
      }];
+}
+
+-(void)shareAchievements:(NSArray*)achievements
+{
+    for(GKAchievement *ach in achievements)
+    {
+        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved %@",[[FaceBookManager sharedInstance] FullName],ach.identifier] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+        [[FaceBookManager sharedInstance] share:entity];
+    }
+    
 }
 @end

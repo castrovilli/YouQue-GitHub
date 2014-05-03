@@ -27,7 +27,6 @@
     self = [self init];
     _currentGame = game;
     _currentGame.achievementsState.delegate = self;
-    _currentGame.score.levelDelegate = _levelProvider;
     return self;
 }
 -(void)matrixViewDidLoad:(BOOL)gameIsResumed
@@ -153,7 +152,10 @@
         if(_currentGame.score.score > [ICloudManager getLocalPlayerHighScore])
         {
             [ICloudManager saveLocalPlayerHighScore:_currentGame.score.score];
-            [[FaceBookManager sharedInstance] shareScore:_currentGame.score.score level:1];
+            
+            ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved new personal high score %d !",[[FaceBookManager sharedInstance] FullName],_currentGame.score.score] link:@"" name:@"YouQue" description:@"New personal high score"];
+            
+            [[FaceBookManager sharedInstance] share:entity];
         }
         
     }];
@@ -261,6 +263,9 @@
         
         //Update Score
         int deltaScore = [_currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
+        
+        //Update level
+        [_levelProvider ReportScore:_currentGame.score.score];
         
         // track achievements
         [_currentGame.achievementsState reportAchievementWithNumberOfClearedOutCells:numberOfCellsDetected Newlevel:[_levelProvider GetCurrentLevel].LevelIndex OldLevel:oldLevel];

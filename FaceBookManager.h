@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import "ShareEntity.h"
 @interface FaceBookManager : NSObject
 @property(nonatomic,readonly)BOOL isFacebookAvailable;
 +(FaceBookManager*)sharedInstance;
 -(void)Initializefacebook;
--(void)shareScore:(int)score level:(int)maxLevel;
+-(void)share:(ShareEntity*)entity;
+-(NSString*)FullName;
 @end

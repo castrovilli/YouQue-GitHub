@@ -41,6 +41,8 @@ typedef enum
     
     SKAction *_fruitBlurAction;
     
+    BOOL dragging;
+    
 }
 @property(nonatomic,assign)id<CellViewDelegate> delegate;
 @property(nonatomic)BOOL IsOccupied;
@@ -68,4 +70,5 @@ typedef enum
 @protocol CellViewDelegate <NSObject>
 -(void)CellViewTouched:(CellView*)cellView;
 -(void)CellViewDragged:(CellView*)cellView withState:(UIGestureRecognizerState)state withNewPoint:(CGPoint)newPoint;
+-(void)cellViewDraggingCanceled:(CellView*)cellview ;
 @end

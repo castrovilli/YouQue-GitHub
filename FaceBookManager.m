@@ -45,8 +45,14 @@
 }
 -(void)shareScore:(int)score level:(int)maxLevel
 {
-    NSString *key = @"1483381315209223";
+   
 
+
+}
+-(void)share:(ShareEntity *)entity
+{
+    NSString *key = @"1483381315209223";
+    
     
     // Specify the permissions required
     NSArray *permissions = @[@"publish_stream"];
@@ -54,7 +60,7 @@
     // Specify the audience
     NSDictionary *facebookOptions = [NSDictionary new];
     facebookOptions = @{ACFacebookAppIdKey : key,
-                        ACFacebookAudienceKey :  ACFacebookAudienceOnlyMe,
+                        ACFacebookAudienceKey :  ACFacebookAudienceFriends,
                         ACFacebookPermissionsKey : permissions};
     
     // Specify the Account Type
@@ -65,12 +71,12 @@
     [self.accountStore requestAccessToAccountsWithType:accountType options:facebookOptions completion:^(BOOL granted, NSError *error) {
         if (granted)
         {
-           // _writeAccessGranted = YES;
+            // _writeAccessGranted = YES;
             NSArray *array = [self.accountStore accountsWithAccountType:accountType];
             _facebookAccount = [array lastObject];
             
             NSLog(@"Write permissions granted.");
-            [self shareScoreAfterSharePermissionGranted:score maxLevel:maxLevel];
+            [self shareAfterSharePermissionGranted:entity];
         }
         
         if (error) {
@@ -82,10 +88,8 @@
             }
         }
     }];
-
-
 }
--(void)shareScoreAfterSharePermissionGranted:(int)score maxLevel:(int)maxLevel
+-(void)shareAfterSharePermissionGranted:(ShareEntity*)entity
 {
     
     SLRequest *postToMyWall = ({
@@ -94,17 +98,16 @@
         
         // Create the post details
         NSString *link        = @"https://itunes.apple.com/eg/app/youque/id721318647?mt=8";
-        NSString *message     = [NSString stringWithFormat:@"%@ achieved new personal high score %d on YouQue",self.facebookAccount.userFullName,score ];
-        NSString *picture     = @"http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/150px-Apple_logo_black.svg.png";
-        NSString *name        = @"YouQue";
+        NSString *message     = entity.message;
+       // NSString *picture     = @"http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/150px-Apple_logo_black.svg.png";
+        NSString *name        = entity.name;
         NSString *caption     = @"classic 7x7 game";
-        NSString *description = @"";
+        NSString *description = entity.sharedDescription;
         
         // Create a dictionary of post elements
         NSDictionary *postDict = @{
                                    @"link": link,
                                    @"message" : message,
-                                   @"picture" : picture,
                                    @"name" : name,
                                    @"caption" : caption,
                                    @"description" : description
@@ -148,6 +151,10 @@
         postToMyWall;
     });
 
+}
+-(NSString*)FullName
+{
+    return self.facebookAccount.userFullName;
 }
 -(void)Initializefacebook
 {

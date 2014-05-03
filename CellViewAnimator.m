@@ -29,46 +29,15 @@
         //******************** cell removal actions *******************************
         
         
-        //SKAction *scaleUp = [SKAction scaleTo:1.8 duration:0.22];
+        SKAction *scaleUp = [SKAction scaleTo:2.0 duration:0.2];
         
-        CGFloat removalDuration = 0.11;
-       // SKAction *fadeOutDelay = [SKAction waitForDuration:0.09];
-        SKAction *fadeOut = [SKAction fadeOutWithDuration:removalDuration];
-        //SKAction *fadeOutSequense = [SKAction sequence:@[fadeOutDelay,fadeOut]];
+        SKAction *fadeout = [SKAction fadeOutWithDuration:0.2];
         
+        SKAction *remove = [SKAction group:@[scaleUp,fadeout]];
         
+        SKAction *reverse = [SKAction group:@[[SKAction scaleTo:1.0 duration:0.0],[SKAction fadeInWithDuration:0.0]]];
         
-        SKAction *squeezeAction = [SKAction scaleXTo:4.0 y:0.2 duration:removalDuration];
-        
-        
-        _removalHorizontal = [SKAction group:@[squeezeAction,fadeOut]];
-        
-        
-        
-        SKAction *squeezeVertical = [SKAction scaleXTo:0.2 y:4.0 duration:removalDuration];
-        
-        _removalVertical = [SKAction group:@[squeezeVertical,fadeOut]];
-        
-        
-        
-        SKAction *squeezeDiagonalToTheRight = [SKAction scaleXTo:4.0 y:0.2 duration:removalDuration];
-        
-        SKAction *rotateToTheRight = [SKAction rotateByAngle:degreesToRadians( 45.0  ) duration:0.0];
-        
-        _removalDiagonalToTheRight = [SKAction group:@[rotateToTheRight,squeezeDiagonalToTheRight,fadeOut]];
-        
-        
-        
-        SKAction *rotateToTheLeft = [SKAction rotateByAngle:degreesToRadians( -45.0  ) duration:0.0];
-        
-        _removalDiagonalToTheLeft = [SKAction group:@[rotateToTheLeft,squeezeDiagonalToTheRight,fadeOut]];
-        
-        
-        SKAction *rotateReset = [SKAction rotateToAngle:degreesToRadians( 0.0  ) duration:0.0];
-        
-        SKAction *scaleReset = [SKAction scaleXTo:1.0 y:1.0 duration:0.0];
-        
-        _removalReset = [SKAction group:@[rotateReset,scaleReset]];
+        _removalAction = [SKAction sequence:@[remove,reverse]];
         
         //******************** cell addition actions *******************************
         

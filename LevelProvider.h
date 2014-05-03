@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LevelEntity.h"
 #import "ScoreEntity.h"
-#define LEVEL_RANGE 10.0f
+#define LEVEL_RANGE 600.0f
 @protocol LevelProviderDelegate;
 @interface LevelProvider : NSObject<ScoreEntityDelegate>
 
@@ -19,6 +19,7 @@
 
 -(id)initWithNumberOfLevels:(int)noOfLevels;
 
+-(void)ReportScore:(int)score;
 
 -(LevelEntity*)GetCurrentLevel;
 -(void)ResetLevel;

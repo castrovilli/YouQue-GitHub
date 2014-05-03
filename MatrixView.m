@@ -30,7 +30,7 @@
         
         //self.layer.borderColor = [UIColor colorWithRed:(57.0f/255.0f) green:(57.0f/255.0f) blue:(57.0f/255.0f) alpha:1.0].CGColor;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AppDidResignActive) name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AppDidResignActive) name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
         
         playLevelCompletionSound = [SKAction playSoundFileNamed:@"Ta Da.wav" waitForCompletion:NO];
         
@@ -82,14 +82,14 @@
     }
     return self;
 }
--(void)AppDidResignActive
+/*-(void)AppDidResignActive
 {
     if(gameController.startCellIndex)
     {
         CellView *startCell = [self getCellViewWithIndex:gameController.startCellIndex.integerValue];
         [self CellViewDragged:startCell withState:UIGestureRecognizerStateEnded withNewPoint:startCell.position];
     }
-}
+}*/
 -(void)playCelebrationSound
 {
     //int randomIndex = arc4random_uniform(3)+1;
@@ -377,6 +377,14 @@
     {
         CellView *cell = [self getCellViewWithIndex:i];
         cell.userInteractionEnabled = YES;
+    }
+}
+-(void)cellViewDraggingCanceled:(CellView *)cellview
+{
+    if(gameController.startCellIndex)
+    {
+        CellView *startCell = [self getCellViewWithIndex:gameController.startCellIndex.integerValue];
+        [self CellViewDragged:startCell withState:UIGestureRecognizerStateEnded withNewPoint:startCell.position];
     }
 }
 -(void)CellViewDragged:(CellView *)cellView withState:(UIGestureRecognizerState)state withNewPoint:(CGPoint)newPoint

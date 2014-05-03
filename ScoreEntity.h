@@ -10,7 +10,6 @@
 #import "ICloudManager.h"
 @protocol ScoreEntityDelegate;
 @interface ScoreEntity : NSObject<NSCoding,NSCopying>
-@property(nonatomic,weak)id<ScoreEntityDelegate> levelDelegate;
 @property(nonatomic,readonly)int score;
 @property(nonatomic,readonly)int numberOfConsecutiveRowCollection;
 -(int)ReportScoreWithNumberOfDetectedCells:(NSUInteger)numberOfDetectedCells;

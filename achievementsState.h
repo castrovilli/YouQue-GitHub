@@ -5,7 +5,7 @@
 //  Created by Mohammed Eldehairy on 4/24/14.
 //  Copyright (c) 2014 Mohammed Eldehairy. All rights reserved.
 //
-
+#import "FaceBookManager.h"
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
 #define FRUITS5_ACHIEVEMENT @"5fruitsAchieved"

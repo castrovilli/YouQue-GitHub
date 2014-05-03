@@ -52,10 +52,6 @@
         _score += 4 * _numberOfConsecutiveRowCollection ;
         _numberOfConsecutiveRowCollection++;
     }
-    if([_levelDelegate respondsToSelector:@selector(newScore:)])
-    {
-        [_levelDelegate newScore:_score];
-    }
     
     return _score - oldScore;
     

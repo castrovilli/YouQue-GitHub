@@ -157,6 +157,7 @@
 		6EE15F6A1913A481004C3C5B /* Watermelon-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F691913A481004C3C5B /* Watermelon-fill.png */; };
 		6EE15F6E1913A7C2004C3C5B /* orange-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F6D1913A7C2004C3C5B /* orange-fill.png */; };
 		6EE6EE77190E22B500ED0C17 /* targetred200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6EE76190E22B500ED0C17 /* targetred200x200.png */; };
+		6EF292E11914E8DC004D49F4 /* ShareEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF292E01914E8DC004D49F4 /* ShareEntity.m */; };
 		6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */; };
 		6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */; };
 		6EFF2F4C190FE09300FA6F6F /* cartoon natural landscape1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */; };
@@ -375,6 +376,8 @@
 		6EE15F6D1913A7C2004C3C5B /* orange-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange-fill.png"; sourceTree = "<group>"; };
 		6EE6EE76190E22B500ED0C17 /* targetred200x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetred200x200.png; sourceTree = "<group>"; };
 		6EE6EE78190E30A700ED0C17 /* YouQue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = YouQue.entitlements; sourceTree = "<group>"; };
+		6EF292DF1914E8DC004D49F4 /* ShareEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareEntity.h; sourceTree = "<group>"; };
+		6EF292E01914E8DC004D49F4 /* ShareEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareEntity.m; sourceTree = "<group>"; };
 		6EFF2F47190FD49100FA6F6F /* cartoon natural landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape.jpg"; sourceTree = "<group>"; };
 		6EFF2F49190FDADD00FA6F6F /* cartoon natural landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartoon natural landscape.png"; sourceTree = "<group>"; };
 		6EFF2F4B190FE09300FA6F6F /* cartoon natural landscape1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cartoon natural landscape1.jpg"; sourceTree = "<group>"; };
@@ -891,6 +894,7 @@
 		6E9AF151190B339400E41D73 /* FacebookManager */ = {
 			isa = PBXGroup;
 			children = (
+				6EF292DE1914E8B6004D49F4 /* ShareEntity */,
 				6E9AF152190B33A800E41D73 /* FaceBookManager.h */,
 				6E9AF153190B33A800E41D73 /* FaceBookManager.m */,
 			);
@@ -1062,6 +1066,15 @@
 				6EE15F56191387D3004C3C5B /* progress_accessory.png */,
 			);
 			name = Progress;
+			sourceTree = "<group>";
+		};
+		6EF292DE1914E8B6004D49F4 /* ShareEntity */ = {
+			isa = PBXGroup;
+			children = (
+				6EF292DF1914E8DC004D49F4 /* ShareEntity.h */,
+				6EF292E01914E8DC004D49F4 /* ShareEntity.m */,
+			);
+			name = ShareEntity;
 			sourceTree = "<group>";
 		};
 		6EFF2F40190FBFA300FA6F6F /* Blured */ = {
@@ -1291,6 +1304,7 @@
 				6E9601E5190B896B008E972A /* HexColor.m in Sources */,
 				6E9AF115190B31FD00E41D73 /* YQMyScene.m in Sources */,
 				6E9AF143190B329600E41D73 /* MSize.m in Sources */,
+				6EF292E11914E8DC004D49F4 /* ShareEntity.m in Sources */,
 				6E9AF112190B31FD00E41D73 /* YQViewController.m in Sources */,
 				6E9AF158190B33D000E41D73 /* GameController.m in Sources */,
 				6E9601E0190B893B008E972A /* TSMessageView.m in Sources */,

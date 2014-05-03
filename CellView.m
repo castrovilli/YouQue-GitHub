@@ -71,10 +71,11 @@
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    /*if([_delegate respondsToSelector:@selector(CellViewTouched:)])
+    if([_delegate respondsToSelector:@selector(CellViewTouched:)])
     {
         [_delegate CellViewTouched:self];
-    }*/
+    }
+    
     if(!_SetTouchable)
     {
         return;
@@ -89,14 +90,14 @@
     firtsY = contentView.position.y;
     originalRect = contentView.frame;
     
-    UITouch *touch = [touches anyObject];
+   /* UITouch *touch = [touches anyObject];
     
     CGPoint currentPoint = [touch locationInNode:self.parent];
         
     if([_delegate respondsToSelector:@selector(CellViewDragged:withState:withNewPoint:)])
     {
         [_delegate CellViewDragged:self withState:UIGestureRecognizerStateBegan withNewPoint:currentPoint];
-    }
+    }*/
     
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -110,7 +111,17 @@
         return;
     }
     
-   // contentView.zPosition = 999;
+    UIGestureRecognizerState state = UIGestureRecognizerStateBegan;
+    
+    if(dragging)
+    {
+        state = UIGestureRecognizerStateChanged;
+    }else
+    {
+        state = UIGestureRecognizerStateBegan;
+        dragging = YES;
+    }
+    
     
     UITouch *touch = [touches anyObject];
     
@@ -125,6 +136,11 @@
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if(!dragging)
+    {
+        return;
+    }
+    
     if(!_SetTouchable)
     {
         return;
@@ -134,6 +150,8 @@
     {
         return;
     }
+    
+    dragging = NO;
     
     UITouch *touch = [touches anyObject];
     
@@ -146,6 +164,13 @@
     }
     
    // contentView.zPosition = 100;
+}
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if([_delegate respondsToSelector:@selector(cellViewDraggingCanceled:)])
+    {
+        [_delegate cellViewDraggingCanceled:self];
+    }
 }
 /*-(void)cellDragged:(UIPanGestureRecognizer*)sender
 {
@@ -369,11 +394,11 @@
         [self animateCellWithColor:backColor withDelay:delay withCompletionBlock:completionBlock];
         return;
     }
-    if (animationType==CellAnimationTypeRemoval)
+   /* if (animationType==CellAnimationTypeRemoval)
     {
         [self animateCellRemovalWithDelay:delay withCompletionBlock:completionBlock];
         return;
-    }
+    }*/
     
     if(animationType == CellAnimationTypeNone)
     {
@@ -414,7 +439,7 @@
     self.IsOccupied = NO;
     [self animateCellRemovalWithDelay:0.0 withOrientation:(removedRowOrientation)orientation withStatus:status  withCompletionBlock:completionBlock];
 }
--(SKAction*)removalActionWithOrientation:(removedRowOrientation)orientation
+/*-(SKAction*)removalActionWithOrientation:(removedRowOrientation)orientation
 {
     SKAction *removalAction;
     
@@ -436,30 +461,25 @@
             break;
     }
     return removalAction;
-}
+}*/
 -(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withOrientation:(removedRowOrientation)orientation withStatus:(GraphCellStatus)status withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
 {
     contentView.zPosition = 1000;
     
-    SKAction *delayAction = [SKAction waitForDuration:delay*0.15];
     
-    contentView.texture = [self getBlurredImageForStatus:status];
     
-    SKAction *sequense = [SKAction sequence:@[delayAction,[self removalActionWithOrientation:orientation]]];
     
-    [contentView runAction:sequense completion:^{
+    [contentView runAction:[CellViewAnimator sharedInstance].removalAction completion:^{
         
         
         contentView.texture = nil;
-        contentView.alpha = 1.0;
-        [contentView runAction:[CellViewAnimator sharedInstance].removalReset];
         contentView.zPosition = 10;
         completionBlock(YES);
         
         
     }];
 }
--(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
+/*-(void)animateCellRemovalWithDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock
 {
     contentView.zPosition = 1000;
     
@@ -486,7 +506,7 @@
     
    
     
-}
+}*/
 
 
 

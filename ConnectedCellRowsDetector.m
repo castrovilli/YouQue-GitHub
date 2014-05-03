@@ -11,7 +11,6 @@
 @implementation ConnectedCellRowsDetector
 +(NSArray*)getConnectedCellsWithGraph:(Graph*)graph withVertices:(NSArray*)vertices withCompletionBlock:(DetectedResultArrayBlock)block
 {
-    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
         
     NSMutableArray *result = [NSMutableArray array];
     
@@ -61,31 +60,16 @@
             
         }
         
-        if(rowsForCurrentVertix.count > 1)
+        for(int i = 1 ; i < rowsForCurrentVertix.count; i++)
         {
-            for(int i = 1 ; i < rowsForCurrentVertix.count; i++)
-            {
-                RemovedRowEntity *row = [rowsForCurrentVertix objectAtIndex:i];
-                [row.row removeObject:GCell];
-            }
+            RemovedRowEntity *row = [rowsForCurrentVertix objectAtIndex:i];
+            [row.row removeObject:GCell];
         }
         
         [result addObjectsFromArray:rowsForCurrentVertix];
-        /*[result addObjectsFromArray:[self detectConnectedRowsVerticallyWithGraph:graph withVertixe:GCell]];
-        [result addObjectsFromArray:[self detectConnectedRowsHorizontallyWithGraph:graph withVertixe:GCell]];
-        [result addObjectsFromArray:[self detectConnectedRowsDiagonallyToTheRightWithGraph:graph withVertixe:GCell]];
-        [result addObjectsFromArray:[self detectConnectedRowsDiagonallyToTheLeftWithGraph:graph withVertixe:GCell]];*/
     }
-    NSSet *set = [NSSet setWithArray:result];
-    NSArray *uniqueArray = [set allObjects];
-        //dispatch_async(dispatch_get_main_queue(), ^(void){
         
-    return uniqueArray;
-            //block(uniqueArray);
-       // });
-        
-    //});
-    //return result;
+    return result;
 }
 +(NSArray*)detectConnectedRowsVerticallyWithGraph:(Graph*)graph withVertixe:(GraphCell*)VertixGCell
 {
