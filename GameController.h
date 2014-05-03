@@ -51,8 +51,6 @@ typedef void (^CompletionBlock)(NSArray* detectedCells);
 
 -(void)matrixViewDidLoad:(BOOL)gameIsResumed;
 
-//-(void)UpdateScore;
-
 -(void)undoLastMove;
 
 -(void)ResetUndo;

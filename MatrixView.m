@@ -910,7 +910,8 @@
 
 -(CellView*)getCellViewWithIndex:(NSUInteger)index
 {
-    CellView *cell = [[CellView alloc] init];
+
+    /*CellView *cell = [[CellView alloc] init];
     cell.tag = index+1000;
     CellView *foundCell = [MDBinarySearch searchForItem:cell inArray:contentView.children withCompareBlock:^int(NSObject *cell1,NSObject *cell2){
     
@@ -928,8 +929,8 @@
             return 0;
         }
     
-    }];
-    return foundCell;
+    }];*/
+    return [[contentView children] objectAtIndex:index];
 }
 
 

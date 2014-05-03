@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
-            landmarkName = "-ReloadWithSize:gameResumed:"
+            landmarkName = "-LoadWithCellsGameResumed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "420796731.545031"
+            timestampString = "420817408.643316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "938"
-            endingLineNumber = "938"
-            landmarkName = "-getCellViewWithIndex:"
-            landmarkType = "5">
+            startingLineNumber = "939"
+            endingLineNumber = "939"
+            landmarkName = "@implementation MatrixView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "420796731.545031"
+            timestampString = "420817408.643316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "926"
-            endingLineNumber = "926"
+            startingLineNumber = "927"
+            endingLineNumber = "927"
             landmarkName = "-getCellViewWithIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "420796731.545031"
+            timestampString = "420817408.643316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "921"
-            endingLineNumber = "921"
+            startingLineNumber = "922"
+            endingLineNumber = "922"
             landmarkName = "-getCellViewWithIndex:"
             landmarkType = "5">
             <Locations>
@@ -649,7 +649,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "356"
             endingLineNumber = "356"
-            landmarkName = "-setUserInteractionEnabled:"
+            landmarkName = "-setMatrixUnTouchableExceptCellAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1079,7 +1079,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "663"
             endingLineNumber = "663"
-            landmarkName = "-addCollisionIndicatorViewOnCellAtIndex:withAlpha:"
+            landmarkName = "-removeCollisionIndicatorView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
