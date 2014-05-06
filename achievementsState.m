@@ -67,7 +67,7 @@
     NSMutableArray *achievements = [NSMutableArray array];
     if(NoOfClearedOutCells == 5)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"5fruits" title:@"5 fruits" points:10];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_ID] title:@"5 fruits" points:10];
         
         GKAchievement *achievement = [self achievementWitjIdentifier:@"5fruits" withPercentage:100.0];
         [achievements addObject:acheievement];
@@ -76,7 +76,7 @@
     }
     if(NoOfClearedOutCells == 6)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"6fruits" title:@"6 fruits" points:10];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_ID] title:@"6 fruits" points:10];
         
         GKAchievement *achievement = [self achievementWitjIdentifier:@"6fruits" withPercentage:100.0];
         [achievements addObject:acheievement];
@@ -86,7 +86,7 @@
     
     if(NoOfClearedOutCells == 7)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"7fruits" title:@"7 fruits" points:10];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_ID] title:@"7 fruits" points:10];
         
         [achievements addObject:acheievement];
         
@@ -99,7 +99,7 @@
     
     if(_numberOfConsecutiveRowCollection == 2)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"2xCombo" title:@"2x Combo" points:10];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_ID] title:@"2x Combo" points:10];
 
         [achievements addObject:acheievement];
         
@@ -108,7 +108,7 @@
     
     if(_numberOfConsecutiveRowCollection == 4)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"4xCombo" title:@"4x Combo" points:40];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_ID] title:@"4x Combo" points:40];
         
         [achievements addObject:acheievement];
         
@@ -117,7 +117,7 @@
     
     if(_numberOfConsecutiveRowCollection == 6)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"6xCombo" title:@"6x Combo" points:60];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_ID] title:@"6x Combo" points:60];
         
         [achievements addObject:acheievement];
         
@@ -128,7 +128,7 @@
     
     if(_numberOfConsecutiveRowCollection == 8)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"8xCombo" title:@"8x Combo" points:80];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_ID] title:@"8x Combo" points:80];
         
         [achievements addObject:acheievement];
         
@@ -140,7 +140,7 @@
     
     if(_numberOfConsecutiveRowCollection == 10)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:@"10xCombo" title:@"10x Combo" points:100];
+        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_2_REACHED_ACHIEVEMENT_ID] title:COMBO_10X_ACHIEVEMENT_ID points:100];
     
         [achievements addObject:acheievement];
         
@@ -187,13 +187,13 @@
     
     if(Newlevel == 2)
     {
-        return [self achievementWitjIdentifier:@"level2" withPercentage:100.0];
+        return [self achievementWitjIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_2_REACHED_ACHIEVEMENT_ID] withPercentage:100.0];
     }else if(Newlevel == 3)
     {
-        return [self achievementWitjIdentifier:@"level3" withPercentage:100.0];
+        return [self achievementWitjIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_3_REACHED_ACHIEVEMENT_ID] withPercentage:100.0];
     }else if(Newlevel == 4)
     {
-        return [self achievementWitjIdentifier:@"level4" withPercentage:100.0];
+        return [self achievementWitjIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_ID] withPercentage:100.0];
     }else
     {
         return nil;

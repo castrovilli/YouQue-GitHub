@@ -23,6 +23,17 @@
 #define MAIN_MENU_BUTTON_HIGHLIGHTED_IMAGE_KEY @"main-menu-button-image-highlighted"
 #define GOOGLE_ANALYTICS_TRACKER_ID_KEY @"googleAnalytics-tracker-id"
 #define REVMOB_APP_ID_KEY @"RevMob-App-id"
+#define FRUITS_5_ACHIEVEMENT_ID @"5fruits"
+#define FRUITS_6_ACHIEVEMENT_ID @"6fruits"
+#define FRUITS_7_ACHIEVEMENT_ID @"7fruits"
+#define COMBO_2X_ACHIEVEMENT_ID @"2xCombo"
+#define COMBO_4X_ACHIEVEMENT_ID @"4xCombo"
+#define COMBO_6X_ACHIEVEMENT_ID @"6xCombo"
+#define COMBO_8X_ACHIEVEMENT_ID @"8xCombo"
+#define COMBO_10X_ACHIEVEMENT_ID @"10xCombo"
+#define LEVEL_2_REACHED_ACHIEVEMENT_ID @"level2"
+#define LEVEL_3_REACHED_ACHIEVEMENT_ID @"level3"
+#define LEVEL_4_REACHED_ACHIEVEMENT_ID @"level4"
 @interface TemplateConfiguration : NSObject
 {
     NSDictionary *configDictionary;
