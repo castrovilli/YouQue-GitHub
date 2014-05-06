@@ -16,6 +16,7 @@
 #import <RevMobAds/RevMobAds.h>
 #define PRODUCT_ID @"YouQueRemoveAds"
 #import "GAITrackedViewController.h"
+#import "EAIntroView.h"
 typedef enum
 {
     currentSceneGame = 1,
@@ -50,4 +51,6 @@ typedef enum
 -(IBAction)resumeGame:(id)sender;
 -(void)quitGameScene;
 -(IBAction)RemoveAdsAction:(id)sender;
+-(IBAction)howToAction:(id)sender;
+
 @end

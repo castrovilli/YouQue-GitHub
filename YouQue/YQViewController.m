@@ -352,6 +352,51 @@
     } completion:nil];
     
 }
+-(void)howToAction:(id)sender
+{
+    // basic
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.title = @"Game Objective";
+    page1.desc = @"The objective is to clear out rows of 4 or more cells with the same colour either vertically ,horizontally ,or diagonally to gain points.";
+    page1.descColor = [UIColor whiteColor];
+    page1.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+    page1.descPositionY = 180;
+    page1.titlePositionY = 220;
+    
+    // custom
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.title = @"Moving fruits";
+   // page2.titleFont = [UIFont fontWithName:@"Georgia-BoldItalic" size:20];
+    page2.titlePositionY = 225;
+    page2.desc = @"To move a cell around ,select it until it jiggles,Then select an unoccupied place ,Or you can simply drag it around the board ,The catch is that the path must be clear ,And cells can't move diagonally.";
+    page2.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+    page2.descPositionY = 200;
+    page2.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title2"]];
+    page2.titleIconPositionY = 150;
+    page2.descColor = [UIColor whiteColor];
+    
+    // custom view from nib
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.title = @"Moving fruits";
+    page3.desc = @"Every time you move a cell , new cells are added ,And the cells to be added next are shown at the top, Except when your move completes rows of 4 or more cells of same fruit, no new cells are added .";
+    page3.descColor = [UIColor whiteColor];
+    page3.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+    page3.descPositionY = 200;
+    page3.titlePositionY = 220;
+    
+    EAIntroPage *page4 = [EAIntroPage page];
+    page4.title = @"Undo";
+    page4.desc = @"You can undo any move by pressing the undo button on the top right corner .";
+    page4.descColor = [UIColor whiteColor];
+    page4.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+    page4.descPositionY = 120;
+    page4.titlePositionY = 140;
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
+    //intro.bgImage = [UIImage imageNamed:@"background.jpg"];
+    intro.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8];
+    [intro showInView:self.view animateDuration:0.2];
+}
 -(void)quitGameScene
 {
     [self presentMenuSceneAnimated:YES];

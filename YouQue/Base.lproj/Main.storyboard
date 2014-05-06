@@ -84,6 +84,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="howToAction:" destination="LVB-YS-i5n" eventType="touchUpInside" id="B9G-EW-WQ0"/>
+                                        </connections>
                                     </button>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Watermelon-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-6z-Ltc">
                                         <rect key="frame" x="95" y="40" width="128" height="128"/>

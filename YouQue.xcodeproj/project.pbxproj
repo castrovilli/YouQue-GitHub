@@ -17,6 +17,8 @@
 		6E027498191110C700D91445 /* strawberryicon50x50-blur@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E02748E191110C700D91445 /* strawberryicon50x50-blur@2x.png */; };
 		6E027499191110C700D91445 /* Watermelonicon50x50-blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E02748F191110C700D91445 /* Watermelonicon50x50-blur.png */; };
 		6E02749A191110C700D91445 /* Watermelonicon50x50-blur@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E027490191110C700D91445 /* Watermelonicon50x50-blur@2x.png */; };
+		6E2E9B3C19198A8400AB670C /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E9B3919198A8400AB670C /* EAIntroPage.m */; };
+		6E2E9B3D19198A8400AB670C /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E9B3B19198A8400AB670C /* EAIntroView.m */; };
 		6E2F2E4C190D8C59006DD825 /* Watermelon-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F2E4B190D8C59006DD825 /* Watermelon-icon.png */; };
 		6E3656251910A7EE00FAAA68 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3656241910A7EE00FAAA68 /* RevMobAds.framework */; };
 		6E3656271910B73300FAAA68 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E3656261910B73300FAAA68 /* background.jpg */; };
@@ -190,6 +192,10 @@
 		6E02748E191110C700D91445 /* strawberryicon50x50-blur@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strawberryicon50x50-blur@2x.png"; sourceTree = "<group>"; };
 		6E02748F191110C700D91445 /* Watermelonicon50x50-blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermelonicon50x50-blur.png"; sourceTree = "<group>"; };
 		6E027490191110C700D91445 /* Watermelonicon50x50-blur@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermelonicon50x50-blur@2x.png"; sourceTree = "<group>"; };
+		6E2E9B3819198A8400AB670C /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroPage.h; sourceTree = "<group>"; };
+		6E2E9B3919198A8400AB670C /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
+		6E2E9B3A19198A8400AB670C /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
+		6E2E9B3B19198A8400AB670C /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
 		6E2F2E4B190D8C59006DD825 /* Watermelon-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermelon-icon.png"; sourceTree = "<group>"; };
 		6E3656241910A7EE00FAAA68 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		6E3656261910B73300FAAA68 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -454,6 +460,25 @@
 				6EE6EE76190E22B500ED0C17 /* targetred200x200.png */,
 			);
 			name = "tagret image";
+			sourceTree = "<group>";
+		};
+		6E2E9B3619198A6C00AB670C /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				6E2E9B3719198A8400AB670C /* EAIntroView */,
+			);
+			name = tutorial;
+			sourceTree = "<group>";
+		};
+		6E2E9B3719198A8400AB670C /* EAIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				6E2E9B3819198A8400AB670C /* EAIntroPage.h */,
+				6E2E9B3919198A8400AB670C /* EAIntroPage.m */,
+				6E2E9B3A19198A8400AB670C /* EAIntroView.h */,
+				6E2E9B3B19198A8400AB670C /* EAIntroView.m */,
+			);
+			path = EAIntroView;
 			sourceTree = "<group>";
 		};
 		6E44A4A5190CA5AE00E8888D /* Fruit images */ = {
@@ -1024,6 +1049,7 @@
 		6E9AF180190B352F00E41D73 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E2E9B3619198A6C00AB670C /* tutorial */,
 				6EE15F4C19138557004C3C5B /* ProgressNode */,
 				6E44A4A9190CA9FB00E8888D /* SKButton */,
 				6E9601ED190B8DE1008E972A /* MDPopUpView */,
@@ -1374,6 +1400,7 @@
 				6E9AF14C190B32E900E41D73 /* ICloudManager.m in Sources */,
 				6E9AF164190B342700E41D73 /* UndoManager.m in Sources */,
 				6EE15F5219138579004C3C5B /* TCProgressTimerNode.m in Sources */,
+				6E2E9B3C19198A8400AB670C /* EAIntroPage.m in Sources */,
 				6E80E579190E75BE00349E38 /* UIViewController+Loader.m in Sources */,
 				6E9AF189190B3A6C00E41D73 /* SKNode+Jiggle.m in Sources */,
 				6E9AF16B190B346100E41D73 /* RandomUnOccupiedCellsGenerator.m in Sources */,
@@ -1391,6 +1418,7 @@
 				6E44A4D3190CD80100E8888D /* CellViewAnimator.m in Sources */,
 				6E9AF108190B31FD00E41D73 /* main.m in Sources */,
 				6E9AF17E190B350F00E41D73 /* MJPriorityDictionary.mm in Sources */,
+				6E2E9B3D19198A8400AB670C /* EAIntroView.m in Sources */,
 				6E9AF140190B328400E41D73 /* GraphCell.m in Sources */,
 				6E9AF168190B344300E41D73 /* PersistentStore.m in Sources */,
 				6E9AF139190B325C00E41D73 /* GameEntity.m in Sources */,
