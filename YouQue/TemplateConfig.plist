@@ -36,25 +36,47 @@
 	<string>53588cadd63ee9c01fe876de</string>
 	<key>5fruits-achievement-id</key>
 	<string>5fruits</string>
+	<key>5fruits-achievement-title</key>
+	<string>5 fruits</string>
 	<key>6fruits-achievement-id</key>
 	<string>6fruits</string>
+	<key>6fruits-achievement-title</key>
+	<string>6 fruits</string>
 	<key>7fruits-achievement-id</key>
 	<string>7fruits</string>
+	<key>7fruits-achievement-title</key>
+	<string>7 fruits</string>
 	<key>2xCombo-achievement-id</key>
 	<string>2xCombo</string>
+	<key>2xCombo-achievement-title</key>
+	<string>2x Combo</string>
 	<key>4xCombo-achievement-id</key>
 	<string>4xCombo</string>
+	<key>4xCombo-achievement-title</key>
+	<string>4x Combo</string>
 	<key>6xCombo-achievement-id</key>
 	<string>6xCombo</string>
+	<key>6xCombo-achievement-title</key>
+	<string>6x Combo</string>
 	<key>8xCombo-achievement-id</key>
 	<string>8xCombo</string>
+	<key>8xCombo-achievement-title</key>
+	<string>8x Combo</string>
 	<key>10xCombo-achievement-id</key>
 	<string>10xCombo</string>
+	<key>10xCombo-achievement-title</key>
+	<string>10x Combo</string>
 	<key>level2Reached-achievement-id</key>
 	<string>level2</string>
+	<key>level2Reached-achievement-title</key>
+	<string>Level 2</string>
 	<key>level3Reached-achievement-id</key>
 	<string>level3</string>
+	<key>level3Reached-achievement-title</key>
+	<string>Level 3</string>
 	<key>level4Reached-achievement-id</key>
 	<string>level4</string>
+	<key>level4Reached-achievement-title</key>
+	<string>Level4</string>
 </dict>
 </plist>
