@@ -28,7 +28,7 @@
         
        
        /* self.backgroundColor = [UIColor colorWithRed:(75.0f/255.0f) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];*/
-        UIImage *bg = [UIImage imageNamed:@"background.jpg"];
+        UIImage *bg = [UIImage imageNamed:[[TemplateConfiguration sharedInstance] valueForKey:BACKGROUND_IMAGE_KEY]];
         SKSpriteNode *BGNode = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:bg ]];
         BGNode.size = size;
         BGNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
@@ -36,8 +36,8 @@
         
         
         
-        progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:@"Watermelon-fill.png"
-                                                            backgroundImageNamed:@"emptyCell-wooden.png"
+        progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PROGRESS_PIE_FILL_IMAGE_KEY]
+                                                            backgroundImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PROGRESS_PIE_BACKGROUND_IMAGE_KEY]
                                                              accessoryImageNamed:nil];
         progressView.position = CGPointMake(280, 465);
         [self addChild:progressView];
@@ -50,7 +50,7 @@
         [self addChild:LevelLbl];
         
         
-        undoBtn = [SKButton spriteNodeWithImageNamed:@"undo2.png"];
+        undoBtn = [SKButton spriteNodeWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:UNDO_IMAGE_KEY]];
         undoBtn.position = CGPointMake(290, 520);
         undoBtn.size = CGSizeMake(40, 40);
         undoBtn.name = @"undoBtn";
@@ -62,7 +62,7 @@
         ScoreBoard.fontColor = [UIColor blackColor];
         [self addChild:ScoreBoard];
         
-        quitBtn = [SKSpriteNode spriteNodeWithImageNamed:@"pause.png"];
+        quitBtn = [SKSpriteNode spriteNodeWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PAUSE_IMAGE_KEY]];
         quitBtn.size = CGSizeMake(40, 40);
         quitBtn.position = CGPointMake(30, 520);
         quitBtn.name = @"quitBtn";
@@ -186,9 +186,9 @@
         achievementsPopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-100)/2, 60, 200, 100) withTextColor:[UIColor purpleColor] withFontSize:25];
     }
     
-    [achievementsPopUpView showInView:self.view withText:ach.title withCompletionBlock:^{
+    [achievementsPopUpView showInView:self.view withText:ach.title withCompletionBlock:^(BOOL finished){
         
-        
+        [achievementsPopUpView removeFromSuperview];
         [self showAchievements:achievements currentIndex:index];
         
     }];

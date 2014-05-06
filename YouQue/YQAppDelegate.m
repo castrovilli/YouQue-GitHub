@@ -18,7 +18,7 @@
     
     if(![self adRemovalPurchased] && [self hasFourInchDisplay])
     {
-        [RevMobAds startSessionWithAppID:@"53588cadd63ee9c01fe876de"];
+        [RevMobAds startSessionWithAppID:[[TemplateConfiguration sharedInstance] valueForKey:REVMOB_APP_ID_KEY]];
         [RevMobAds session].testingMode = RevMobAdsTestingModeWithAds;
     }
     
@@ -44,7 +44,7 @@
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     
     // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-50016663-1"];
+    [[GAI sharedInstance] trackerWithTrackingId:[[TemplateConfiguration sharedInstance] valueForKey:GOOGLE_ANALYTICS_TRACKER_ID_KEY]];
 }
 - (void) authenticateLocalPlayer
 {

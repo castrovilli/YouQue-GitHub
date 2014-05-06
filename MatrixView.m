@@ -73,7 +73,7 @@
         
         
         targetImageView = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(150, 150)];
-        targetImageView.texture = [SKTexture textureWithImageNamed:@"targetred200x200.png"] ;
+        targetImageView.texture = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:TARGET_IMAGE_KEY]] ;
         
       //  draggedCellTage = -1;
         

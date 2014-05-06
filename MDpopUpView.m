@@ -25,7 +25,7 @@
     }
     return self;
 }
--(void)showInView:(UIView*)containerView withText:(NSString*)txt withCompletionBlock:(void (^) (void))completionBlock
+-(void)showInView:(UIView*)containerView withText:(NSString*)txt withCompletionBlock:(void (^) (BOOL finished))completionBlock
 {
     self.alpha = 0.0;
     self.transform = CGAffineTransformMakeScale(0.1, 0.1);
@@ -44,11 +44,7 @@
             self.transform = CGAffineTransformMakeScale(1.4, 1.4);
             self.alpha = 0.0;
         
-        } completion:^(BOOL finished){
-        
-            [self removeFromSuperview];
-        
-        }];
+        } completion:completionBlock];
     }];
     
     

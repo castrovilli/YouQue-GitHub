@@ -68,9 +68,9 @@
     
     
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
+    UIImage *buttonImage = [[UIImage imageNamed:[[TemplateConfiguration sharedInstance] valueForKey:MAIN_MENU_BUTTON_NORMAL_IMAGE_KEY]]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:[[TemplateConfiguration sharedInstance] valueForKey:MAIN_MENU_BUTTON_HIGHLIGHTED_IMAGE_KEY]]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     
     [howToBtn setBackgroundImage:buttonImage forState:UIControlStateNormal]

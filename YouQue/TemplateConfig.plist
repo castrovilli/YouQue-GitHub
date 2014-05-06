@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>strawbery-image</key>
+	<string>strawberryicon50x50.png</string>
+	<key>orange-image</key>
+	<string>Orange50x50.png</string>
+	<key>watermelon-image</key>
+	<string>Watermelonicon50x50.png</string>
+	<key>blueberry-image</key>
+	<string>blueberrycoloricon50x50.png</string>
+	<key>apple-image</key>
+	<string>Apple50x50.png</string>
+	<key>background-image</key>
+	<string>background.jpg</string>
+	<key>undo-image</key>
+	<string>undo2.png</string>
+	<key>pause-image</key>
+	<string>pause.png</string>
+	<key>empty-cell-image</key>
+	<string>emptyCell-wooden.png</string>
+	<key>target-image</key>
+	<string>targetred200x200.png</string>
+	<key>progressPie-fill-image</key>
+	<string>Watermelon-fill.png</string>
+	<key>progressPie-back-image</key>
+	<string>emptyCell-wooden.png</string>
+	<key>main-menu-button-image-noraml</key>
+	<string>greyButton.png</string>
+	<key>main-menu-button-image-highlighted</key>
+	<string>greyButtonHighlight.png</string>
+	<key>googleAnalytics-tracker-id</key>
+	<string>UA-50016663-1</string>
+	<key>RevMob-App-id</key>
+	<string>53588cadd63ee9c01fe876de</string>
+</dict>
+</plist>

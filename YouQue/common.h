@@ -5,7 +5,7 @@
 //  Created by Mohammed Eldehairy on 4/28/14.
 //  Copyright (c) 2014 Mohammed Eldehairy. All rights reserved.
 //
-
+#import "TemplateConfiguration.h"
 #ifndef YouQue_common_h
 #define YouQue_common_h
 

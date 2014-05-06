@@ -25,12 +25,12 @@
     self = [super init];
     if(self)
     {
-        _strawberryImg = [SKTexture textureWithImageNamed:@"strawberryicon50x50.png"];
-        _blueberryImg = [SKTexture textureWithImageNamed:@"blueberrycoloricon50x50.png"];
-        _watermelonImg = [SKTexture textureWithImageNamed:@"Watermelonicon50x50.png"];
-        _appleImg = [SKTexture textureWithImageNamed:@"Apple50x50.png"];
-        _orangeImg = [SKTexture textureWithImageNamed:@"Orange50x50.png"];
-        _emptyImg = [SKTexture textureWithImageNamed:@"emptyCell-wooden.png"];
+        _strawberryImg = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:STRAWBERRY_IMAGE_KEY]];
+        _blueberryImg = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:BLUEBERRY_IMAGE_KEY]];
+        _watermelonImg = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:WATERMELON_IMAGE_KEY]];
+        _appleImg = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:APPLE_IMAGE_KEY]];
+        _orangeImg = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:ORANGE_IMAGE_KEY]];
+        _emptyImg = [SKTexture textureWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:EMPTY_CELL_IMAGE_KEY]];
         
         
        /* _strawberryImg_blur = [SKTexture textureWithImageNamed:@"strawberryicon50x50-blur.png"];
