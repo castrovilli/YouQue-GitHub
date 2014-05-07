@@ -14,14 +14,7 @@
 {
     [super viewDidLoad];
 
-    BOOL loadedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:APP_LOADED_BEFORE_KEY];
     
-    if(!loadedBefore)
-    {
-        [self howToAction:nil];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:APP_LOADED_BEFORE_KEY];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
     
     
      self.screenName = @"Game View";
@@ -111,6 +104,16 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeAds) name:PURCHASE_SUCCEEDED_NOTIFICATION object:nil];
         
         [self loadNewAd];
+    }
+    
+    
+    BOOL loadedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:APP_LOADED_BEFORE_KEY];
+    
+    if(!loadedBefore)
+    {
+        [self howToAction:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:APP_LOADED_BEFORE_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
