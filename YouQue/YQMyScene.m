@@ -57,10 +57,18 @@
         undoBtn.zPosition = 1000;
         [self addChild:undoBtn];
         
+        
+        SKCropNode *cropNode = [[SKCropNode alloc] init];
+        cropNode.position = CGPointMake(CGRectGetMidX(self.frame), 515);
+        [self addChild:cropNode];
+        
         ScoreBoard = [[SKLabelNode alloc] init];
-        ScoreBoard.position = CGPointMake(CGRectGetMidX(self.frame), 515);
         ScoreBoard.fontColor = [UIColor blackColor];
-        [self addChild:ScoreBoard];
+        [cropNode addChild:ScoreBoard];
+        
+        SKSpriteNode *maskNode = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(200, 50)];
+        cropNode.maskNode = maskNode;
+        
         
         quitBtn = [SKSpriteNode spriteNodeWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PAUSE_IMAGE_KEY]];
         quitBtn.size = CGSizeMake(40, 40);
@@ -69,12 +77,17 @@
         quitBtn.zPosition = 1000;
         [self addChild:quitBtn];
         
+        SKCropNode *personalHighcropNode = [[SKCropNode alloc] init];
+        personalHighcropNode.position = CGPointMake(CGRectGetMidX(self.frame), 490);
+        [self addChild:personalHighcropNode];
         
         personalHighScoreLbl = [[SKLabelNode alloc] init];
-        personalHighScoreLbl.position = CGPointMake(CGRectGetMidX(self.frame), 490);
         personalHighScoreLbl.fontSize = 15;
         personalHighScoreLbl.fontColor = [UIColor blackColor];
-        [self addChild:personalHighScoreLbl];
+        [personalHighcropNode addChild:personalHighScoreLbl];
+        
+        SKSpriteNode *personalHighmaskNode = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(180, 50)];
+        personalHighcropNode.maskNode = personalHighmaskNode;
         
         quitTransition = [SKTransition moveInWithDirection:SKTransitionDirectionLeft duration:0.5];
         

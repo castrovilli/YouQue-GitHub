@@ -400,7 +400,7 @@
     EAIntroPage *page3 = [EAIntroPage page];
     page3.title = @"Moving fruits";
     page3.titleFont = [UIFont boldSystemFontOfSize:22];
-    
+     
     UIImageView *icon3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
     icon3.contentMode = UIViewContentModeScaleAspectFit;
     icon3.image = [UIImage imageNamed:@"new cells.png"];
