@@ -45,6 +45,7 @@ typedef enum
      UIButton *removeAdsBtn;
     
     MDPaymentTransactionObserver *paymentObserver;
+    
 }
 @property(nonatomic)currentScene currentSceneType;
 @property(nonatomic,retain)NSArray *appStoreProducts;
