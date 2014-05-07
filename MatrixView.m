@@ -32,6 +32,8 @@
         
         //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AppDidResignActive) name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
         
+        //self.color = [UIColor colorWithRed:(75.0f/255.0) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];
+        
         playLevelCompletionSound = [SKAction playSoundFileNamed:@"Ta Da.wav" waitForCompletion:NO];
         
         IsGameResumed = resumed;

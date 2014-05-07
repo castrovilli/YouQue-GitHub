@@ -17,6 +17,7 @@
 #define PRODUCT_ID @"YouQueRemoveAds"
 #import "GAITrackedViewController.h"
 #import "EAIntroView.h"
+#define APP_LOADED_BEFORE_KEY @"app first load"
 typedef enum
 {
     currentSceneGame = 1,
@@ -29,7 +30,7 @@ typedef enum
     YQMainMenu * MainMenuScene;
     YQMyScene *gameScene;
     
-    currentScene currentSceneType;
+    
     
     
     SKTransition *FromRighttransition;
@@ -45,6 +46,7 @@ typedef enum
     
     MDPaymentTransactionObserver *paymentObserver;
 }
+@property(nonatomic)currentScene currentSceneType;
 @property(nonatomic,retain)NSArray *appStoreProducts;
 -(IBAction)newGame:(id)sender;
 -(IBAction)GameCenterAction:(id)sender;

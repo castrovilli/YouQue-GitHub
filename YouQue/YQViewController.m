@@ -14,6 +14,16 @@
 {
     [super viewDidLoad];
 
+    BOOL loadedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:APP_LOADED_BEFORE_KEY];
+    
+    if(!loadedBefore)
+    {
+        [self howToAction:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:APP_LOADED_BEFORE_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    
      self.screenName = @"Game View";
     [TSMessage setDefaultViewController:self];
     
@@ -162,8 +172,8 @@
 }
 -(void)setLastScene:(currentScene)lastScene
 {
-    [[NSUserDefaults standardUserDefaults] setInteger:lastScene forKey:@"lastScene"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    _currentSceneType = lastScene;
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -332,7 +342,7 @@
     
      [self setLastScene:currentSceneGame];
     
-    currentSceneType = currentSceneGame;
+   // currentSceneType = currentSceneGame;
     
     if(!animated)
     {
@@ -357,7 +367,12 @@
     // basic
     EAIntroPage *page1 = [EAIntroPage page];
     page1.title = @"Game Objective";
-    page1.desc = @"The objective is to clear out rows of 4 or more cells with the same colour either vertically ,horizontally ,or diagonally to gain points.";
+    UIImageView *icon1 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+    icon1.image = [UIImage imageNamed:@"objective.png"];
+    page1.titleIconView = icon1;
+    
+    page1.titleFont = [UIFont boldSystemFontOfSize:22];
+    page1.desc = @"The objective is to clear out rows of 4 or more cells with the same type either vertically ,horizontally ,or diagonally to gain points.";
     page1.descColor = [UIColor whiteColor];
     page1.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
     page1.descPositionY = 180;
@@ -366,35 +381,49 @@
     // custom
     EAIntroPage *page2 = [EAIntroPage page];
     page2.title = @"Moving fruits";
-   // page2.titleFont = [UIFont fontWithName:@"Georgia-BoldItalic" size:20];
+    
+    UIImageView *icon2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+    icon2.image = [UIImage imageNamed:@"movingcells.png"];
+    page2.titleIconView = icon2;
+    
     page2.titlePositionY = 225;
-    page2.desc = @"To move a cell around ,select it until it jiggles,Then select an unoccupied place ,Or you can simply drag it around the board ,The catch is that the path must be clear ,And cells can't move diagonally.";
+    page2.desc = @"To move a cell around ,select it until it jiggles,Then select an unoccupied place ,Or you can simply drag it around the board ,The catch is that the path must be clear , And cells can't move diagonally.";
     page2.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
     page2.descPositionY = 200;
-    page2.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title2"]];
-    page2.titleIconPositionY = 150;
     page2.descColor = [UIColor whiteColor];
     
     // custom view from nib
     EAIntroPage *page3 = [EAIntroPage page];
     page3.title = @"Moving fruits";
-    page3.desc = @"Every time you move a cell , new cells are added ,And the cells to be added next are shown at the top, Except when your move completes rows of 4 or more cells of same fruit, no new cells are added .";
+    
+    UIImageView *icon3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+    icon3.contentMode = UIViewContentModeScaleAspectFit;
+    icon3.image = [UIImage imageNamed:@"new cells.png"];
+    page3.titleIconView = icon3;
+    
+    page3.desc = @"Every time you move a cell , new cells are added , And the cells to be added next are shown at the top, Except when your move completes rows of 4 or more cells of same fruit, no new cells are added .";
     page3.descColor = [UIColor whiteColor];
     page3.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
     page3.descPositionY = 200;
     page3.titlePositionY = 220;
     
     EAIntroPage *page4 = [EAIntroPage page];
+    
+    UIImageView *icon4 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+    icon4.contentMode = UIViewContentModeScaleAspectFit;
+    icon4.image = [UIImage imageNamed:@"undo tut.png"];
+    page4.titleIconView = icon4;
+    
     page4.title = @"Undo";
     page4.desc = @"You can undo any move by pressing the undo button on the top right corner .";
     page4.descColor = [UIColor whiteColor];
     page4.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
-    page4.descPositionY = 120;
-    page4.titlePositionY = 140;
+    page4.descPositionY = 200;
+    page4.titlePositionY = 220;
     
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
-    //intro.bgImage = [UIImage imageNamed:@"background.jpg"];
-    intro.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8];
+    intro.bgImage = [UIImage imageNamed:@"tutorialBackground.png"];
+    //intro.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8];
     [intro showInView:self.view animateDuration:0.2];
 }
 -(void)quitGameScene

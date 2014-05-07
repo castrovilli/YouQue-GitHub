@@ -48,6 +48,10 @@
 		6E44A4E2190CE46300E8888D /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4DE190CE46300E8888D /* greyButtonHighlight.png */; };
 		6E44A4E3190CE46300E8888D /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4DF190CE46300E8888D /* greyButtonHighlight@2x.png */; };
 		6E5F1976190F94660013F9D7 /* RemovedRowEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F1975190F94660013F9D7 /* RemovedRowEntity.m */; };
+		6E7AAD1C191A41570030F3A1 /* objective.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAD1B191A41570030F3A1 /* objective.png */; };
+		6E7AAD1F191A426B0030F3A1 /* movingcells.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAD1E191A426B0030F3A1 /* movingcells.png */; };
+		6E7AAD24191A4D590030F3A1 /* new cells.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAD23191A4D590030F3A1 /* new cells.png */; };
+		6E7AAD27191A4DE10030F3A1 /* undo tut.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAD26191A4DE10030F3A1 /* undo tut.png */; };
 		6E80E54A190E718B00349E38 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80E549190E718B00349E38 /* Accounts.framework */; };
 		6E80E54C190E719D00349E38 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80E54B190E719D00349E38 /* Social.framework */; };
 		6E80E54E190E71A600349E38 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80E54D190E71A600349E38 /* Security.framework */; };
@@ -147,6 +151,7 @@
 		6EAD368F1919257100EE508B /* TemplateConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD368E1919257100EE508B /* TemplateConfig.plist */; };
 		6EAD36931919270900EE508B /* TemplateConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD36921919270900EE508B /* TemplateConfiguration.m */; };
 		6ED65224190B9FB600D5D4CE /* MDBinarySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */; };
+		6EDCB075191A2F3200DC6721 /* tutorialBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCB074191A2F3200DC6721 /* tutorialBackground.png */; };
 		6EE15F5119138579004C3C5B /* TCProgressTimerForegroundCropNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */; };
 		6EE15F5219138579004C3C5B /* TCProgressTimerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE15F5019138579004C3C5B /* TCProgressTimerNode.m */; };
 		6EE15F54191386AB004C3C5B /* YQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE15F53191386AB004C3C5B /* YQViewController.xib */; };
@@ -231,6 +236,10 @@
 		6E493C9D190EAD7D00C25B0B /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		6E5F1974190F94660013F9D7 /* RemovedRowEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemovedRowEntity.h; sourceTree = "<group>"; };
 		6E5F1975190F94660013F9D7 /* RemovedRowEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemovedRowEntity.m; sourceTree = "<group>"; };
+		6E7AAD1B191A41570030F3A1 /* objective.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = objective.png; sourceTree = "<group>"; };
+		6E7AAD1E191A426B0030F3A1 /* movingcells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movingcells.png; sourceTree = "<group>"; };
+		6E7AAD23191A4D590030F3A1 /* new cells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new cells.png"; sourceTree = "<group>"; };
+		6E7AAD26191A4DE10030F3A1 /* undo tut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo tut.png"; sourceTree = "<group>"; };
 		6E80E549190E718B00349E38 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6E80E54B190E719D00349E38 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6E80E54D190E71A600349E38 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -373,6 +382,7 @@
 		6EAD36921919270900EE508B /* TemplateConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateConfiguration.m; sourceTree = "<group>"; };
 		6ED65222190B9FB600D5D4CE /* MDBinarySearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBinarySearch.h; sourceTree = "<group>"; };
 		6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBinarySearch.m; sourceTree = "<group>"; };
+		6EDCB074191A2F3200DC6721 /* tutorialBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialBackground.png; sourceTree = "<group>"; };
 		6EE15F4D19138579004C3C5B /* TCProgressTimerForegroundCropNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProgressTimerForegroundCropNode.h; sourceTree = "<group>"; };
 		6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProgressTimerForegroundCropNode.m; sourceTree = "<group>"; };
 		6EE15F4F19138579004C3C5B /* TCProgressTimerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProgressTimerNode.h; sourceTree = "<group>"; };
@@ -589,6 +599,30 @@
 			name = RemovedRowEntity;
 			sourceTree = "<group>";
 		};
+		6E7AAD1D191A42590030F3A1 /* moving cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAD1E191A426B0030F3A1 /* movingcells.png */,
+			);
+			name = "moving cells";
+			sourceTree = "<group>";
+		};
+		6E7AAD20191A4C3E0030F3A1 /* new cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAD23191A4D590030F3A1 /* new cells.png */,
+			);
+			name = "new cells";
+			sourceTree = "<group>";
+		};
+		6E7AAD25191A4DD10030F3A1 /* undo tut */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAD26191A4DE10030F3A1 /* undo tut.png */,
+			);
+			name = "undo tut";
+			sourceTree = "<group>";
+		};
 		6E80E572190E72F600349E38 /* StartApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,6 +768,7 @@
 		6E9601F1190B9366008E972A /* UI Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EDCB073191A2F2000DC6721 /* tutorial */,
 				6EEF85C31915380600EC1973 /* emptyCell-wooden.png */,
 				6E15B21E1913B5FD004F59F5 /* tagret image */,
 				6EE15F55191387A5004C3C5B /* Progress */,
@@ -1100,6 +1135,26 @@
 			name = MDBinarySearch;
 			sourceTree = "<group>";
 		};
+		6EDCB073191A2F2000DC6721 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAD25191A4DD10030F3A1 /* undo tut */,
+				6E7AAD20191A4C3E0030F3A1 /* new cells */,
+				6E7AAD1D191A42590030F3A1 /* moving cells */,
+				6EDCB076191A3A1600DC6721 /* objective */,
+				6EDCB074191A2F3200DC6721 /* tutorialBackground.png */,
+			);
+			name = tutorial;
+			sourceTree = "<group>";
+		};
+		6EDCB076191A3A1600DC6721 /* objective */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAD1B191A41570030F3A1 /* objective.png */,
+			);
+			name = objective;
+			sourceTree = "<group>";
+		};
 		6EE15F4C19138557004C3C5B /* ProgressNode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1294,6 +1349,7 @@
 				6EE15F6219139EA4004C3C5B /* green-circle60.png in Resources */,
 				6E9601D9190B893B008E972A /* NotificationBackgroundWarning@2x.png in Resources */,
 				6EFF2F4A190FDADD00FA6F6F /* cartoon natural landscape.png in Resources */,
+				6E7AAD27191A4DE10030F3A1 /* undo tut.png in Resources */,
 				6E02749A191110C700D91445 /* Watermelonicon50x50-blur@2x.png in Resources */,
 				6E9601D0190B893B008E972A /* NotificationBackgroundErrorIcon.png in Resources */,
 				6EE15F57191387D3004C3C5B /* progress_accessory.png in Resources */,
@@ -1329,6 +1385,7 @@
 				6EE15F681913A3AE004C3C5B /* orange.png in Resources */,
 				6E9AF117190B31FD00E41D73 /* Spaceship.png in Resources */,
 				6E44A4B6190CAF1F00E8888D /* icon29x29.png in Resources */,
+				6E7AAD1F191A426B0030F3A1 /* movingcells.png in Resources */,
 				6E3656271910B73300FAAA68 /* background.jpg in Resources */,
 				6E36562B1910B8F700FAAA68 /* Default-568h@2x.png in Resources */,
 				6EFF2F48190FD49100FA6F6F /* cartoon natural landscape.jpg in Resources */,
@@ -1348,6 +1405,7 @@
 				6E9601D5190B893B008E972A /* NotificationBackgroundSuccess@2x.png in Resources */,
 				6E027499191110C700D91445 /* Watermelonicon50x50-blur.png in Resources */,
 				6E960201190B93AD008E972A /* Orange50x50@2x.png in Resources */,
+				6E7AAD24191A4D590030F3A1 /* new cells.png in Resources */,
 				6E44A4CA190CC42F00E8888D /* emptyCell1.png in Resources */,
 				6E960203190B93AD008E972A /* strawberryicon50x50@2x.png in Resources */,
 				6E44A4B9190CAF1F00E8888D /* icon80x80.png in Resources */,
@@ -1357,6 +1415,8 @@
 				6E9601D2190B893B008E972A /* NotificationBackgroundMessage.png in Resources */,
 				6E9601DB190B893B008E972A /* NotificationBackgroundWarningIcon@2x.png in Resources */,
 				6E9601D7190B893B008E972A /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
+				6EDCB075191A2F3200DC6721 /* tutorialBackground.png in Resources */,
+				6E7AAD1C191A41570030F3A1 /* objective.png in Resources */,
 				6E027498191110C700D91445 /* strawberryicon50x50-blur@2x.png in Resources */,
 				6EFF2F4C190FE09300FA6F6F /* cartoon natural landscape1.jpg in Resources */,
 			);

@@ -17,5 +17,5 @@
 @interface YQAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property(strong,nonatomic)YQViewController *mainViewController;
 @end
