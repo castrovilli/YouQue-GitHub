@@ -67,7 +67,7 @@
     if(NoOfClearedOutCells == 5)
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_TITLE] points:10];
-        
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -75,7 +75,7 @@
     if(NoOfClearedOutCells == 6)
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_TITLE] points:10];
-        
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -84,7 +84,7 @@
     if(NoOfClearedOutCells == 7)
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_TITLE] points:10];
-        
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         
@@ -98,6 +98,7 @@
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_TITLE] points:10];
 
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -106,7 +107,7 @@
     if(_numberOfConsecutiveRowCollection == 4)
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_TITLE] points:40];
-        
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -115,7 +116,7 @@
     if(_numberOfConsecutiveRowCollection == 6)
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_TITLE] points:60];
-        
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -126,7 +127,7 @@
     if(_numberOfConsecutiveRowCollection == 8)
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_TITLE] points:80];
-        
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -139,6 +140,7 @@
     {
         MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_10X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_10X_ACHIEVEMENT_TITLE] points:100];
     
+        acheievement.percentage = 100;
         [achievements addObject:acheievement];
         
         NSLog(@"%@",acheievement.identifier);
@@ -146,6 +148,11 @@
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
         [self shareEntity:entity];
     }
+    
+    
+   
+    
+    
     
     MDAchievement *newLevelAch = [self newLevelAchievement:Newlevel oldLevel:oldLevel];
     
@@ -161,11 +168,61 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:FRUITS5_ACHIEVEMENT object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:achievements,ACHIEVEMENTS_INFO_KEY, nil]];
     }
     
+    [self reportYouQueAchievementsWithNumberOfClearedOutCells:_numberOfClearedOutCells];
    
+}
+-(void)reportYouQueAchievementsWithNumberOfClearedOutCells:(int)number
+{
+    NSMutableArray *achievements = [NSMutableArray array];
+    
+    if(_numberOfClearedOutCells <= 1000)
+    {
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_BEGINNER_ACHIEVEMENT_ID];
+        
+        acheievement.percentComplete = _numberOfClearedOutCells / 1000;
+        acheievement.percentComplete *= 100;
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
+        
+        
+    }else if (_numberOfClearedOutCells <= 10000)
+    {
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_INTERMEDIATE_ACHIEVEMENT_ID];
+        
+        acheievement.percentComplete = _numberOfClearedOutCells / 10000;
+        acheievement.percentComplete *= 100;
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
+        
+    }else if (_numberOfClearedOutCells <= 100000)
+    {
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_MASTER_ACHIEVEMENT_ID];
+        
+        acheievement.percentComplete = _numberOfClearedOutCells / 100000;
+        acheievement.percentComplete *= 100;
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
+    }else
+    {
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_HARDCORE_ACHIEVEMENT_ID];
+        
+        acheievement.percentComplete = _numberOfClearedOutCells / 1000000;
+        acheievement.percentComplete *= 100;
+        [achievements addObject:acheievement];
+        
+        NSLog(@"%@",acheievement.identifier);
+    }
+    
+    [self reportAChievementsToGameCenter:achievements];
+    
+
 }
 -(void)shareEntity:(ShareEntity*)entity
 {
-    //[[FaceBookManager sharedInstance] share:entity];
+    
 }
 -(void)notifyDelegateWithNewPoints:(int)points
 {
@@ -210,9 +267,13 @@
     for(MDAchievement *ach in achievements)
     {
         GKAchievement *GkAch = [[GKAchievement alloc] initWithIdentifier:ach.identifier];
-        GkAch.percentComplete = 100;
+        GkAch.percentComplete = ach.percentage;
         [GKAchievements addObject:GkAch];
     }
+    [self reportAChievementsToGameCenter:GKAchievements];
+}
+-(void)reportAChievementsToGameCenter:(NSArray*)GKAchievements
+{
     [GKAchievement reportAchievements: GKAchievements withCompletionHandler:^(NSError *error)
      {
          if (error != nil)
@@ -221,7 +282,6 @@
          }
      }];
 }
-
 -(void)shareAchievements:(NSArray*)achievements
 {
     for(GKAchievement *ach in achievements)

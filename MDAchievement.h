@@ -13,4 +13,5 @@
 @property(nonatomic,retain,readonly)NSString *identifier;
 @property(nonatomic,retain,readonly)NSString *title;
 @property(nonatomic,readonly)int points;
+@property(nonatomic)CGFloat percentage;
 @end

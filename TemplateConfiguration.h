@@ -45,6 +45,18 @@
 #define LEVEL_3_REACHED_ACHIEVEMENT_TITLE @"level3Reached-achievement-title"
 #define LEVEL_4_REACHED_ACHIEVEMENT_ID @"level4Reached-achievement-id"
 #define LEVEL_4_REACHED_ACHIEVEMENT_TITLE @"level4Reached-achievement-title"
+
+#define YOUQUE_BEGINNER_ACHIEVEMENT_ID @"YouQueBeginner-achievement-id"
+#define YOUQUE_BEGINNER_ACHIEVEMENT_TITLE @"YouQueBeginner-achievement-title"
+
+#define YOUQUE_INTERMEDIATE_ACHIEVEMENT_ID @"YouQueIntermediate-achievement-id"
+#define YOUQUE_INTERMEDIATE_ACHIEVEMENT_TITLE @"YouQueIntermediate-achievement-title"
+
+#define YOUQUE_MASTER_ACHIEVEMENT_ID @"YouQueMaster-achievement-id"
+#define YOUQUE_MASTER_ACHIEVEMENT_TITLE @"YouQueMaster-achievement-title"
+
+#define YOUQUE_HARDCORE_ACHIEVEMENT_ID @"YouQueHardcore-achievement-id"
+#define YOUQUE_HARDCORE_ACHIEVEMENT_TITLE @"YouQueHardcore-achievement-title"
 @interface TemplateConfiguration : NSObject
 {
     NSDictionary *configDictionary;

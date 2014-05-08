@@ -78,5 +78,21 @@
 	<string>level4</string>
 	<key>level4Reached-achievement-title</key>
 	<string>Level4</string>
+	<key>YouQueBeginner-achievement-id</key>
+	<string>YouQueBeginner</string>
+	<key>YouQueBeginner-achievement-title</key>
+	<string>YouQue Beginner</string>
+	<key>YouQueIntermediate-achievement-id</key>
+	<string>YouQueIntermediate</string>
+	<key>YouQueIntermediate-achievement-title</key>
+	<string>YouQue Intermediate</string>
+	<key>YouQueMaster-achievement-id</key>
+	<string>YouQueMaster</string>
+	<key>YouQueMaster-achievement-title</key>
+	<string>YouQue Master</string>
+	<key>YouQueHardcore-achievement-id</key>
+	<string>YouQueHardcore</string>
+	<key>YouQueHardcore-achievement-title</key>
+	<string>YouQue Hardcore</string>
 </dict>
 </plist>
