@@ -19,6 +19,8 @@
 @property(nonatomic,weak)id<AchievementsStateDelegate> delegate;
 
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel;
+-(void)resetCounter;
+-(void)reportYouQueAchievements;
 @end
 @protocol AchievementsStateDelegate <NSObject>
 

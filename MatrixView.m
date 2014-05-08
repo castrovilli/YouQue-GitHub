@@ -146,6 +146,7 @@
     _UndoBtn.enabled = NO;
     [gameController.currentGame.score ResetScore];
     [gameController.currentGame.graph ResetGraph];
+    [gameController.currentGame.achievementsState resetCounter];
     [self ReloadWithSize:gameController.currentGame.graph.size gameResumed:NO];
 }
 //**********************MATRIX RELOAD WITH CELLS ***************************************************
@@ -787,10 +788,6 @@
                           handler:^(SIAlertView *alert) {
                               
                               [self ReloadNewGame];
-                              if([_delegate respondsToSelector:@selector(GameOver)])
-                              {
-                                  [_delegate GameOver];
-                              }
                               
                           }];
     
@@ -801,10 +798,6 @@
                               if([_delegate respondsToSelector:@selector(MatrixViewQuit:)])
                               {
                                   [_delegate MatrixViewQuit:self];
-                              }
-                              if([_delegate respondsToSelector:@selector(GameOver)])
-                              {
-                                  [_delegate GameOver];
                               }
                           }];
     

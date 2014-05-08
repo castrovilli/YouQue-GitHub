@@ -201,6 +201,10 @@
         removeAdsBtn.enabled = NO;
     }
     
+    [self updateResumeBtnEnabled];
+}
+-(void)updateResumeBtnEnabled
+{
     GameEntity *ResumedGame = [PersistentStore getLastGame];
     if(!ResumedGame)
     {
@@ -437,8 +441,8 @@
 }
 -(void)presentMenuSceneAnimated:(BOOL)animated
 {
-     [self setLastScene:currentSceneMenu];
-    
+    [self setLastScene:currentSceneMenu];
+    [self updateResumeBtnEnabled];
     
     
     if(!animated)

@@ -142,6 +142,9 @@
 }
 -(void)ReportScoreToGameCenter
 {
+    
+    [_currentGame.achievementsState reportYouQueAchievements];
+    
     GKScore *scoreReporter = [[GKScore alloc] initWithLeaderboardIdentifier:@"YouQueMainLeaderboard"];
     scoreReporter.value = _currentGame.score.score;
     scoreReporter.context = 0;

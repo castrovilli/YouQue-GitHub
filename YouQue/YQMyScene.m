@@ -292,11 +292,6 @@
 - (BOOL)hasFourInchDisplay {
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);
 }
--(void)GameOver
-{
-    //[interstitial_ presentFromRootViewController:self];
-    
-}
 -(void)newScore:(int)score delta:(int)deltaScore
 {
     ScoreBoard.text = [NSString stringWithFormat:@"%d",score];
@@ -314,7 +309,7 @@
 }
 -(void)MatrixViewQuit:(MatrixView *)matrixView
 {
-    //[self.navigationController popViewControllerAnimated:YES];
+    [self.viewController quitGameScene];
 }
 -(void)AddNextCellsWithGraphCells:(NSArray *)GCells
 {

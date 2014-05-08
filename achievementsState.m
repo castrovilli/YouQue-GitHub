@@ -50,6 +50,11 @@
     }
     return copy;
 }
+-(void)resetCounter
+{
+    _numberOfClearedOutCells = 0;
+    _numberOfConsecutiveRowCollection = 0;
+}
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel
 {
     
@@ -168,52 +173,52 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:FRUITS5_ACHIEVEMENT object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:achievements,ACHIEVEMENTS_INFO_KEY, nil]];
     }
     
-    [self reportYouQueAchievementsWithNumberOfClearedOutCells:_numberOfClearedOutCells];
+    
    
 }
--(void)reportYouQueAchievementsWithNumberOfClearedOutCells:(int)number
+-(void)reportYouQueAchievements
 {
     NSMutableArray *achievements = [NSMutableArray array];
     
-    if(_numberOfClearedOutCells <= 1000)
+    
+    GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_BEGINNER_ACHIEVEMENT_ID]];
+    
+    acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 1000;
+    [achievements addObject:acheievement];
+    
+    NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 1000);
+    
+    
+
+    if (_numberOfClearedOutCells > 1000)
     {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_BEGINNER_ACHIEVEMENT_ID];
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_INTERMEDIATE_ACHIEVEMENT_ID]];
         
-        acheievement.percentComplete = _numberOfClearedOutCells / 1000;
-        acheievement.percentComplete *= 100;
+        acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 10000;
         [achievements addObject:acheievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 10000);
         
-        
-    }else if (_numberOfClearedOutCells <= 10000)
+    }
+    
+    if (_numberOfClearedOutCells > 10000)
     {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_INTERMEDIATE_ACHIEVEMENT_ID];
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_MASTER_ACHIEVEMENT_ID]];
         
-        acheievement.percentComplete = _numberOfClearedOutCells / 10000;
-        acheievement.percentComplete *= 100;
+        acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 100000;
         [achievements addObject:acheievement];
         
-        NSLog(@"%@",acheievement.identifier);
-        
-    }else if (_numberOfClearedOutCells <= 100000)
+        NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 100000);
+    }
+    
+    if (_numberOfClearedOutCells > 100000)
     {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_MASTER_ACHIEVEMENT_ID];
+        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_HARDCORE_ACHIEVEMENT_ID]];
         
-        acheievement.percentComplete = _numberOfClearedOutCells / 100000;
-        acheievement.percentComplete *= 100;
+        acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 1000000;
         [achievements addObject:acheievement];
         
-        NSLog(@"%@",acheievement.identifier);
-    }else
-    {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:YOUQUE_HARDCORE_ACHIEVEMENT_ID];
-        
-        acheievement.percentComplete = _numberOfClearedOutCells / 1000000;
-        acheievement.percentComplete *= 100;
-        [achievements addObject:acheievement];
-        
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 1000000);
     }
     
     [self reportAChievementsToGameCenter:achievements];
