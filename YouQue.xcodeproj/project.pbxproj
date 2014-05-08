@@ -25,6 +25,7 @@
 		6E3656291910B89900FAAA68 /* background640x1136.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E3656281910B89900FAAA68 /* background640x1136.jpg */; };
 		6E36562B1910B8F700FAAA68 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E36562A1910B8F700FAAA68 /* Default-568h@2x.png */; };
 		6E36562D1910B95400FAAA68 /* splash640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E36562C1910B95400FAAA68 /* splash640x960.png */; };
+		6E408DCB191BA0740092A222 /* magic_spell_trick_sound_002.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E408DCA191BA0740092A222 /* magic_spell_trick_sound_002.wav */; };
 		6E44A4A8190CA5DE00E8888D /* undo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4A7190CA5DE00E8888D /* undo2.png */; };
 		6E44A4AC190CAA1B00E8888D /* SKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E44A4AB190CAA1B00E8888D /* SKButton.m */; };
 		6E44A4AE190CAE1500E8888D /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E44A4AD190CAE1500E8888D /* pause.png */; };
@@ -207,6 +208,7 @@
 		6E3656281910B89900FAAA68 /* background640x1136.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background640x1136.jpg; sourceTree = "<group>"; };
 		6E36562A1910B8F700FAAA68 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E36562C1910B95400FAAA68 /* splash640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash640x960.png; sourceTree = "<group>"; };
+		6E408DCA191BA0740092A222 /* magic_spell_trick_sound_002.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = magic_spell_trick_sound_002.wav; sourceTree = "<group>"; };
 		6E44A4A7190CA5DE00E8888D /* undo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo2.png; sourceTree = "<group>"; };
 		6E44A4AA190CAA1B00E8888D /* SKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKButton.h; sourceTree = "<group>"; };
 		6E44A4AB190CAA1B00E8888D /* SKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButton.m; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 		6E44A4CD190CD05A00E8888D /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				6E408DCA191BA0740092A222 /* magic_spell_trick_sound_002.wav */,
 				6E44A4CE190CD06F00E8888D /* Ta Da.wav */,
 			);
 			name = sounds;
@@ -1377,6 +1380,7 @@
 				6EE15F641913A147004C3C5B /* green-circle.png in Resources */,
 				6E9601FD190B93AD008E972A /* Apple50x50@2x.png in Resources */,
 				6E44A4BA190CAF1F00E8888D /* icon114x114.png in Resources */,
+				6E408DCB191BA0740092A222 /* magic_spell_trick_sound_002.wav in Resources */,
 				6E2F2E4C190D8C59006DD825 /* Watermelon-icon.png in Resources */,
 				6E027497191110C700D91445 /* strawberryicon50x50-blur.png in Resources */,
 				6E9AF119190B31FD00E41D73 /* Images.xcassets in Resources */,

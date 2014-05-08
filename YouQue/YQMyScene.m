@@ -172,7 +172,7 @@
         progressView.pieBackgroundColor = [UIColor lightGrayColor];*/
         
 
-        
+        playAhievementSoundAction = [SKAction playSoundFileNamed:@"magic_spell_trick_sound_002.wav" waitForCompletion:NO];
         
         [self updateHighScoreLabel];
         firstLoad = YES;
@@ -183,6 +183,10 @@
 {
     NSArray *achievements = [notification.userInfo objectForKey:ACHIEVEMENTS_INFO_KEY];
     
+    if(achievements.count>0)
+    {
+        [self runAction:playAhievementSoundAction];
+    }
     [self showAchievements:achievements currentIndex:0];
 }
 -(void)showAchievements:(NSArray*)achievements currentIndex:(int)index
@@ -196,7 +200,7 @@
     
     if(!achievementsPopUpView)
     {
-        achievementsPopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-100)/2, 60, 200, 100) withTextColor:[UIColor purpleColor] withFontSize:25];
+        achievementsPopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-300)/2, 50, 300, 100) withTextColor:[UIColor redColor] withFontSize:50];
     }
     
     [achievementsPopUpView showInView:self.view withText:ach.title withCompletionBlock:^(BOOL finished){
@@ -206,6 +210,16 @@
         
     }];
 }
+- (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
+{
+    [TSMessage showNotificationInViewController:self.viewController title:title subtitle:msg type:TSMessageNotificationTypeError];
+}
+- (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
+{
+    [TSMessage showNotificationInViewController:self.viewController title:title subtitle:msg type:TSMessageNotificationTypeSuccess];
+    
+}
+
 -(void)highScoreUpdated
 {
     [self updateHighScoreLabel];
@@ -299,10 +313,10 @@
     {
         scorePopUpView = [[MDpopUpView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width-100)/2, 10, 300, 100) withTextColor:[UIColor greenColor] withFontSize:60];
     }
-    if(deltaScore > 12)
+   /* if(deltaScore > 12)
     {
         [scorePopUpView showInView:self.view withText:[NSString stringWithFormat:@"+ %d",deltaScore] withCompletionBlock:nil];
-    }
+    }*/
     
     
     

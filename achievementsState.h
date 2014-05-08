@@ -14,6 +14,32 @@
 @protocol AchievementsStateDelegate;
 @interface achievementsState : NSObject <NSCoding,NSCopying>
 {
+    MDAchievement *fruits5Achievement;
+    MDAchievement *fruits6Achievement;
+    MDAchievement *fruits7Achievement;
+    
+    MDAchievement *Combo2xAchievement;
+    MDAchievement *Combo4xAchievement;
+    MDAchievement *Combo6xAchievement;
+    MDAchievement *Combo8xAchievement;
+    MDAchievement *Combo10xAchievement;
+    
+    MDAchievement *level2Achievement;
+    MDAchievement *level3Achievement;
+    MDAchievement *level4Achievement;
+    
+    
+    
+    
+    ShareEntity *fruits5ShareEntity;
+    ShareEntity *fruits6ShareEntity;
+    ShareEntity *fruits7ShareEntity;
+    
+    ShareEntity *combo2xShareEntity;
+    ShareEntity *combo4xShareEntity;
+    ShareEntity *combo6xShareEntity;
+    ShareEntity *combo8xShareEntity;
+    ShareEntity *combo10xShareEntity;
     
 }
 @property(nonatomic,weak)id<AchievementsStateDelegate> delegate;

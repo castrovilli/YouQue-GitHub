@@ -260,16 +260,12 @@
 - (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
  
-    [TSMessage showNotificationWithTitle:title
-                                subtitle:msg
-                                    type:TSMessageNotificationTypeError];
+    [self.delegate showBannerWithMessage:msg withTitle:title];
 }
 - (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
     
-    [TSMessage showNotificationWithTitle:title
-                                subtitle:msg
-                                    type:TSMessageNotificationTypeSuccess];
+    [self.delegate showNormalBannerWithMessage:msg withTitle:title];
 }
 
 

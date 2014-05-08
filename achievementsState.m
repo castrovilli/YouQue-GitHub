@@ -21,9 +21,12 @@
     {
         self.numberOfClearedOutCells = 0;
         self.numberOfConsecutiveRowCollection = 0;
+        [self initializeAchievementsAndShareEntities];
+        
     }
     return self;
 }
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
@@ -31,6 +34,11 @@
     {
         self.numberOfClearedOutCells = ((NSNumber*)[aDecoder decodeObjectForKey:@"numberOfClearedOutCells"]).integerValue;
         self.numberOfConsecutiveRowCollection = ((NSNumber*)[aDecoder decodeObjectForKey:@"numberOfConsecutiveRowCollection"]).integerValue;
+        
+        
+        
+       [self initializeAchievementsAndShareEntities];
+        
     }
     return self;
 }
@@ -50,6 +58,53 @@
     }
     return copy;
 }
+
+-(void)initializeAchievementsAndShareEntities
+{
+    fruits5Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_TITLE] points:10];
+    fruits5Achievement.percentage = 100;
+    
+    fruits6Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_TITLE] points:10];
+    fruits6Achievement.percentage = 100;
+    
+    fruits7Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_TITLE] points:10];
+    fruits7Achievement.percentage = 100;
+    
+    Combo2xAchievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_TITLE] points:10];
+    Combo2xAchievement.percentage = 100;
+    
+    Combo4xAchievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_TITLE] points:40];
+    Combo4xAchievement.percentage = 100;
+    
+    Combo6xAchievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_TITLE] points:60];
+    Combo6xAchievement.percentage = 100;
+    
+    Combo8xAchievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_TITLE] points:80];
+    Combo8xAchievement.percentage = 100;
+    
+    Combo10xAchievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_10X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_10X_ACHIEVEMENT_TITLE] points:100];
+    Combo10xAchievement.percentage = 100;
+    
+    level2Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_2_REACHED_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_2_REACHED_ACHIEVEMENT_TITLE] points:100];
+    level2Achievement.percentage = 100;
+    
+    level3Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_3_REACHED_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_3_REACHED_ACHIEVEMENT_TITLE] points:100];
+    level3Achievement.percentage = 100;
+    
+    level4Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_TITLE] points:100];
+    level4Achievement.percentage = 100;
+    
+    
+    
+    combo4xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 4x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+    
+    combo6xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 6x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+    
+    combo8xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 8x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+    
+    combo10xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+}
+
 -(void)resetCounter
 {
     _numberOfClearedOutCells = 0;
@@ -71,87 +126,69 @@
     NSMutableArray *achievements = [NSMutableArray array];
     if(NoOfClearedOutCells == 5)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_TITLE] points:10];
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:fruits5Achievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",fruits5Achievement.identifier);
     }
     if(NoOfClearedOutCells == 6)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_6_ACHIEVEMENT_TITLE] points:10];
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:fruits6Achievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",fruits6Achievement.identifier);
     }
     
     if(NoOfClearedOutCells == 7)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_7_ACHIEVEMENT_TITLE] points:10];
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:fruits7Achievement];
         
         
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",fruits7Achievement.identifier);
         ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
         [self shareEntity:entity];
     }
     
     if(_numberOfConsecutiveRowCollection == 2)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_2X_ACHIEVEMENT_TITLE] points:10];
-
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:Combo2xAchievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",Combo2xAchievement.identifier);
     }
     
     if(_numberOfConsecutiveRowCollection == 4)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_4X_ACHIEVEMENT_TITLE] points:40];
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:Combo4xAchievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",Combo4xAchievement.identifier);
+        
+        [self shareEntity:combo4xShareEntity];
     }
     
     if(_numberOfConsecutiveRowCollection == 6)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_6X_ACHIEVEMENT_TITLE] points:60];
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:Combo6xAchievement];
         
-        NSLog(@"%@",acheievement.identifier);
-        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 6x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [self shareEntity:entity];
+        NSLog(@"%@",Combo6xAchievement.identifier);
+
+        [self shareEntity:combo6xShareEntity];
     }
     
     if(_numberOfConsecutiveRowCollection == 8)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_8X_ACHIEVEMENT_TITLE] points:80];
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:Combo8xAchievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",Combo8xAchievement.identifier);
         
-        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 8x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [self shareEntity:entity];
+        [self shareEntity:combo8xShareEntity];
     }
     
     if(_numberOfConsecutiveRowCollection == 10)
     {
-        MDAchievement *acheievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_10X_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:COMBO_10X_ACHIEVEMENT_TITLE] points:100];
-    
-        acheievement.percentage = 100;
-        [achievements addObject:acheievement];
+        [achievements addObject:Combo10xAchievement];
         
-        NSLog(@"%@",acheievement.identifier);
+        NSLog(@"%@",Combo10xAchievement.identifier);
         
-        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [self shareEntity:entity];
+        [self shareEntity:combo10xShareEntity];
     }
     
     
@@ -178,7 +215,7 @@
 }
 -(void)reportYouQueAchievements
 {
-    NSMutableArray *achievements = [NSMutableArray array];
+   /* NSMutableArray *achievements = [NSMutableArray array];
     
     
     GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_BEGINNER_ACHIEVEMENT_ID]];
@@ -221,13 +258,13 @@
         NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 1000000);
     }
     
-    [self reportAChievementsToGameCenter:achievements];
+    [self reportAChievementsToGameCenter:achievements];*/
     
 
 }
 -(void)shareEntity:(ShareEntity*)entity
 {
-    
+    [[FaceBookManager sharedInstance] share:entity];
 }
 -(void)notifyDelegateWithNewPoints:(int)points
 {
@@ -246,13 +283,13 @@
     
     if(Newlevel == 2)
     {
-        return [self achievementWitjIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_2_REACHED_ACHIEVEMENT_ID] withPercentage:100.0 withTitle:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_2_REACHED_ACHIEVEMENT_TITLE]];
+        return level2Achievement;
     }else if(Newlevel == 3)
     {
-        return [self achievementWitjIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_3_REACHED_ACHIEVEMENT_ID] withPercentage:100.0 withTitle:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_3_REACHED_ACHIEVEMENT_TITLE]];
+        return level3Achievement;
     }else if(Newlevel == 4)
     {
-        return [self achievementWitjIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_ID] withPercentage:100.0 withTitle:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_TITLE]];
+        return level4Achievement;
     }else
     {
         return nil;
@@ -271,9 +308,7 @@
     
     for(MDAchievement *ach in achievements)
     {
-        GKAchievement *GkAch = [[GKAchievement alloc] initWithIdentifier:ach.identifier];
-        GkAch.percentComplete = ach.percentage;
-        [GKAchievements addObject:GkAch];
+        [GKAchievements addObject:ach.gkAchievement];
     }
     [self reportAChievementsToGameCenter:GKAchievements];
 }

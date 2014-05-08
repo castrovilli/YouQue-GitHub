@@ -19,6 +19,7 @@
         
         lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
         lbl.textColor = color;
+        lbl.textAlignment = NSTextAlignmentCenter;
         lbl.font = [UIFont boldSystemFontOfSize:fontSize];
         lbl.backgroundColor = [UIColor clearColor];
         [self addSubview:lbl];

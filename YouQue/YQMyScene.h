@@ -41,6 +41,8 @@
     SKAction *matrixSlideInSequense;
     
     SKTransition *quitTransition;
+    
+    SKAction *playAhievementSoundAction;
 }
 @property(nonatomic,weak)YQViewController *viewController;
 @property(nonatomic,retain)GameEntity *ResumedGame;

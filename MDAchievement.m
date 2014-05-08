@@ -17,6 +17,8 @@
         _identifier = identifier;
         _points = points;
         _title = title;
+        
+        _gkAchievement = [[GKAchievement alloc] initWithIdentifier:_identifier];
     }
     return self;
 }

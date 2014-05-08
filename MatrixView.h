@@ -75,7 +75,9 @@ typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNum
 -(void)AddNextCellsWithGraphCells:(NSArray*)GCells;
 -(void)setProgress:(CGFloat)progress withLevelNumber:(int)levelNo;
 -(void)ResetNextAddedCells;
--(void)GameOver;
 -(void)authenticatePlayer;
 -(void)newScore:(int)score delta:(int)deltaScore;
+
+- (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title;
+- (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title;
 @end
