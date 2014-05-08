@@ -39,19 +39,40 @@
         progressView = [[TCProgressTimerNode alloc] initWithForegroundImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PROGRESS_PIE_FILL_IMAGE_KEY]
                                                             backgroundImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PROGRESS_PIE_BACKGROUND_IMAGE_KEY]
                                                              accessoryImageNamed:nil];
-        progressView.position = CGPointMake(280, 465);
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            progressView.position = CGPointMake(280, 465);
+        }else
+        {
+            progressView.position = CGPointMake(280, 365);
+        }
         [self addChild:progressView];
         [progressView setProgress:0.0f];
         
         LevelLbl = [[SKLabelNode alloc] init];
-        LevelLbl.position = CGPointMake(280, 460);
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            LevelLbl.position = CGPointMake(280, 460);
+        }else
+        {
+            LevelLbl.position = CGPointMake(280, 360);
+        }
         LevelLbl.fontColor = [UIColor yellowColor];
         LevelLbl.fontSize = 15;
         [self addChild:LevelLbl];
         
         
         undoBtn = [SKButton spriteNodeWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:UNDO_IMAGE_KEY]];
-        undoBtn.position = CGPointMake(290, 520);
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            undoBtn.position = CGPointMake(290, 520);
+        }else
+        {
+            undoBtn.position = CGPointMake(290, 420);
+        }
         undoBtn.size = CGSizeMake(40, 40);
         undoBtn.name = @"undoBtn";
         undoBtn.zPosition = 1000;
@@ -59,7 +80,14 @@
         
         
         SKCropNode *cropNode = [[SKCropNode alloc] init];
-        cropNode.position = CGPointMake(CGRectGetMidX(self.frame), 515);
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            cropNode.position = CGPointMake(CGRectGetMidX(self.frame), 515);
+        }else
+        {
+            cropNode.position = CGPointMake(CGRectGetMidX(self.frame), 415);
+        }
         [self addChild:cropNode];
         
         ScoreBoard = [[SKLabelNode alloc] init];
@@ -72,13 +100,29 @@
         
         quitBtn = [SKSpriteNode spriteNodeWithImageNamed:[[TemplateConfiguration sharedInstance] valueForKey:PAUSE_IMAGE_KEY]];
         quitBtn.size = CGSizeMake(40, 40);
-        quitBtn.position = CGPointMake(30, 520);
+        
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            quitBtn.position = CGPointMake(30, 520);
+        }else
+        {
+            quitBtn.position = CGPointMake(30, 420);
+        }
         quitBtn.name = @"quitBtn";
         quitBtn.zPosition = 1000;
         [self addChild:quitBtn];
         
         SKCropNode *personalHighcropNode = [[SKCropNode alloc] init];
-        personalHighcropNode.position = CGPointMake(CGRectGetMidX(self.frame), 490);
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            personalHighcropNode.position = CGPointMake(CGRectGetMidX(self.frame), 490);
+        }else
+        {
+            personalHighcropNode.position = CGPointMake(CGRectGetMidX(self.frame), 390);
+        }
+        
         [self addChild:personalHighcropNode];
         
         personalHighScoreLbl = [[SKLabelNode alloc] init];
@@ -108,7 +152,16 @@
         //[self.navigationController setNavigationBarHidden:YES];
         SKSpriteNode *gameContainerView = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:CGSizeMake(600, 400)];
         gameContainerView.anchorPoint = CGPointMake(0.0, 0.0);
-        gameContainerView.position = CGPointMake(5, 120);
+        
+        if([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            gameContainerView.position = CGPointMake(5, 120);
+        }else
+        {
+            gameContainerView.position = CGPointMake(5, 20);
+        }
+        
+        
         [self addChild:gameContainerView];
         
         
@@ -213,11 +266,12 @@
 - (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
     [TSMessage showNotificationInViewController:self.viewController title:title subtitle:msg type:TSMessageNotificationTypeError];
+    [self.viewController showBannerWithMessage:msg withTitle:title];
 }
 - (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
     [TSMessage showNotificationInViewController:self.viewController title:title subtitle:msg type:TSMessageNotificationTypeSuccess];
-    
+    [self.viewController showNormalBannerWithMessage:msg withTitle:title];
 }
 
 -(void)highScoreUpdated

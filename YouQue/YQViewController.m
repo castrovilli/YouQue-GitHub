@@ -169,6 +169,14 @@
     [removeAdsBtn setTitle:@"Remove Ads $0.99" forState:UIControlStateNormal];
     [self.view addSubview:removeAdsBtn];
 }
+- (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
+{
+    [TSMessage showNotificationInViewController:self title:title subtitle:msg type:TSMessageNotificationTypeError];
+}
+- (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
+{
+    [TSMessage showNotificationInViewController:self title:title subtitle:msg type:TSMessageNotificationTypeSuccess];
+}
 -(currentScene)lastScene
 {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"lastScene"];
@@ -374,50 +382,112 @@
     // basic
     EAIntroPage *page1 = [EAIntroPage page];
     page1.title = @"Game Objective";
-    UIImageView *icon1 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
-    icon1.image = [UIImage imageNamed:@"objective.png"];
-    page1.titleIconView = icon1;
     
-    page1.titleFont = [UIFont boldSystemFontOfSize:22];
+    
+    
     page1.desc = @"The objective is to clear out rows of 4 or more fruits of the same type either vertically ,horizontally ,or diagonally to gain points.";
     page1.descColor = [UIColor whiteColor];
-    page1.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
     page1.descPositionY = 180;
-    page1.titlePositionY = 220;
+    
+    if([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        UIImageView *icon1 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+        icon1.image = [UIImage imageNamed:@"objective.png"];
+        page1.titleIconView = icon1;
+        page1.titleFont = [UIFont boldSystemFontOfSize:22];
+        page1.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
+        page1.descPositionY = 180;
+        page1.titlePositionY = 220;
+    }else
+    {
+        UIImageView *icon1 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 240, 240)];
+        icon1.image = [UIImage imageNamed:@"objective.png"];
+        page1.titleIconView = icon1;
+        page1.titleIconPositionY -= 20;
+        page1.titleFont = [UIFont boldSystemFontOfSize:20];
+        page1.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+        page1.descPositionY = 150;
+        page1.titlePositionY = 190;
+    }
+    
+    
+
     
     // custom
     EAIntroPage *page2 = [EAIntroPage page];
     page2.title = @"Moving fruits";
-    page2.titleFont = [UIFont boldSystemFontOfSize:22];
     
-    UIImageView *icon2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
-    icon2.image = [UIImage imageNamed:@"movingcells.png"];
-    page2.titleIconView = icon2;
     
-    page2.titlePositionY = 225;
+    
+    
+    
     page2.desc = @"To move a fruit around , select it until it jiggles,Then select an unoccupied place ,Or you can simply drag it around the board ,The catch is that the path must be clear , And fruits can't move diagonally.";
-    page2.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
-    page2.descPositionY = 200;
+    
+    
     page2.descColor = [UIColor whiteColor];
+    
+    if([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        UIImageView *icon2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+        icon2.image = [UIImage imageNamed:@"movingcells.png"];
+        page2.titleIconView = icon2;
+        page2.titleFont = [UIFont boldSystemFontOfSize:22];
+        page2.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
+        page2.descPositionY = 200;
+        page2.titlePositionY = 225;
+    }else
+    {
+        UIImageView *icon2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 240, 240)];
+        icon2.image = [UIImage imageNamed:@"movingcells.png"];
+        page2.titleIconView = icon2;
+        page2.titleIconPositionY -= 20;
+        page2.titleFont = [UIFont boldSystemFontOfSize:20];
+        page2.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+        page2.descPositionY = 170;
+        page2.titlePositionY = 195;
+    }
+    
     
     // custom view from nib
     EAIntroPage *page3 = [EAIntroPage page];
     page3.title = @"Moving fruits";
-    page3.titleFont = [UIFont boldSystemFontOfSize:22];
+    
      
-    UIImageView *icon3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
-    icon3.contentMode = UIViewContentModeScaleAspectFit;
-    icon3.image = [UIImage imageNamed:@"new cells.png"];
-    page3.titleIconView = icon3;
+    
     
     page3.desc = @"Every time you move a fruit , new fruits are added , And the ones to be added next are shown at the top, Except when your move completes rows of 4 or more fruits of the same type, no new ones are added .";
     page3.descColor = [UIColor whiteColor];
-    page3.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
-    page3.descPositionY = 200;
-    page3.titlePositionY = 220;
+    
+    
+    
+    
+    
+    if([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        UIImageView *icon3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
+        icon3.contentMode = UIViewContentModeScaleAspectFit;
+        icon3.image = [UIImage imageNamed:@"new cells.png"];
+        page3.titleIconView = icon3;
+        page3.titleFont = [UIFont boldSystemFontOfSize:22];
+        page3.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
+        page3.descPositionY = 200;
+        page3.titlePositionY = 220;
+    }else
+    {
+        UIImageView *icon3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 240, 240)];
+        icon3.image = [UIImage imageNamed:@"new cells.png"];
+        icon3.contentMode = UIViewContentModeScaleAspectFit;
+        page3.titleIconView = icon3;
+        page3.titleIconPositionY -= 20;
+        page3.titleFont = [UIFont boldSystemFontOfSize:20];
+        page3.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+        page3.descPositionY = 170;
+        page3.titlePositionY = 190;
+    }
+    
     
     EAIntroPage *page4 = [EAIntroPage page];
-    page4.titleFont = [UIFont boldSystemFontOfSize:22];
+    
     
     UIImageView *icon4 = [[UIImageView alloc] initWithFrame:CGRectMake(20, -20, 280, 280)];
     icon4.contentMode = UIViewContentModeScaleAspectFit;
@@ -427,9 +497,24 @@
     page4.title = @"Undo";
     page4.desc = @"You can undo any move by pressing the undo button at the top right corner .";
     page4.descColor = [UIColor whiteColor];
-    page4.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
-    page4.descPositionY = 200;
-    page4.titlePositionY = 220;
+    
+    
+    
+    if([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        page4.titleFont = [UIFont boldSystemFontOfSize:22];
+        page4.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
+        page4.descPositionY = 200;
+        page4.titlePositionY = 220;
+    }else
+    {
+        page4.titleFont = [UIFont boldSystemFontOfSize:20];
+        page4.descFont = [UIFont fontWithName:@"Georgia-Italic" size:16];
+        page4.descPositionY = 170;
+        page4.titlePositionY = 190;
+    }
+    
+    
     
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
     intro.bgImage = [UIImage imageNamed:@"tutorialBackground.png"];

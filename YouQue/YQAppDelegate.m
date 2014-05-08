@@ -19,7 +19,7 @@
     if(![self adRemovalPurchased] && [self hasFourInchDisplay])
     {
         [RevMobAds startSessionWithAppID:[[TemplateConfiguration sharedInstance] valueForKey:REVMOB_APP_ID_KEY]];
-        [RevMobAds session].testingMode = RevMobAdsTestingModeWithAds;
+        [RevMobAds session].testingMode = RevMobAdsTestingModeWithoutAds;
     }
     
     [[FaceBookManager sharedInstance] Initializefacebook];

@@ -55,5 +55,6 @@ typedef enum
 -(void)quitGameScene;
 -(IBAction)RemoveAdsAction:(id)sender;
 -(IBAction)howToAction:(id)sender;
-
+- (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title;
+- (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title;
 @end
