@@ -17,6 +17,7 @@
 #define PRODUCT_ID @"YouQueRemoveAds"
 #import "GAITrackedViewController.h"
 #import "EAIntroView.h"
+#import "ALAlertBanner.h"
 #define APP_LOADED_BEFORE_KEY @"app first load"
 typedef enum
 {

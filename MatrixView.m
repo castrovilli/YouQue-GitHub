@@ -327,7 +327,7 @@
         
         if(path.count==0)
         {
-            [self showBannerWithMessage:@"Can't go there !" withTitle:@"Sorry"];
+            [self showBannerWithMessage:@"The path must be clear !" withTitle:@"Sorry"];
         }
         
         [gameController commitMove];

@@ -265,12 +265,10 @@
 }
 - (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
-    [TSMessage showNotificationInViewController:self.viewController title:title subtitle:msg type:TSMessageNotificationTypeError];
     [self.viewController showBannerWithMessage:msg withTitle:title];
 }
 - (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
-    [TSMessage showNotificationInViewController:self.viewController title:title subtitle:msg type:TSMessageNotificationTypeSuccess];
     [self.viewController showNormalBannerWithMessage:msg withTitle:title];
 }
 

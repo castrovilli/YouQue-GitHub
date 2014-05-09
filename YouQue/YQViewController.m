@@ -18,7 +18,6 @@
     
     
      self.screenName = @"Game View";
-    [TSMessage setDefaultViewController:self];
     
     
     
@@ -171,11 +170,23 @@
 }
 - (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
-    [TSMessage showNotificationInViewController:self title:title subtitle:msg type:TSMessageNotificationTypeError];
+    ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view
+                                                        style:ALAlertBannerStyleFailure
+                                                     position:ALAlertBannerPositionTop
+                                                        title:title
+                                                     subtitle:msg];
+    [banner show];
+    //[TSMessage showNotificationInViewController:self title:title subtitle:msg type:TSMessageNotificationTypeError];
 }
 - (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
-    [TSMessage showNotificationInViewController:self title:title subtitle:msg type:TSMessageNotificationTypeSuccess];
+    ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view
+                                                        style:ALAlertBannerStyleSuccess
+                                                     position:ALAlertBannerPositionTop
+                                                        title:title
+                                                     subtitle:msg];
+    [banner show];
+    //[TSMessage showNotificationInViewController:self title:title subtitle:msg type:TSMessageNotificationTypeSuccess];
 }
 -(currentScene)lastScene
 {
