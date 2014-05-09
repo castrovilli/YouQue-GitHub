@@ -304,8 +304,39 @@
 }
 -(IBAction)newGame:(id)sender
 {
+    GameEntity *ResumedGame = [PersistentStore getLastGame];
+    if(!ResumedGame.graph)
+    {
+        [self newGameAnimated:YES];
+        return;
+    }
     
-    [self newGameAnimated:YES];
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Warning" andMessage:@"Last Game will be lost"];
+    
+    [alertView addButtonWithTitle:@"Continue"
+                             type:SIAlertViewButtonTypeDefault
+                          handler:^(SIAlertView *alert) {
+                              
+                              
+                              [self newGameAnimated:YES];
+                              
+                              
+                          }];
+    
+    [alertView addButtonWithTitle:@"Canel"
+                             type:SIAlertViewButtonTypeCancel
+                          handler:^(SIAlertView *alert) {
+                              
+                              
+                              
+                          }];
+    
+    
+    
+    
+    alertView.transitionStyle = SIAlertViewTransitionStyleFade;
+    
+    [alertView show];
     
 }
 -(void)newGameAnimated:(BOOL)animated
