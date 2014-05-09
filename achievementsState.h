@@ -31,7 +31,7 @@
     
     
     
-    ShareEntity *fruits5ShareEntity;
+   /* ShareEntity *fruits5ShareEntity;
     ShareEntity *fruits6ShareEntity;
     ShareEntity *fruits7ShareEntity;
     
@@ -39,7 +39,20 @@
     ShareEntity *combo4xShareEntity;
     ShareEntity *combo6xShareEntity;
     ShareEntity *combo8xShareEntity;
-    ShareEntity *combo10xShareEntity;
+    ShareEntity *combo10xShareEntity;*/
+    
+    BOOL fruits5AchievementSharedBefore;
+    BOOL fruits6AchievementSharedBefore;
+    BOOL fruits7AchievementSharedBefore;
+    
+    BOOL combo2xAchievementSharedBefore;
+    BOOL combo4xAchievementSharedBefore;
+    BOOL combo6xAchievementSharedBefore;
+    BOOL combo8xAchievementSharedBefore;
+    BOOL combo10xAchievementSharedBefore;
+    
+    
+    NSMutableArray *entitiesToBeShared;
     
 }
 @property(nonatomic,weak)id<AchievementsStateDelegate> delegate;
@@ -47,6 +60,7 @@
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel;
 -(void)resetCounter;
 -(void)reportYouQueAchievements;
+-(void)postAchievementsToFacebook;
 @end
 @protocol AchievementsStateDelegate <NSObject>
 

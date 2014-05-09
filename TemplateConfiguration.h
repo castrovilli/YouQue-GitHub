@@ -57,6 +57,8 @@
 
 #define YOUQUE_HARDCORE_ACHIEVEMENT_ID @"YouQueHardcore-achievement-id"
 #define YOUQUE_HARDCORE_ACHIEVEMENT_TITLE @"YouQueHardcore-achievement-title"
+
+#define FACEBOOK_APP_ID_KEY @"FacebookAppID"
 @interface TemplateConfiguration : NSObject
 {
     NSDictionary *configDictionary;

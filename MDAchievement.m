@@ -22,4 +22,26 @@
     }
     return self;
 }
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if(self)
+    {
+        _identifier = [aDecoder decodeObjectForKey:@"identifier"];
+        _title = [aDecoder decodeObjectForKey:@"title"];
+        _gkAchievement = [aDecoder decodeObjectForKey:@"gkAchievement"];
+        _points = ((NSNumber*)[aDecoder decodeObjectForKey:@"points"]).intValue;
+        _percentage = ((NSNumber*)[aDecoder decodeObjectForKey:@"percentage"]).floatValue;
+        
+    }
+    return self;
+}
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:_identifier forKey:@"identifier"];
+    [aCoder encodeObject:_title forKey:@"title"];
+    [aCoder encodeObject:_gkAchievement forKey:@"gkAchievement"];
+    [aCoder encodeObject:[NSNumber numberWithInt:_points] forKey:@"points"];
+    [aCoder encodeObject:[NSNumber numberWithFloat:_percentage] forKey:@"percentage"];
+}
 @end

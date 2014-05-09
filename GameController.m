@@ -173,6 +173,14 @@
     
     [PersistentStore persistGame:_currentGame];
 }
+-(void)gameOver
+{
+    [_currentGame.achievementsState postAchievementsToFacebook];
+    if([_delegate respondsToSelector:@selector(GameOver)])
+    {
+        [_delegate GameOver];
+    }
+}
 -(void)AddNewCells
 {
     NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
@@ -181,10 +189,8 @@
     
     if(unoccupiedCells.count<[_levelProvider GetCurrentLevel].numberOfAddedCells)
     {
-        if([_delegate respondsToSelector:@selector(GameOver)])
-        {
-            [_delegate GameOver];
-        }
+        [self gameOver];
+        
         return;
     }
     NSArray *result = [RandomUnOccupiedCellsGenerator GenerateRandomUnOccupiedCellsIndexes:[_levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){}];
@@ -212,7 +218,7 @@
             
             if(unoccupiedCells.count==0)
             {
-                [_delegate GameOver];
+                [self gameOver];
                 
             }else
             {

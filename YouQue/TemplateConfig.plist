@@ -94,5 +94,7 @@
 	<string>YouQueHardcore</string>
 	<key>YouQueHardcore-achievement-title</key>
 	<string>YouQue Hardcore</string>
+	<key>FacebookAppID</key>
+	<string>1483381315209223</string>
 </dict>
 </plist>

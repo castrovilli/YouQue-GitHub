@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
-@interface MDAchievement : NSObject
+@interface MDAchievement : NSObject<NSCoding>
 -(id)initWithIdentifier:(NSString*)identifier title:(NSString*)title points:(int)points;
 @property(nonatomic,retain,readonly)NSString *identifier;
 @property(nonatomic,retain,readonly)NSString *title;

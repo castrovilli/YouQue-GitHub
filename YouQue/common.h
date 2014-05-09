@@ -11,4 +11,5 @@
 
 #define APP_WILL_RESIGN_ACTIVE_NOT @"appwillresignactive"
 #define APP_WILL_BECOME_ACTIVE_NOT @"appwillbecomeactive"
+#define APP_WILL_Entter_BACKGROUND_NOT @"appwillenterbackground"
 #endif

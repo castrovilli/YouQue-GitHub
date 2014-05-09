@@ -21,7 +21,11 @@
     {
         self.numberOfClearedOutCells = 0;
         self.numberOfConsecutiveRowCollection = 0;
+        
+        entitiesToBeShared = [NSMutableArray array];
+        
         [self initializeAchievementsAndShareEntities];
+        
         
     }
     return self;
@@ -34,7 +38,7 @@
     {
         self.numberOfClearedOutCells = ((NSNumber*)[aDecoder decodeObjectForKey:@"numberOfClearedOutCells"]).integerValue;
         self.numberOfConsecutiveRowCollection = ((NSNumber*)[aDecoder decodeObjectForKey:@"numberOfConsecutiveRowCollection"]).integerValue;
-        
+        entitiesToBeShared = [aDecoder decodeObjectForKey:@"entitiesToBeShared"];
         
         
        [self initializeAchievementsAndShareEntities];
@@ -46,6 +50,8 @@
 {
     [aCoder encodeObject:[NSNumber numberWithInteger:self.numberOfClearedOutCells] forKey:@"numberOfClearedOutCells"];
     [aCoder encodeObject:[NSNumber numberWithInteger:self.numberOfConsecutiveRowCollection] forKey:@"numberOfConsecutiveRowCollection"];
+    [aCoder encodeObject:entitiesToBeShared forKey:@"entitiesToBeShared"];
+    
 }
 -(id)copyWithZone:(NSZone *)zone
 {
@@ -61,6 +67,10 @@
 
 -(void)initializeAchievementsAndShareEntities
 {
+    
+    
+    
+    
     fruits5Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:FRUITS_5_ACHIEVEMENT_TITLE] points:10];
     fruits5Achievement.percentage = 100;
     
@@ -96,19 +106,42 @@
     
     
     
-    combo4xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 4x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+    /*combo4xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 4x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
     
     combo6xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 6x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
     
     combo8xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 8x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
     
     combo10xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 10x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
+    
+    
+    fruits7ShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];*/
 }
-
+-(void)postAchievementsToFacebook
+{
+    NSMutableString *message = [NSMutableString stringWithFormat:@"%@ accomplished %d acheivements \n",[[FaceBookManager sharedInstance] FullName],entitiesToBeShared.count];
+    
+    for(MDAchievement *ach in entitiesToBeShared)
+    {
+        [message appendFormat:@"\u00b7 %@ \n",ach.title];
+        
+    }
+    
+    ShareEntity *sharedEntityForAchievements = [[ShareEntity alloc] initWithMessage:message link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"new achievements"];
+    if(entitiesToBeShared.count > 0)
+    {
+        [[FaceBookManager sharedInstance] share:sharedEntityForAchievements];
+    }
+}
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
+}
 -(void)resetCounter
 {
     _numberOfClearedOutCells = 0;
     _numberOfConsecutiveRowCollection = 0;
+    entitiesToBeShared = [NSMutableArray array];
 }
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel
 {
@@ -129,12 +162,25 @@
         [achievements addObject:fruits5Achievement];
         
         NSLog(@"%@",fruits5Achievement.identifier);
+        
+        if(!fruits5AchievementSharedBefore)
+        {
+            fruits5AchievementSharedBefore = YES;
+            [entitiesToBeShared addObject:fruits5Achievement];
+        }
+        
     }
     if(NoOfClearedOutCells == 6)
     {
         [achievements addObject:fruits6Achievement];
         
         NSLog(@"%@",fruits6Achievement.identifier);
+        
+        if(!fruits6AchievementSharedBefore)
+        {
+            fruits6AchievementSharedBefore = YES;
+            [entitiesToBeShared addObject:fruits6Achievement];
+        }
     }
     
     if(NoOfClearedOutCells == 7)
@@ -144,8 +190,12 @@
         
         
         NSLog(@"%@",fruits7Achievement.identifier);
-        ShareEntity *entity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
-        [self shareEntity:entity];
+        
+        if(!fruits7AchievementSharedBefore)
+        {
+            fruits7AchievementSharedBefore = YES;
+            [entitiesToBeShared addObject:fruits7Achievement];
+        }
     }
     
     if(_numberOfConsecutiveRowCollection == 2)
@@ -153,6 +203,11 @@
         [achievements addObject:Combo2xAchievement];
         
         NSLog(@"%@",Combo2xAchievement.identifier);
+        if(!combo2xAchievementSharedBefore)
+        {
+            [entitiesToBeShared addObject:Combo2xAchievement];
+            combo2xAchievementSharedBefore = YES;
+        }
     }
     
     if(_numberOfConsecutiveRowCollection == 4)
@@ -161,7 +216,12 @@
         
         NSLog(@"%@",Combo4xAchievement.identifier);
         
-        [self shareEntity:combo4xShareEntity];
+        if(!combo4xAchievementSharedBefore)
+        {
+           [entitiesToBeShared addObject:Combo4xAchievement];
+            combo4xAchievementSharedBefore = YES;
+        }
+        
     }
     
     if(_numberOfConsecutiveRowCollection == 6)
@@ -170,7 +230,12 @@
         
         NSLog(@"%@",Combo6xAchievement.identifier);
 
-        [self shareEntity:combo6xShareEntity];
+        if(!combo6xAchievementSharedBefore)
+        {
+            [entitiesToBeShared addObject:Combo6xAchievement];
+            combo6xAchievementSharedBefore = YES;
+        }
+        
     }
     
     if(_numberOfConsecutiveRowCollection == 8)
@@ -179,7 +244,12 @@
         
         NSLog(@"%@",Combo8xAchievement.identifier);
         
-        [self shareEntity:combo8xShareEntity];
+        if(!combo8xAchievementSharedBefore)
+        {
+            [entitiesToBeShared addObject:Combo8xAchievement];
+            combo8xAchievementSharedBefore = YES;
+        }
+        
     }
     
     if(_numberOfConsecutiveRowCollection == 10)
@@ -188,7 +258,12 @@
         
         NSLog(@"%@",Combo10xAchievement.identifier);
         
-        [self shareEntity:combo10xShareEntity];
+        if(!combo10xAchievementSharedBefore)
+        {
+            [entitiesToBeShared addObject:Combo10xAchievement];
+            combo10xAchievementSharedBefore = YES;
+        }
+        
     }
     
     

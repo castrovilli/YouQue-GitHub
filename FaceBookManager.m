@@ -89,7 +89,7 @@
 }
 -(void)share:(ShareEntity *)entity
 {
-    NSString *key = @"1483381315209223";
+    NSString *key = [[TemplateConfiguration sharedInstance] valueForKey:FACEBOOK_APP_ID_KEY];
     
     
     // Specify the permissions required
@@ -98,7 +98,7 @@
     // Specify the audience
     NSDictionary *facebookOptions ;
     facebookOptions = @{ACFacebookAppIdKey : key,
-                        ACFacebookAudienceKey :  ACFacebookAudienceFriends,
+                        ACFacebookAudienceKey :  ACFacebookAudienceOnlyMe,
                         ACFacebookPermissionsKey : permissions};
     
     // Specify the Account Type
@@ -199,7 +199,7 @@
     self.accountStore = [[ACAccountStore alloc]init];
     ACAccountType *FBaccountType= [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
     
-    NSString *key = @"1483381315209223";
+    NSString *key = [[TemplateConfiguration sharedInstance] valueForKey:FACEBOOK_APP_ID_KEY];
     NSDictionary *dictFB = [NSDictionary dictionaryWithObjectsAndKeys:key,ACFacebookAppIdKey,@[@"email"],ACFacebookPermissionsKey, nil];
     
     [self.accountStore requestAccessToAccountsWithType:FBaccountType options:dictFB completion:
@@ -222,7 +222,7 @@
              sessionCache.oauthToekn = self.facebookAccount.credential.oauthToken;
              sessionCache.permissions = @[@"email"];
              
-             _fbSession = [[FBSession alloc] initWithAppID:@"1483381315209223" permissions:@[@"email"]  defaultAudience:FBSessionDefaultAudienceFriends urlSchemeSuffix:nil tokenCacheStrategy:sessionCache];
+             _fbSession = [[FBSession alloc] initWithAppID:[[TemplateConfiguration sharedInstance] valueForKey:FACEBOOK_APP_ID_KEY] permissions:@[@"email"]  defaultAudience:FBSessionDefaultAudienceFriends urlSchemeSuffix:nil tokenCacheStrategy:sessionCache];
              
              isFacebookAvailable = 1;
          } else
