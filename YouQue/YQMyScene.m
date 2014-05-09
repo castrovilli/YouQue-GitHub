@@ -537,7 +537,7 @@
 }
 -(void)dealloc
 {
-  //  [[NSNotificationCenter defaultCenter] removeObserver:self name:PURCHASE_SUCCEEDED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FRUITS5_ACHIEVEMENT object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:HIGH_SCORE_UPDATED_NOTIFICATION object:nil];
 }
 -(void)UndoAction:(id)sender

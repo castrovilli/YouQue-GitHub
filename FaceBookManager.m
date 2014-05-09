@@ -58,7 +58,7 @@
     NSArray *permissions = @[@"publish_stream"];
     
     // Specify the audience
-    NSDictionary *facebookOptions = [NSDictionary new];
+    NSDictionary *facebookOptions ;
     facebookOptions = @{ACFacebookAppIdKey : key,
                         ACFacebookAudienceKey :  ACFacebookAudienceFriends,
                         ACFacebookPermissionsKey : permissions};

@@ -131,7 +131,7 @@
     
     if([_delegate respondsToSelector:@selector(CellViewDragged:withState:withNewPoint:)])
     {
-        [_delegate CellViewDragged:self withState:UIGestureRecognizerStateChanged withNewPoint:currentPoint];
+        [_delegate CellViewDragged:self withState:state withNewPoint:currentPoint];
     }
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

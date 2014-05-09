@@ -115,7 +115,10 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
-
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:PURCHASE_SUCCEEDED_NOTIFICATION object:nil];
+}
 -(void)initializeMenuButtons
 {
     UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]

@@ -931,7 +931,7 @@
 
 -(void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
+    //[[NSNotificationCenter defaultCenter] removeObserver:self name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
 }
 
 
