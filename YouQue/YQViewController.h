@@ -44,6 +44,7 @@ typedef enum
      UIButton *newBtn;
      UIButton *highScoreBtn;
      UIButton *removeAdsBtn;
+   IBOutlet  UIButton *inviteFriendsBtn;
     
     MDPaymentTransactionObserver *paymentObserver;
     
@@ -56,6 +57,7 @@ typedef enum
 -(void)quitGameScene;
 -(IBAction)RemoveAdsAction:(id)sender;
 -(IBAction)howToAction:(id)sender;
+-(IBAction)inviteFriendsAction:(id)sender;
 - (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title;
 - (void) showNormalBannerWithMessage:(NSString*)msg withTitle:(NSString*)title;
 @end

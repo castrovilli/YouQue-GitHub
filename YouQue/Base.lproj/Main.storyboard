@@ -107,6 +107,24 @@
                                             <action selector="RemoveAdsAction:" destination="LVB-YS-i5n" eventType="touchUpInside" id="ZrK-UM-n7q"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyD-nH-FdD">
+                                        <rect key="frame" x="38" y="137" width="245" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Invite your friends">
+                                            <color key="titleColor" red="0.070588235289999995" green="0.66274509800000003" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.50587363139999997" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inviteFriendsAction:" destination="LVB-YS-i5n" eventType="touchUpInside" id="Hq9-z1-r3v"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -117,6 +135,7 @@
                         <outlet property="ResumBtn" destination="TjZ-Np-Udt" id="5EX-Hz-xON"/>
                         <outlet property="highScoreBtn" destination="8m3-hf-0Es" id="aRJ-u4-L0e"/>
                         <outlet property="howToBtn" destination="ebR-15-uIC" id="Ftq-GN-R3V"/>
+                        <outlet property="inviteFriendsBtn" destination="kyD-nH-FdD" id="ZUr-7z-lce"/>
                         <outlet property="menuView" destination="bdu-wb-ODQ" id="d8B-P7-75w"/>
                         <outlet property="newBtn" destination="dgb-WM-Ae7" id="BfK-Xn-2hn"/>
                         <outlet property="removeAdsBtn" destination="jAM-cm-rzE" id="MQJ-sB-92U"/>

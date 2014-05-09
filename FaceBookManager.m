@@ -12,7 +12,10 @@
     BOOL isFacebookAvailable;
     
     BOOL sharePermissionGranted;
+    
+    
 }
+@property(nonatomic,retain)FBSession *fbSession;
 @property(nonatomic,retain)ACAccountStore *accountStore;
 @property(nonatomic,retain)ACAccount *facebookAccount;
 @end
@@ -34,6 +37,41 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accountChanged:) name:ACAccountStoreDidChangeNotification object:nil];
     }
     return self;
+}
+-(void)showInviteFriendsDialoge
+{
+    
+    
+    
+    [FBWebDialogs
+     presentRequestsDialogModallyWithSession:self.fbSession
+     message:@"checkout this cool iOS Game"
+     title:@"YouQue"
+     parameters:nil
+     handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+         if (error) {
+             // Error launching the dialog or sending the request.
+             NSLog(@"Error sending request.");
+         } else {
+             if (result == FBWebDialogResultDialogNotCompleted) {
+                 // User clicked the "x" icon
+                 NSLog(@"User canceled request.");
+             } else {
+                 // Handle the send request callback
+                 /*NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                 if (![urlParams valueForKey:@"request"]) {
+                     // User clicked the Cancel button
+                     NSLog(@"User canceled request.");
+                 } else {
+                     // User clicked the Send button
+                     NSString *requestID = [urlParams valueForKey:@"request"];
+                     NSLog(@"Request ID: %@", requestID);
+                 }*/
+             }
+         }
+     }];
+    
+    
 }
 -(BOOL)isFacebookAvailable
 {
@@ -179,6 +217,12 @@
              
              
              NSLog(@"facebook account =%@",self.facebookAccount);
+             
+             MDSessionTokenCachingStrategy *sessionCache = [[MDSessionTokenCachingStrategy alloc] init];
+             sessionCache.oauthToekn = self.facebookAccount.credential.oauthToken;
+             sessionCache.permissions = @[@"email"];
+             
+             _fbSession = [[FBSession alloc] initWithAppID:@"1483381315209223" permissions:@[@"email"]  defaultAudience:FBSessionDefaultAudienceFriends urlSchemeSuffix:nil tokenCacheStrategy:sessionCache];
              
              isFacebookAvailable = 1;
          } else

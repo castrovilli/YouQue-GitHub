@@ -140,7 +140,9 @@
 		6E9AF189190B3A6C00E41D73 /* SKNode+Jiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AF188190B3A6C00E41D73 /* SKNode+Jiggle.m */; };
 		6EAD368F1919257100EE508B /* TemplateConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD368E1919257100EE508B /* TemplateConfig.plist */; };
 		6EAD36931919270900EE508B /* TemplateConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD36921919270900EE508B /* TemplateConfiguration.m */; };
+		6EBAD9FF191D3823007D5EFC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBAD9FE191D3823007D5EFC /* FacebookSDK.framework */; };
 		6ED65224190B9FB600D5D4CE /* MDBinarySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */; };
+		6EDAC98A191D44F200C522D7 /* MDSessionTokenCachingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDAC989191D44F200C522D7 /* MDSessionTokenCachingStrategy.m */; };
 		6EDCB075191A2F3200DC6721 /* tutorialBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCB074191A2F3200DC6721 /* tutorialBackground.png */; };
 		6EE15F5119138579004C3C5B /* TCProgressTimerForegroundCropNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */; };
 		6EE15F5219138579004C3C5B /* TCProgressTimerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE15F5019138579004C3C5B /* TCProgressTimerNode.m */; };
@@ -359,8 +361,11 @@
 		6EAD368E1919257100EE508B /* TemplateConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TemplateConfig.plist; sourceTree = "<group>"; };
 		6EAD36911919270900EE508B /* TemplateConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateConfiguration.h; sourceTree = "<group>"; };
 		6EAD36921919270900EE508B /* TemplateConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateConfiguration.m; sourceTree = "<group>"; };
+		6EBAD9FE191D3823007D5EFC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		6ED65222190B9FB600D5D4CE /* MDBinarySearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBinarySearch.h; sourceTree = "<group>"; };
 		6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBinarySearch.m; sourceTree = "<group>"; };
+		6EDAC988191D44F200C522D7 /* MDSessionTokenCachingStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSessionTokenCachingStrategy.h; sourceTree = "<group>"; };
+		6EDAC989191D44F200C522D7 /* MDSessionTokenCachingStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSessionTokenCachingStrategy.m; sourceTree = "<group>"; };
 		6EDCB074191A2F3200DC6721 /* tutorialBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialBackground.png; sourceTree = "<group>"; };
 		6EE15F4D19138579004C3C5B /* TCProgressTimerForegroundCropNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProgressTimerForegroundCropNode.h; sourceTree = "<group>"; };
 		6EE15F4E19138579004C3C5B /* TCProgressTimerForegroundCropNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProgressTimerForegroundCropNode.m; sourceTree = "<group>"; };
@@ -423,6 +428,7 @@
 				6E80E54A190E718B00349E38 /* Accounts.framework in Frameworks */,
 				6E9601A5190B86D3008E972A /* GameKit.framework in Frameworks */,
 				6E9AF0FC190B31FD00E41D73 /* CoreGraphics.framework in Frameworks */,
+				6EBAD9FF191D3823007D5EFC /* FacebookSDK.framework in Frameworks */,
 				6E9AF0FE190B31FD00E41D73 /* UIKit.framework in Frameworks */,
 				6E80E570190E72F200349E38 /* libStartAppAdSDK.a in Frameworks */,
 				6E9AF100190B31FD00E41D73 /* SpriteKit.framework in Frameworks */,
@@ -742,6 +748,7 @@
 		6E9AF0F8190B31FD00E41D73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EBAD9FE191D3823007D5EFC /* FacebookSDK.framework */,
 				6E3656241910A7EE00FAAA68 /* RevMobAds.framework */,
 				6E80E569190E729000349E38 /* SystemConfiguration.framework */,
 				6E80E567190E728400349E38 /* StoreKit.framework */,
@@ -906,6 +913,7 @@
 		6E9AF151190B339400E41D73 /* FacebookManager */ = {
 			isa = PBXGroup;
 			children = (
+				6EDAC987191D44B400C522D7 /* FBSessionTokenCahcingStartegy */,
 				6EF292DE1914E8B6004D49F4 /* ShareEntity */,
 				6E9AF152190B33A800E41D73 /* FaceBookManager.h */,
 				6E9AF153190B33A800E41D73 /* FaceBookManager.m */,
@@ -1061,6 +1069,15 @@
 				6ED65223190B9FB600D5D4CE /* MDBinarySearch.m */,
 			);
 			name = MDBinarySearch;
+			sourceTree = "<group>";
+		};
+		6EDAC987191D44B400C522D7 /* FBSessionTokenCahcingStartegy */ = {
+			isa = PBXGroup;
+			children = (
+				6EDAC988191D44F200C522D7 /* MDSessionTokenCachingStrategy.h */,
+				6EDAC989191D44F200C522D7 /* MDSessionTokenCachingStrategy.m */,
+			);
+			name = FBSessionTokenCahcingStartegy;
 			sourceTree = "<group>";
 		};
 		6EDCB073191A2F2000DC6721 /* tutorial */ = {
@@ -1373,6 +1390,7 @@
 				6E44A4D7190CDB4200E8888D /* CellViewTextures.m in Sources */,
 				6E9AF16F190B349000E41D73 /* ConnectedCellRowsDetector.m in Sources */,
 				6E9AF160190B340C00E41D73 /* LevelEntity.m in Sources */,
+				6EDAC98A191D44F200C522D7 /* MDSessionTokenCachingStrategy.m in Sources */,
 				6EF292E51914F776004D49F4 /* MDAchievement.m in Sources */,
 				6E9AF154190B33A800E41D73 /* FaceBookManager.m in Sources */,
 				6E9AF14C190B32E900E41D73 /* ICloudManager.m in Sources */,

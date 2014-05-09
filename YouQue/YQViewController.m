@@ -96,7 +96,9 @@
     ;
     [removeAdsBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     
-    
+    [inviteFriendsBtn setBackgroundImage:buttonImage forState:UIControlStateNormal]
+    ;
+    [inviteFriendsBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
 
     if(![self adRemovalPurchased])
     {
@@ -114,6 +116,10 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:APP_LOADED_BEFORE_KEY];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
+-(void)inviteFriendsAction:(id)sender
+{
+    [[FaceBookManager sharedInstance] showInviteFriendsDialoge];
 }
 -(void)dealloc
 {
