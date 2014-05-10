@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421232891.999342"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "-LoadWithCellsGameResumed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "930"
-            endingLineNumber = "930"
+            startingLineNumber = "908"
+            endingLineNumber = "908"
             landmarkName = "@implementation MatrixView"
             landmarkType = "3">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "918"
-            endingLineNumber = "918"
+            startingLineNumber = "896"
+            endingLineNumber = "896"
             landmarkName = "-getCellViewWithIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "913"
-            endingLineNumber = "913"
+            startingLineNumber = "891"
+            endingLineNumber = "891"
             landmarkName = "-getCellViewWithIndex:"
             landmarkType = "5">
             <Locations>
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "-newScore:delta:"
             landmarkType = "5">
          </BreakpointContent>
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "-AddNextCellsWithGraphCells:"
             landmarkType = "5">
          </BreakpointContent>
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "-AddNextCellsWithGraphCells:"
             landmarkType = "5">
             <Locations>
@@ -326,11 +326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
             landmarkName = "-AddNextCellsWithGraphCells:"
             landmarkType = "5">
          </BreakpointContent>
@@ -454,11 +454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "-reloadGame:"
             landmarkType = "5">
          </BreakpointContent>
@@ -470,11 +470,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
+            startingLineNumber = "513"
+            endingLineNumber = "513"
             landmarkName = "-willMoveFromView:"
             landmarkType = "5">
             <Locations>
@@ -532,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "-CellViewDragged:withState:withNewPoint:"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
             landmarkName = "-CellViewDragged:withState:withNewPoint:"
             landmarkType = "5">
          </BreakpointContent>
@@ -564,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "455"
-            endingLineNumber = "455"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "-CellViewDragged:withState:withNewPoint:"
             landmarkType = "5">
          </BreakpointContent>
@@ -580,11 +580,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "-CellViewDragged:withState:withNewPoint:"
             landmarkType = "5">
          </BreakpointContent>
@@ -596,11 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "-CellViewDragged:withState:withNewPoint:"
             landmarkType = "5">
          </BreakpointContent>
@@ -628,11 +628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "-setUserInteractionEnabled:"
             landmarkType = "5">
          </BreakpointContent>
@@ -644,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "-setMatrixUnTouchableExceptCellAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -660,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "-setMatrixUnTouchableExceptCellAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -676,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "-setMatrixTouchable"
             landmarkType = "5">
          </BreakpointContent>
@@ -804,11 +804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "736"
-            endingLineNumber = "736"
+            startingLineNumber = "714"
+            endingLineNumber = "714"
             landmarkName = "-removeCells:withCompletionBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -820,11 +820,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "737"
-            endingLineNumber = "737"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
             landmarkName = "-removeCells:withCompletionBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -868,11 +868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "718"
-            endingLineNumber = "718"
+            startingLineNumber = "696"
+            endingLineNumber = "696"
             landmarkName = "-removeCells:withCompletionBlock:"
             landmarkType = "5">
             <Locations>
@@ -994,11 +994,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "-AddNextCellsWithGraphCells:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1010,11 +1010,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "-getPlayerHighScore"
             landmarkType = "5">
          </BreakpointContent>
@@ -1026,11 +1026,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "-getPlayerHighScore"
             landmarkType = "5">
          </BreakpointContent>
@@ -1042,11 +1042,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQMyScene.m"
-            timestampString = "421326636.810586"
+            timestampString = "421414669.942821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1058,11 +1058,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "662"
-            endingLineNumber = "662"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "-removeCollisionIndicatorView"
             landmarkType = "5">
          </BreakpointContent>
@@ -1074,11 +1074,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatrixView.m"
-            timestampString = "421241816.700201"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "505"
-            endingLineNumber = "505"
+            startingLineNumber = "483"
+            endingLineNumber = "483"
             landmarkName = "-CellViewDragged:withState:withNewPoint:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1248,11 +1248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouQue/YQAppDelegate.m"
-            timestampString = "421154959.111063"
+            timestampString = "421411830.874774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-applicationWillResignActive:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1264,11 +1264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-reportYouQueAchievements"
             landmarkType = "5">
          </BreakpointContent>
@@ -1296,11 +1296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "-reportYouQueAchievements"
             landmarkType = "5">
          </BreakpointContent>
@@ -1312,11 +1312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "-reportYouQueAchievements"
             landmarkType = "5">
          </BreakpointContent>
@@ -1328,11 +1328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
             landmarkName = "-shareEntity:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1344,11 +1344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "-reportAchievementWithNumberOfClearedOutCells:Newlevel:OldLevel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1360,11 +1360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-reportAchievementWithNumberOfClearedOutCells:Newlevel:OldLevel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1376,11 +1376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-reportAchievementWithNumberOfClearedOutCells:Newlevel:OldLevel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1429,7 +1429,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "-postAchievementsToFacebook"
+            landmarkName = "-postAchievements"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1440,12 +1440,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "achievementsState.m"
-            timestampString = "421356506.42767"
+            timestampString = "421416513.677545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-resetCounter"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YouQue/YQMyScene.m"
+            timestampString = "421414669.942821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "-initWithSize:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "achievementsState.m"
+            timestampString = "421416495.366556"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-shareAchievementPost:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "achievementsState.m"
+            timestampString = "421416496.272493"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "-shareAchievementPost:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

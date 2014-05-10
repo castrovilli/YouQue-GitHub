@@ -225,10 +225,16 @@
         progressView.pieBackgroundColor = [UIColor lightGrayColor];*/
         
 
-        playAhievementSoundAction = [SKAction playSoundFileNamed:@"magic_spell_trick_sound_002.wav" waitForCompletion:NO];
+        //playAhievementSoundAction = [SKAction playSoundFileNamed:@"magic_spell_trick_sound_002.wav" waitForCompletion:NO];
         
         [self updateHighScoreLabel];
         firstLoad = YES;
+        
+        NSString *filename = @"magic_spell_trick_sound_002";
+        CFBundleRef mainBundle = CFBundleGetMainBundle ();
+        CFURLRef soundFileUrl = CFBundleCopyResourceURL(mainBundle, (__bridge CFStringRef)filename, CFSTR("wav"), NULL);
+        AudioServicesCreateSystemSoundID(soundFileUrl, &AchievementSoundID);
+        
     }
     return self;
 }
@@ -238,7 +244,8 @@
     
     if(achievements.count>0)
     {
-        [self runAction:playAhievementSoundAction];
+        AudioServicesPlaySystemSound(AchievementSoundID);
+        
     }
     [self showAchievements:achievements currentIndex:0];
 }
@@ -537,6 +544,7 @@
 }
 -(void)dealloc
 {
+    AudioServicesDisposeSystemSoundID(AchievementSoundID);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:FRUITS5_ACHIEVEMENT object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:HIGH_SCORE_UPDATED_NOTIFICATION object:nil];
 }

@@ -11,6 +11,7 @@
 #import "MDAchievement.h"
 #define FRUITS5_ACHIEVEMENT @"5fruitsAchieved"
 #define ACHIEVEMENTS_INFO_KEY @"achievements"
+#define ACHIEVEMENTS_LAST_SHARE_DATE_KEY @"lastAchievementShareDate"
 @protocol AchievementsStateDelegate;
 @interface achievementsState : NSObject <NSCoding,NSCopying>
 {
@@ -41,7 +42,7 @@
     ShareEntity *combo8xShareEntity;
     ShareEntity *combo10xShareEntity;*/
     
-    BOOL fruits5AchievementSharedBefore;
+    /*BOOL fruits5AchievementSharedBefore;
     BOOL fruits6AchievementSharedBefore;
     BOOL fruits7AchievementSharedBefore;
     
@@ -51,8 +52,12 @@
     BOOL combo8xAchievementSharedBefore;
     BOOL combo10xAchievementSharedBefore;
     
+    BOOL level2AchievementSharedBefore;
+    BOOL level3AchievementSharedBefore;
+    BOOL level4AchievementSharedBefore;*/
     
-    NSMutableArray *entitiesToBeShared;
+    
+    NSMutableSet *entitiesToBeShared;
     
 }
 @property(nonatomic,weak)id<AchievementsStateDelegate> delegate;
@@ -60,7 +65,7 @@
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel;
 -(void)resetCounter;
 -(void)reportYouQueAchievements;
--(void)postAchievementsToFacebook;
+-(void)postAchievements;
 @end
 @protocol AchievementsStateDelegate <NSObject>
 

@@ -45,8 +45,7 @@ typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNum
     
     GameController *gameController;
     
-    SKAction *playLevelCompletionSound;
-    
+    SystemSoundID newLevelSoundID;
 }
 //UI Controls
 @property(nonatomic,retain)SKButton *UndoBtn;

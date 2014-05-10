@@ -44,4 +44,12 @@
     [aCoder encodeObject:[NSNumber numberWithInt:_points] forKey:@"points"];
     [aCoder encodeObject:[NSNumber numberWithFloat:_percentage] forKey:@"percentage"];
 }
+-(BOOL)isEqual:(id)object
+{
+    return [_identifier isEqual:((MDAchievement*)object).identifier];
+}
+-(NSUInteger)hash
+{
+    return [_identifier hash];
+}
 @end

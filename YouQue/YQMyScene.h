@@ -43,6 +43,8 @@
     SKTransition *quitTransition;
     
     SKAction *playAhievementSoundAction;
+    
+    SystemSoundID AchievementSoundID;
 }
 @property(nonatomic,weak)YQViewController *viewController;
 @property(nonatomic,retain)GameEntity *ResumedGame;

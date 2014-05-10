@@ -175,7 +175,7 @@
 }
 -(void)gameOver
 {
-    [_currentGame.achievementsState postAchievementsToFacebook];
+    [_currentGame.achievementsState postAchievements];
     if([_delegate respondsToSelector:@selector(GameOver)])
     {
         [_delegate GameOver];

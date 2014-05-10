@@ -22,7 +22,7 @@
         self.numberOfClearedOutCells = 0;
         self.numberOfConsecutiveRowCollection = 0;
         
-        entitiesToBeShared = [NSMutableArray array];
+        entitiesToBeShared = [NSMutableSet set];
         
         [self initializeAchievementsAndShareEntities];
         
@@ -117,7 +117,7 @@
     
     fruits7ShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 7 fruits",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];*/
 }
--(void)postAchievementsToFacebook
+-(void)postAchievements
 {
     NSMutableString *message = [NSMutableString stringWithFormat:@"%@ accomplished %d acheivements \n",[[FaceBookManager sharedInstance] FullName],entitiesToBeShared.count];
     
@@ -130,8 +130,35 @@
     ShareEntity *sharedEntityForAchievements = [[ShareEntity alloc] initWithMessage:message link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"new achievements"];
     if(entitiesToBeShared.count > 0)
     {
-        [[FaceBookManager sharedInstance] share:sharedEntityForAchievements];
+        [self shareAchievementPost:sharedEntityForAchievements];
+        
+        [self reportAchievements:entitiesToBeShared.allObjects];
     }
+}
+-(BOOL)isLastAchievementShareMoreThanDayAgo
+{
+    NSNumber *timeInterval = [[NSUserDefaults standardUserDefaults] objectForKey:ACHIEVEMENTS_LAST_SHARE_DATE_KEY];
+    
+    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+    
+    if((now - timeInterval.integerValue) < 86400)
+    {
+        return NO;
+    }else
+    {
+        return YES;
+    }
+}
+-(void)shareAchievementPost:(ShareEntity*)sharedEntityForAchievements
+{
+    if(![self isLastAchievementShareMoreThanDayAgo])
+    {
+        return;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970]] forKey:ACHIEVEMENTS_LAST_SHARE_DATE_KEY];
+    
+    [[FaceBookManager sharedInstance] share:sharedEntityForAchievements];
 }
 -(void)dealloc
 {
@@ -141,7 +168,7 @@
 {
     _numberOfClearedOutCells = 0;
     _numberOfConsecutiveRowCollection = 0;
-    entitiesToBeShared = [NSMutableArray array];
+    entitiesToBeShared = [NSMutableSet set];
 }
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel
 {
@@ -163,9 +190,8 @@
         
         NSLog(@"%@",fruits5Achievement.identifier);
         
-        if(!fruits5AchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:fruits5Achievement])
         {
-            fruits5AchievementSharedBefore = YES;
             [entitiesToBeShared addObject:fruits5Achievement];
         }
         
@@ -176,9 +202,8 @@
         
         NSLog(@"%@",fruits6Achievement.identifier);
         
-        if(!fruits6AchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:fruits6Achievement])
         {
-            fruits6AchievementSharedBefore = YES;
             [entitiesToBeShared addObject:fruits6Achievement];
         }
     }
@@ -191,9 +216,8 @@
         
         NSLog(@"%@",fruits7Achievement.identifier);
         
-        if(!fruits7AchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:fruits7Achievement])
         {
-            fruits7AchievementSharedBefore = YES;
             [entitiesToBeShared addObject:fruits7Achievement];
         }
     }
@@ -203,10 +227,9 @@
         [achievements addObject:Combo2xAchievement];
         
         NSLog(@"%@",Combo2xAchievement.identifier);
-        if(!combo2xAchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:Combo2xAchievement])
         {
             [entitiesToBeShared addObject:Combo2xAchievement];
-            combo2xAchievementSharedBefore = YES;
         }
     }
     
@@ -216,10 +239,9 @@
         
         NSLog(@"%@",Combo4xAchievement.identifier);
         
-        if(!combo4xAchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:Combo4xAchievement])
         {
-           [entitiesToBeShared addObject:Combo4xAchievement];
-            combo4xAchievementSharedBefore = YES;
+            [entitiesToBeShared addObject:Combo4xAchievement];
         }
         
     }
@@ -230,10 +252,9 @@
         
         NSLog(@"%@",Combo6xAchievement.identifier);
 
-        if(!combo6xAchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:Combo6xAchievement])
         {
             [entitiesToBeShared addObject:Combo6xAchievement];
-            combo6xAchievementSharedBefore = YES;
         }
         
     }
@@ -244,10 +265,9 @@
         
         NSLog(@"%@",Combo8xAchievement.identifier);
         
-        if(!combo8xAchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:Combo8xAchievement])
         {
             [entitiesToBeShared addObject:Combo8xAchievement];
-            combo8xAchievementSharedBefore = YES;
         }
         
     }
@@ -258,10 +278,9 @@
         
         NSLog(@"%@",Combo10xAchievement.identifier);
         
-        if(!combo10xAchievementSharedBefore)
+        if(![entitiesToBeShared containsObject:Combo10xAchievement])
         {
             [entitiesToBeShared addObject:Combo10xAchievement];
-            combo10xAchievementSharedBefore = YES;
         }
         
     }
@@ -273,15 +292,17 @@
     
     MDAchievement *newLevelAch = [self newLevelAchievement:Newlevel oldLevel:oldLevel];
     
-    if(newLevelAch)
+    if(newLevelAch && ![entitiesToBeShared containsObject:newLevelAch])
     {
+        [entitiesToBeShared addObject:newLevelAch];
+        
         [achievements addObject:newLevelAch];
         NSLog(@"%@",newLevelAch.identifier);
     }
     
     if(achievements.count > 0)
     {
-        [self reportAchievements:achievements];
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:FRUITS5_ACHIEVEMENT object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:achievements,ACHIEVEMENTS_INFO_KEY, nil]];
     }
     

@@ -28,13 +28,6 @@
         
         self.anchorPoint = CGPointMake(0.0, 0.0);
         
-        //self.layer.borderColor = [UIColor colorWithRed:(57.0f/255.0f) green:(57.0f/255.0f) blue:(57.0f/255.0f) alpha:1.0].CGColor;
-        
-        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AppDidResignActive) name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
-        
-        //self.color = [UIColor colorWithRed:(75.0f/255.0) green:(157.0f/255.0f) blue:(153.0f/255.0f) alpha:1.0];
-        
-        playLevelCompletionSound = [SKAction playSoundFileNamed:@"Ta Da.wav" waitForCompletion:NO];
         
         IsGameResumed = resumed;
         
@@ -79,32 +72,17 @@
         
       //  draggedCellTage = -1;
         
-        
+        NSString *filename = @"Ta Da";
+        CFBundleRef mainBundle = CFBundleGetMainBundle ();
+        CFURLRef soundFileUrl = CFBundleCopyResourceURL(mainBundle, (__bridge CFStringRef)filename, CFSTR("wav"), NULL);
+        AudioServicesCreateSystemSoundID(soundFileUrl, &newLevelSoundID);
         
     }
     return self;
 }
-/*-(void)AppDidResignActive
-{
-    if(gameController.startCellIndex)
-    {
-        CellView *startCell = [self getCellViewWithIndex:gameController.startCellIndex.integerValue];
-        [self CellViewDragged:startCell withState:UIGestureRecognizerStateEnded withNewPoint:startCell.position];
-    }
-}*/
 -(void)playCelebrationSound
 {
-    //int randomIndex = arc4random_uniform(3)+1;
-    
-    [self runAction:playLevelCompletionSound];
-    
-   /* NSString *filename = @"Ta Da";
-    CFBundleRef mainBundle = CFBundleGetMainBundle ();
-    CFURLRef soundFileUrl;
-    SystemSoundID soundID;
-    soundFileUrl = CFBundleCopyResourceURL(mainBundle, (__bridge CFStringRef)filename, CFSTR("wav"), NULL);
-    AudioServicesCreateSystemSoundID(soundFileUrl, &soundID);
-    AudioServicesPlaySystemSound(soundID);*/
+    AudioServicesPlaySystemSound(newLevelSoundID);
 }
 -(void)saveGame
 {
@@ -931,7 +909,7 @@
 
 -(void)dealloc
 {
-    //[[NSNotificationCenter defaultCenter] removeObserver:self name:APP_WILL_RESIGN_ACTIVE_NOT object:nil];
+    AudioServicesDisposeSystemSoundID(newLevelSoundID);
 }
 
 
