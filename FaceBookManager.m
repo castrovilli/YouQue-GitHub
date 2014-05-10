@@ -42,7 +42,6 @@
 {
     
     
-    
     [FBWebDialogs
      presentRequestsDialogModallyWithSession:self.fbSession
      message:@"checkout this cool iOS Game"
@@ -328,22 +327,34 @@
         {
             switch (renewResult) {
                 case ACAccountCredentialRenewResultRenewed:
+                {
                     NSLog(@"Good to go");
-                   // [self get];
+                    
+                    
+                    MDSessionTokenCachingStrategy *sessionCache = [[MDSessionTokenCachingStrategy alloc] init];
+                    sessionCache.oauthToekn = self.facebookAccount.credential.oauthToken;
+                    sessionCache.permissions = @[@"email"];
+                   _fbSession = [[FBSession alloc] initWithAppID:[[TemplateConfiguration sharedInstance] valueForKey:FACEBOOK_APP_ID_KEY] permissions:@[@"email"]  defaultAudience:FBSessionDefaultAudienceFriends urlSchemeSuffix:nil tokenCacheStrategy:sessionCache];
+                    
                     break;
+                }
                 case ACAccountCredentialRenewResultRejected:
+                    _fbSession = nil;
                     NSLog(@"User declined permission");
                     break;
                 case ACAccountCredentialRenewResultFailed:
+                    _fbSession = nil;
                     NSLog(@"non-user-initiated cancel, you may attempt to retry");
                     break;
                 default:
+                    _fbSession = nil;
                     break;
             }
             
         }
         else{
             //handle error gracefully
+            _fbSession = nil;
             NSLog(@"error from renew credentials%@",error);
         }
     }];
