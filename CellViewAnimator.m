@@ -8,7 +8,7 @@
 
 #import "CellViewAnimator.h"
 #define degreesToRadians(x) (M_PI * (x) / 180.0)
-#define kAnimationRotateDeg 10.0
+#define kAnimationRotateDeg 12.0
 @implementation CellViewAnimator
 +(CellViewAnimator*)sharedInstance
 {
@@ -57,9 +57,9 @@
         
         SKAction *squeezeRepeat = [SKAction repeatActionForever:squeezeSequense];*/
         
-        SKAction *rotateLeftAction = [SKAction rotateByAngle:degreesToRadians( (kAnimationRotateDeg * -1.0)  ) duration:0.07];
+        SKAction *rotateLeftAction = [SKAction rotateByAngle:degreesToRadians( (kAnimationRotateDeg * -1.0)  ) duration:0.075];
         
-        SKAction *rotateRightAction = [SKAction rotateByAngle:degreesToRadians( kAnimationRotateDeg  ) duration:0.07];
+        SKAction *rotateRightAction = [SKAction rotateByAngle:degreesToRadians( kAnimationRotateDeg  ) duration:0.075];
         SKAction *jiigleAction = [SKAction repeatActionForever:[SKAction sequence:@[rotateLeftAction,rotateRightAction,rotateRightAction,rotateLeftAction]]];
         
         //SKAction *groupAction = [SKAction group:@[jiigleAction,squeezeRepeat]];
