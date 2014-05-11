@@ -19,6 +19,7 @@
         _title = title;
         
         _gkAchievement = [[GKAchievement alloc] initWithIdentifier:_identifier];
+        _gkAchievement.percentComplete = 100.0;
     }
     return self;
 }
