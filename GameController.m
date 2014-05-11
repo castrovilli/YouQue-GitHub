@@ -143,7 +143,10 @@
 -(void)ReportScoreToGameCenter
 {
     
-    [_currentGame.achievementsState reportYouQueAchievements];
+    if(![GKLocalPlayer localPlayer].isAuthenticated)
+    {
+        return;
+    }
     
     GKScore *scoreReporter = [[GKScore alloc] initWithLeaderboardIdentifier:@"YouQueMainLeaderboard"];
     scoreReporter.value = _currentGame.score.score;

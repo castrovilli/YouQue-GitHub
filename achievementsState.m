@@ -410,6 +410,11 @@
 }
 -(void)reportAChievementsToGameCenter:(NSArray*)GKAchievements
 {
+    if(![GKLocalPlayer localPlayer].isAuthenticated)
+    {
+        return;
+    }
+    
     [GKAchievement reportAchievements: GKAchievements withCompletionHandler:^(NSError *error)
      {
          if (error != nil)
