@@ -57,6 +57,7 @@
                  NSLog(@"User canceled request.");
              } else {
                  // Handle the send request callback
+                 NSLog(@"%@",[resultURL query]);
                  /*NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
                  if (![urlParams valueForKey:@"request"]) {
                      // User clicked the Cancel button
@@ -136,7 +137,6 @@
         // Create the post details
         NSString *link        = @"https://itunes.apple.com/eg/app/youque/id721318647?mt=8";
         NSString *message     = entity.message;
-       // NSString *picture     = @"http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/150px-Apple_logo_black.svg.png";
         NSString *name        = entity.name;
         NSString *caption     = @"classic 7x7 game";
         NSString *description = entity.sharedDescription;
@@ -322,7 +322,7 @@
 
 -(void)attemptRenewCredentials
 {
-    [self.accountStore renewCredentialsForAccount:(ACAccount *)self.facebookAccount completion:^(ACAccountCredentialRenewResult renewResult, NSError *error){
+   /* [self.accountStore renewCredentialsForAccount:(ACAccount *)self.facebookAccount completion:^(ACAccountCredentialRenewResult renewResult, NSError *error){
         if(!error)
         {
             switch (renewResult) {
@@ -357,6 +357,7 @@
             _fbSession = nil;
             NSLog(@"error from renew credentials%@",error);
         }
-    }];
+    }];*/
+    [self Initializefacebook];
 }
 @end
