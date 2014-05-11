@@ -264,6 +264,7 @@
     for(RemovedRowEntity *row in result)
     {
         numberOfCellsDetected += row.row.count;
+        NSLog(@"row count %d : \n",row.row.count);
     }
     
     
@@ -281,7 +282,7 @@
         [_currentGame.achievementsState reportAchievementWithNumberOfClearedOutCells:numberOfCellsDetected Newlevel:[_levelProvider GetCurrentLevel].LevelIndex OldLevel:oldLevel];
         
         
-        
+        NSLog(@"number of rows %d \n number of cleared cells %d",result.count,numberOfCellsDetected);
     
         
         

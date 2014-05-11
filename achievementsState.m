@@ -208,7 +208,7 @@
         }
     }
     
-    if(NoOfClearedOutCells == 7)
+    if(NoOfClearedOutCells >= 7)
     {
         [achievements addObject:fruits7Achievement];
         

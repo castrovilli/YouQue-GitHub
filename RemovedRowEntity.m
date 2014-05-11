@@ -7,7 +7,14 @@
 //
 
 #import "RemovedRowEntity.h"
-
+#import "GraphCell.h"
 @implementation RemovedRowEntity
-
+-(BOOL)isEqual:(id)object
+{
+    return [_row isEqualToArray:((RemovedRowEntity*)object).row];
+}
+-(NSUInteger)hash
+{
+    return [_row hash];
+}
 @end

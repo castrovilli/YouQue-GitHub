@@ -12,7 +12,7 @@
 +(NSArray*)getConnectedCellsWithGraph:(Graph*)graph withVertices:(NSArray*)vertices withCompletionBlock:(DetectedResultArrayBlock)block
 {
         
-    NSMutableArray *result = [NSMutableArray array];
+    NSMutableSet *result = [NSMutableSet set];
     
     for(GraphCell *GCell in vertices)
     {
@@ -69,7 +69,7 @@
         [result addObjectsFromArray:rowsForCurrentVertix];
     }
         
-    return result;
+    return result.allObjects;
 }
 +(NSArray*)detectConnectedRowsVerticallyWithGraph:(Graph*)graph withVertixe:(GraphCell*)VertixGCell
 {

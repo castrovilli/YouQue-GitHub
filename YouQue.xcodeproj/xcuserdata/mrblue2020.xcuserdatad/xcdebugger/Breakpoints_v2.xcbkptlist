@@ -1090,11 +1090,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GameController.m"
-            timestampString = "421355760.509785"
+            timestampString = "421518575.180856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "359"
-            endingLineNumber = "359"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "-commitMove"
             landmarkType = "5">
          </BreakpointContent>
@@ -1716,6 +1716,22 @@
             startingLineNumber = "415"
             endingLineNumber = "415"
             landmarkName = "-reportAChievementsToGameCenter:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GameController.m"
+            timestampString = "421518556.259046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "-DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:withVerticesArray:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
