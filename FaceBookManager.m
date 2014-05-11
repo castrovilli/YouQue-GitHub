@@ -227,6 +227,7 @@
          } else
          {
              //Fail gracefully...
+             _fbSession = nil;
              NSLog(@"error getting permission yupeeeeeee %@",e);
              sleep(10);
              NSLog(@"awake from sleep");
