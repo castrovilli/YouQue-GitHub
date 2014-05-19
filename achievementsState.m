@@ -104,6 +104,13 @@
     level4Achievement = [[MDAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_ID] title:[[TemplateConfiguration sharedInstance] valueForKey:LEVEL_4_REACHED_ACHIEVEMENT_TITLE] points:100];
     level4Achievement.percentage = 100;
     
+    YouQueBeginner = [[MDAchievement alloc] initWithIdentifier:@"YouQueBeginner" title:@"YouQue Beginner" points:100];
+    
+    YouQueIntermediate = [[MDAchievement alloc] initWithIdentifier:@"YouQueIntermediate" title:@"YouQue Intermediate" points:100];
+    
+    YouQueMaster = [[MDAchievement alloc] initWithIdentifier:@"YouQueMaster" title:@"YouQue Master" points:100];
+    
+    YouQueHardcore = [[MDAchievement alloc] initWithIdentifier:@"YouQueHardcore" title:@"YouQue Hardcore" points:100];
     
     
     /*combo4xShareEntity = [[ShareEntity alloc] initWithMessage:[NSString stringWithFormat:@"%@ achieved 4x Combo",[[FaceBookManager sharedInstance] FullName]] link:@"https://itunes.apple.com/eg/app/youque/id721318647?mt=8" name:@"YouQue" description:@"New Achievement"];
@@ -121,6 +128,7 @@
 {
     NSMutableString *message = [NSMutableString stringWithFormat:@"%@ accomplished %d acheivements \n",[[FaceBookManager sharedInstance] FullName],entitiesToBeShared.count];
     
+    
     for(MDAchievement *ach in entitiesToBeShared)
     {
         [message appendFormat:@"\u00b7 %@ \n",ach.title];
@@ -132,8 +140,10 @@
     {
         [self shareAchievementPost:sharedEntityForAchievements];
         
-        [self reportAchievements:entitiesToBeShared.allObjects];
     }
+    [entitiesToBeShared addObjectsFromArray:[self YouQueAchievements]];
+    
+    [self reportAchievements:entitiesToBeShared.allObjects];
 }
 -(BOOL)isLastAchievementShareMoreThanDayAgo
 {
@@ -309,53 +319,62 @@
     
    
 }
--(void)reportYouQueAchievements
+-(NSArray*)YouQueAchievements
 {
-   /* NSMutableArray *achievements = [NSMutableArray array];
+   
+    NSMutableArray *youQueAchievements = [NSMutableArray array];
     
-    
-    GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_BEGINNER_ACHIEVEMENT_ID]];
-    
-    acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 1000;
-    [achievements addObject:acheievement];
-    
-    NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 1000);
-    
-    
-
-    if (_numberOfClearedOutCells > 1000)
+    if(_numberOfClearedOutCells <= 1000)
     {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_INTERMEDIATE_ACHIEVEMENT_ID]];
+        CGFloat numberOfCells = (CGFloat)_numberOfClearedOutCells;
+        YouQueBeginner.percentage = (numberOfCells/1000.0f)*100.0f;
+        [youQueAchievements addObject:YouQueBeginner];
+        return youQueAchievements;
         
-        acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 10000;
-        [achievements addObject:acheievement];
-        
-        NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 10000);
-        
+    }else
+    {
+        YouQueBeginner.percentage = 100;
+        [youQueAchievements addObject:YouQueBeginner];
     }
     
-    if (_numberOfClearedOutCells > 10000)
+    
+    
+    if(_numberOfClearedOutCells > 1000 && _numberOfClearedOutCells <= 10000 )
     {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_MASTER_ACHIEVEMENT_ID]];
+        CGFloat numberOfCells = (CGFloat)_numberOfClearedOutCells;
+        YouQueIntermediate.percentage = (numberOfCells/10000.0f)*100.0f;
+        [youQueAchievements addObject:YouQueIntermediate];
+        return youQueAchievements;
         
-        acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 100000;
-        [achievements addObject:acheievement];
-        
-        NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 100000);
+    }else if (_numberOfClearedOutCells > 10000)
+    {
+        YouQueIntermediate.percentage = 100;
+        [youQueAchievements addObject:YouQueIntermediate];
     }
     
-    if (_numberOfClearedOutCells > 100000)
+    
+    
+    if(_numberOfClearedOutCells > 10000 && _numberOfClearedOutCells <= 100000)
     {
-        GKAchievement *acheievement = [[GKAchievement alloc] initWithIdentifier:[[TemplateConfiguration sharedInstance] valueForKey:YOUQUE_HARDCORE_ACHIEVEMENT_ID]];
+        CGFloat numberOfCells = (CGFloat)_numberOfClearedOutCells;
+        YouQueMaster.percentage = (numberOfCells/100000.0f)*100.0f;
+        [youQueAchievements addObject:YouQueMaster];
+        return youQueAchievements;
         
-        acheievement.percentComplete = (_numberOfClearedOutCells * 100) / 1000000;
-        [achievements addObject:acheievement];
-        
-        NSLog(@"%@ %d",acheievement.identifier,(_numberOfClearedOutCells * 100) / 1000000);
+    }else if (_numberOfClearedOutCells > 100000)
+    {
+        YouQueMaster.percentage = 100;
+        [youQueAchievements addObject:YouQueMaster];
     }
     
-    [self reportAChievementsToGameCenter:achievements];*/
-    
+    if(_numberOfClearedOutCells > 100000 && _numberOfClearedOutCells <= 1000000)
+    {
+        CGFloat numberOfCells = (CGFloat)_numberOfClearedOutCells;
+        YouQueHardcore.percentage = (numberOfCells/1000000.0f)*100.0f;
+        [youQueAchievements addObject:YouQueHardcore];
+        
+    }
+    return youQueAchievements;
 
 }
 -(void)shareEntity:(ShareEntity*)entity
@@ -400,6 +419,8 @@
 }
 - (void) reportAchievements:(NSArray*)achievements
 {
+    
+    
     NSMutableArray *GKAchievements = [NSMutableArray array];
     
     for(MDAchievement *ach in achievements)

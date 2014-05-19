@@ -31,30 +31,14 @@
     
     
     
+    MDAchievement *YouQueBeginner;
     
-   /* ShareEntity *fruits5ShareEntity;
-    ShareEntity *fruits6ShareEntity;
-    ShareEntity *fruits7ShareEntity;
+    MDAchievement *YouQueIntermediate;
     
-    ShareEntity *combo2xShareEntity;
-    ShareEntity *combo4xShareEntity;
-    ShareEntity *combo6xShareEntity;
-    ShareEntity *combo8xShareEntity;
-    ShareEntity *combo10xShareEntity;*/
+    MDAchievement *YouQueMaster;
     
-    /*BOOL fruits5AchievementSharedBefore;
-    BOOL fruits6AchievementSharedBefore;
-    BOOL fruits7AchievementSharedBefore;
-    
-    BOOL combo2xAchievementSharedBefore;
-    BOOL combo4xAchievementSharedBefore;
-    BOOL combo6xAchievementSharedBefore;
-    BOOL combo8xAchievementSharedBefore;
-    BOOL combo10xAchievementSharedBefore;
-    
-    BOOL level2AchievementSharedBefore;
-    BOOL level3AchievementSharedBefore;
-    BOOL level4AchievementSharedBefore;*/
+    MDAchievement *YouQueHardcore;
+   
     
     
     NSMutableSet *entitiesToBeShared;
@@ -64,7 +48,6 @@
 
 -(void)reportAchievementWithNumberOfClearedOutCells:(NSUInteger)NoOfClearedOutCells Newlevel:(int)Newlevel OldLevel:(int)oldLevel;
 -(void)resetCounter;
--(void)reportYouQueAchievements;
 -(void)postAchievements;
 @end
 @protocol AchievementsStateDelegate <NSObject>

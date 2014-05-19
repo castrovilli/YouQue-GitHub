@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "FaceBookManager.h"
-#import "STAStartAppAd.h"
 #import <StoreKit/StoreKit.h>
 #import <GameKit/GameKit.h>
 #import "MDPaymentTransactionObserver.h"

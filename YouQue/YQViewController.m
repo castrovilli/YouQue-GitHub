@@ -21,12 +21,9 @@
     
     
     
-    if([self hasFourInchDisplay])
-    {
-        paymentObserver = [[MDPaymentTransactionObserver alloc] init];
-        paymentObserver.delegate = self;
-        [[SKPaymentQueue defaultQueue] addTransactionObserver:paymentObserver];
-    }
+    paymentObserver = [[MDPaymentTransactionObserver alloc] init];
+    paymentObserver.delegate = self;
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:paymentObserver];
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;
@@ -125,58 +122,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:PURCHASE_SUCCEEDED_NOTIFICATION object:nil];
 }
--(void)initializeMenuButtons
-{
-    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
-                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
-                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    
-    
-    ResumBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    ResumBtn.titleLabel.textColor = [UIColor colorWithRed:(18.0f/255.0f) green:(169.0f/255.0f) blue:(233.0f/255.0) alpha:1.0];
-    [ResumBtn setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [ResumBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    ResumBtn.frame = CGRectMake(38, 197, 245, 43);
-    [ResumBtn setTitle:@"Resume" forState:UIControlStateNormal];
-    [self.view addSubview:ResumBtn];
-    
-    
-    newBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    newBtn.titleLabel.textColor = [UIColor colorWithRed:(18.0f/255.0f) green:(169.0f/255.0f) blue:(233.0f/255.0) alpha:1.0];
-    [newBtn setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [newBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    newBtn.frame = CGRectMake(38, 247, 195, 43);
-    [newBtn setTitle:@"New Game" forState:UIControlStateNormal];
-    [self.view addSubview:newBtn];
-    
-    
-    highScoreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    highScoreBtn.titleLabel.textColor = [UIColor colorWithRed:(18.0f/255.0f) green:(169.0f/255.0f) blue:(233.0f/255.0) alpha:1.0];
-    [highScoreBtn setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [highScoreBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    highScoreBtn.frame = CGRectMake(38, 297, 195, 43);
-    [highScoreBtn setTitle:@"High Score" forState:UIControlStateNormal];
-    [self.view addSubview:highScoreBtn];
-    
-    
-    howToBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    howToBtn.titleLabel.textColor = [UIColor colorWithRed:(18.0f/255.0f) green:(169.0f/255.0f) blue:(233.0f/255.0) alpha:1.0];
-    [howToBtn setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [howToBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    howToBtn.frame = CGRectMake(38, 347, 195, 43);
-    [howToBtn setTitle:@"How To Play" forState:UIControlStateNormal];
-    [self.view addSubview:howToBtn];
-    
-    
-    removeAdsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    removeAdsBtn.titleLabel.textColor = [UIColor colorWithRed:(18.0f/255.0f) green:(169.0f/255.0f) blue:(233.0f/255.0) alpha:1.0];
-    [removeAdsBtn setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [removeAdsBtn setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    removeAdsBtn.frame = CGRectMake(38, 397, 195, 43);
-    [removeAdsBtn setTitle:@"Remove Ads $0.99" forState:UIControlStateNormal];
-    [self.view addSubview:removeAdsBtn];
-}
+
 - (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title
 {
     ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view
@@ -223,11 +169,6 @@
         removeAdsBtn.enabled = YES;
     }
     
-    if(![self hasFourInchDisplay])
-    {
-        removeAdsBtn.hidden = YES;
-        removeAdsBtn.enabled = NO;
-    }
     
     [self updateResumeBtnEnabled];
 }
@@ -264,18 +205,25 @@
 -(void)loadNewAd
 {
     
-    if(![self hasFourInchDisplay])
-    {
-        return;
-    }
+    
     /*if (bannerView_ == nil) {
         bannerView_ = [[STABannerView alloc] initWithSize:STA_AutoAdSize autoOrigin:STAAdOrigin_Bottom
                                                  withView:self.view withDelegate:nil];
         [self.view addSubview:bannerView_];
     }*/
+    
     bannerView_ = [[RevMobAds session] bannerView];
     bannerView_.frame = CGRectMake(0, self.view.bounds.size.height-50, self.view.bounds.size.width, 50);
-    [self.view addSubview:bannerView_];
+    
+    if([self hasFourInchDisplay])
+    {
+        [self.view addSubview:bannerView_];
+        
+    }else
+    {
+        [menuView addSubview:bannerView_];
+    }
+    
     
     bannerView_.delegate = self;
     [bannerView_ loadAd];

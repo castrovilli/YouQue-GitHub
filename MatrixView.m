@@ -119,12 +119,14 @@
     {
         [_delegate ResetNextAddedCells];
     }
+    
     [gameController.levelProvider ResetLevel];
     [gameController.UndoManager ResetManager];
     _UndoBtn.enabled = NO;
     [gameController.currentGame.score ResetScore];
     [gameController.currentGame.graph ResetGraph];
     [gameController.currentGame.achievementsState resetCounter];
+    gameController.currentGame.achievementsState = [[achievementsState alloc] init];
     [self ReloadWithSize:gameController.currentGame.graph.size gameResumed:NO];
 }
 //**********************MATRIX RELOAD WITH CELLS ***************************************************

@@ -10,7 +10,6 @@
 #import <SpriteKit/SpriteKit.h>
 #import "YQMainMenu.h"
 #import "YQMyScene.h"
-#import "STABannerView.h"
 #import "MDPaymentTransactionObserver.h"
 #import "UIViewController+Loader.h"
 #import <RevMobAds/RevMobAds.h>

@@ -37,6 +37,11 @@
     }
     return self;
 }
+-(void)setPercentage:(CGFloat)percentage
+{
+    _percentage = percentage;
+    _gkAchievement.percentComplete = percentage;
+}
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:_identifier forKey:@"identifier"];

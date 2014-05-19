@@ -16,7 +16,7 @@
 {
     
     
-    if(![self adRemovalPurchased] && [self hasFourInchDisplay])
+    if(![self adRemovalPurchased])
     {
         [RevMobAds startSessionWithAppID:[[TemplateConfiguration sharedInstance] valueForKey:REVMOB_APP_ID_KEY]];
         [RevMobAds session].testingMode = RevMobAdsTestingModeOff;
@@ -24,6 +24,7 @@
     
     [[FaceBookManager sharedInstance] Initializefacebook];
     [self initializeGoogleAnalyticsTracker];
+    
     // [MMSDK initialize]; //Initialize a Millennial Media session
    // [STAStartAppAd initWithAppId:@"204223654" developerId:@"104470863"];
     // Override point for customization after application launch.
